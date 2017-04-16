@@ -1,0 +1,7 @@
+package com.information.dao;
+
+public class MemoryDAO {
+	public List<Memory> selectAll(){}
+	
+	
+}

@@ -3,3 +3,17 @@
 1492310658442	Delete elements
 1492315726767	Delete element
 1492321784823	Rename package 'com.information.repository'
+1492323006166	Rename resource 'context-datasourcexml.xml'
+1492323182654	Delete element
+1492323184667	Delete element
+1492324425787	Delete element
+1492326629953	Delete element
+1492330035470	Delete element
+1492331800995	Copy compilation unit
+1492331914848	Delete element
+1492331947524	Delete element
+1492332324474	Delete element
+1492332492752	Rename type 'MemoryServieimpl'
+1492354558211	Rename package 'com.information.get.service'
+1492354570523	Rename package 'com.information.get.service.impl'
+1492354668604	Copy packages

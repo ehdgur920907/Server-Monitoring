@@ -1,0 +1,20 @@
+package com.information.get.service.impl;
+
+import com.information.get.Memory;
+import com.information.get.service.MemoryService;
+
+public class MemoryServieimpl implements MemoryService{
+
+	@Override
+	public void insertMemory(Memory memory) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteMemory(Memory memory) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
