@@ -32,6 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/donghyuk/Documents/dev/17-1/capstone/sigar-1.6.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/kimsejune/Downloads/sigar-1.6.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
