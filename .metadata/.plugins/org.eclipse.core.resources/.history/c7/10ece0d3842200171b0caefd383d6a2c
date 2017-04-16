@@ -1,0 +1,16 @@
+package com.monitoring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.information.get.Get;
+
+@Controller
+public class MonitoringController {
+	Get get = new Get();
+	@RequestMapping("/memory")
+	public String memory(Model model) {
+		return "memory";
+	}
+}
