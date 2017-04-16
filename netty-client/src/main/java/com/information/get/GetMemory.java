@@ -2,16 +2,12 @@ package com.information.get;
 
 import org.hyperic.sigar.Mem;
 import org.hyperic.sigar.Sigar;
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 
-public class GetMemory implements Job {
-	public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-		getMemory();
-	}
+import com.information.model.Memory;
 
-	public Memory getMemory() {
+public class GetMemory implements Get {
+	@Override
+	public Memory execute() {
 		Sigar sigar = new Sigar();
 		Memory memory = new Memory();
 

@@ -3,10 +3,10 @@ package com.client.netty;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.information.get.Disk;
 import com.information.get.GetDisk;
 import com.information.get.GetMemory;
-import com.information.get.Memory;
+import com.information.model.Disk;
+import com.information.model.Memory;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -20,8 +20,8 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		GetMemory getMemory = new GetMemory();
 		GetDisk getDisk = new GetDisk();
 		
-		Disk disk = getDisk.getDisk();
-		Memory memory = getMemory.getMemory();
+		Disk disk = getDisk.execute();
+		Memory memory = getMemory.execute();
 
 		JSONObject memoryJsonObject = new JSONObject();
 		JSONObject diskJsonObject = new JSONObject();
