@@ -1,0 +1,38 @@
+package com.board.mvc.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.board.mvc.command.BoardCommand;
+import com.board.mvc.command.BoardListCommand;
+import com.board.mvc.command.BoardWriteCommand;
+
+@Controller
+public class BoardController {
+	BoardCommand boardCommand;
+	@RequestMapping("/list")
+	public String list(Model model) {
+		System.out.println("list()");
+		boardCommand = new BoardListCommand();
+		boardCommand.execute(model);
+		return "/list";
+	}
+	
+	@RequestMapping("/write_view")
+	public String write(Model model) {
+		System.out.println("write_view()");
+		return "/write_view";
+	}
+	
+	@RequestMapping("/write")
+	public String write(HttpServletRequest httpServerletRequest, Model model) {
+		System.out.println("write");
+		model.addAttribute("httpServerletRequest", httpServerletRequest);
+		boardCommand = new BoardWriteCommand();
+		boardCommand.execute(model);
+		return "redirect:/list";
+	}
+}

@@ -1,0 +1,5 @@
+package com.mvc.controller;
+
+@Controller
+public class Controller {
+}

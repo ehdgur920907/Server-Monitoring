@@ -1,0 +1,81 @@
+package com.board.mvc.dto;
+
+import java.sql.Timestamp;
+
+public class BoardDto {
+	
+	int boardId;
+	String boardName;
+	String boardTitle;
+	Timestamp boardDate;
+	int boardHit;
+	int boardGroup;
+	int boardStep;
+	int boardIndent;
+	
+	public BoardDto() {
+		
+	}
+	
+	public BoardDto(int boardId, String boardName, String boardTitle, Timestamp boardDate, int boardHit, int boardGroup, int boardStep, int boardIndent) {
+		super();
+		this.boardId = boardId;
+		this.boardName = boardName;
+		this.boardTitle = boardTitle;
+		this.boardDate = boardDate;
+		this.boardHit = boardHit;
+		this.boardGroup = boardGroup;
+		this.boardStep = boardStep;
+		this.boardIndent = boardIndent;
+	}
+	public int getBoardId() {
+		return boardId;
+	}
+	public void setBoardId(int boardId) {
+		this.boardId = boardId;
+	}
+	public String getBoardName() {
+		return boardName;
+	}
+	public void setBoardName(String boardName) {
+		this.boardName = boardName;
+	}
+	public String getBoardTitle() {
+		return boardTitle;
+	}
+	public void setBoardTitle(String boardTitle) {
+		this.boardTitle = boardTitle;
+	}
+	public Timestamp getBoardDate() {
+		return boardDate;
+	}
+	public void setBoardDate(Timestamp boardDate) {
+		this.boardDate = boardDate;
+	}
+	public int getBoardHit() {
+		return boardHit;
+	}
+	public void setBoardHit(int boardHit) {
+		this.boardHit = boardHit;
+	}
+	public int getBoardGroup() {
+		return boardGroup;
+	}
+	public void setBoardGroup(int boardGroup) {
+		this.boardGroup = boardGroup;
+	}
+	public int getBoardStep() {
+		return boardStep;
+	}
+	public void setBoardStep(int boardStep) {
+		this.boardStep = boardStep;
+	}
+	public int getBoardIndent() {
+		return boardIndent;
+	}
+	public void setBoardIndent(int boardIndent) {
+		this.boardIndent = boardIndent;
+	}
+	
+	
+}

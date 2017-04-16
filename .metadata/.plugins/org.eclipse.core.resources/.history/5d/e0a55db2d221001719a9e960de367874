@@ -1,0 +1,5 @@
+package com.board.mv.dao;
+
+public class BoardDao {
+
+}

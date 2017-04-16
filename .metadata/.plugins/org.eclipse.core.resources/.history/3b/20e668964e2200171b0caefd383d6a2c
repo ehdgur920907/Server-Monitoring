@@ -1,0 +1,26 @@
+package com.client.netty;
+
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
+
+public class EchoClientHandler extends ChannelInboundHandlerAdapter {
+	   @Override
+	   public void channelActive(ChannelHandlerContext ctx) {
+
+	      
+//	      JSONObject json = new JSONObject();
+	//
+////	      
+////	      ByteBuf messageBuffer = Unpooled.buffer();
+////	      messageBuffer.writeBytes(json.toJSONString().getBytes());
+	      System.out.println("heelo");
+	      ctx.writeAndFlush(ctx);
+	   }
+
+	   @Override
+	   public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+	      cause.printStackTrace();
+	      ctx.close();
+	   }
+
+	}

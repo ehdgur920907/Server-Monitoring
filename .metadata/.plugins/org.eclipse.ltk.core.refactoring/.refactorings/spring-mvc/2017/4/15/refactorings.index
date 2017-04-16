@@ -1,0 +1,25 @@
+1492254354092	Rename package 'com.spring.mvc'
+1492254512234	Rename type 'Command'
+1492254520221	Rename type 'BCommand'
+1492254726881	Copy compilation unit
+1492254767905	Copy compilation unit
+1492254780280	Copy compilation unit
+1492254784589	Copy compilation unit
+1492254793015	Rename type 'EditCommand'
+1492254815847	Copy compilation unit
+1492254852313	Copy compilation unit
+1492254992887	Delete element
+1492255133226	Delete element
+1492255164719	Rename type 'BController'
+1492255181768	Rename type 'Command'
+1492255185568	Rename type 'ContentsCommand'
+1492255188397	Rename type 'DeleteCommand'
+1492255190562	Rename type 'ListCommand'
+1492255192616	Rename type 'ModifyCommand'
+1492255194600	Rename type 'ReplyCommand'
+1492255196803	Rename type 'ReplyViewCommand'
+1492255199036	Rename type 'WriteCommand'
+1492255215836	Rename package 'com.mvc.command'
+1492255221965	Rename package 'com.mvc.controller'
+1492255258331	Rename package 'com.mv.dao'
+1492255277586	Rename package 'com.mvc.dto'
