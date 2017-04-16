@@ -1,0 +1,5 @@
+package com.monitoring.dao;
+
+public class MonitoringDao {
+	
+}

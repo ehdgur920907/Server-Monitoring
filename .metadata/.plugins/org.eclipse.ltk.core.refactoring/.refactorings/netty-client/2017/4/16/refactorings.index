@@ -7,3 +7,6 @@
 1492325953832	Rename type 'GetCommnad'
 1492326069906	Rename type 'GetCommand'
 1492326368226	Move compilation units
+1492330045115	Rename package 'com.mysql.mybatis'
+1492331382816	Delete elements
+1492331422104	Delete element
