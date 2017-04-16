@@ -16,11 +16,19 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 		String readMessage = ((ByteBuf) msg).toString(Charset.defaultCharset());
 		
 		JSONParser parser = new JSONParser();
-	    JSONObject json = (JSONObject)parser.parse(readMessage);
+	    JSONObject jsonObject = (JSONObject)parser.parse(readMessage);
+	    JSONObject memoryJsonObject = (JSONObject)jsonObject.get("memory");
+	    JSONObject diskJsonObject = (JSONObject)jsonObject.get("disk");
 	    
-	    System.out.println(json.get("totalMemory"));
-	    System.out.println(json.get("usedMemory"));
-	    System.out.println(json.get("freeMemory"));
+	    System.out.println("====Memory====");
+	    System.out.println("total memory: " + memoryJsonObject.get("totalMemory"));
+	    System.out.println("used memory: " + memoryJsonObject.get("usedMemory"));
+	    System.out.println("free memory: " + memoryJsonObject.get("freeMemory"));
+	    System.out.println("");
+	    System.out.println("====Disk====");
+	    System.out.println("total disk: " + diskJsonObject.get("totalDisk"));
+	    System.out.println("used disk: " + diskJsonObject.get("usedDisk"));
+	    System.out.println("free disk: " + diskJsonObject.get("freeDisk"));
 	}
 
 	@Override

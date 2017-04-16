@@ -1,7 +1,10 @@
 package com.client.netty;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.information.get.Disk;
+import com.information.get.GetDisk;
 import com.information.get.GetMemory;
 import com.information.get.Memory;
 
@@ -15,18 +18,30 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 	public void channelActive(ChannelHandlerContext ctx) {
 		System.out.println("channelActive");
 		GetMemory getMemory = new GetMemory();
-		Memory memory = getMemory.getMemory();
+		GetDisk getDisk = new GetDisk();
 		
+		Disk disk = getDisk.getDisk();
+		Memory memory = getMemory.getMemory();
+
 		JSONObject memoryJsonObject = new JSONObject();
+		JSONObject diskJsonObject = new JSONObject();
+		JSONObject totalJsonObject = new JSONObject();
 		
 		memoryJsonObject.put("totalMemory", memory.getTotalMemory());
 		memoryJsonObject.put("usedMemory", memory.getUsedMemory());
 		memoryJsonObject.put("freeMemory", memory.getFreeMemory());
 		
-		System.out.println(memoryJsonObject);
+		diskJsonObject.put("totalDisk", disk.getTotalDisk());
+		diskJsonObject.put("usedDisk", disk.getUsedDisk());
+		diskJsonObject.put("freeDisk", disk.getFreeDisk());
+		
+		totalJsonObject.put("memory", memoryJsonObject);
+		totalJsonObject.put("disk", diskJsonObject);
+		
+		System.out.println(totalJsonObject);
 		
 		ByteBuf messageBuffer = Unpooled.buffer();
-		messageBuffer.writeBytes(memoryJsonObject.toJSONString().getBytes());
+		messageBuffer.writeBytes(totalJsonObject.toJSONString().getBytes());
 
 		ctx.writeAndFlush(messageBuffer);
 	}
@@ -35,7 +50,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 	public void channelRead(ChannelHandlerContext ctx, Object msg) {
 		ctx.close();
 	}
-	
+
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 		cause.printStackTrace();
