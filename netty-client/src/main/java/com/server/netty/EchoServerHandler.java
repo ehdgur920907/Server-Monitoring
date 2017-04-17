@@ -1,12 +1,11 @@
 package com.server.netty;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import org.apache.ibatis.annotations.Insert;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,9 +13,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.information.get.Memory;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
@@ -28,79 +24,80 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	
-	public void selectInformation() throws Exception{
-		String resource = "com/mybatis/config/mybatis-config.xml";
-		InputStream inputStream = Resources.getResourceAsStream(resource);
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		try(SqlSession session = sqlSessionFactory.openSession()){
-			Memory memory  = session.selectOne("com.information.mapper.MemoryMapper.select_Memorys", "8.46GB");
-		} 
-	}
-	
-	public void insertInformation() throws Exception{
-		String resource = "com/mybatis/config/mybatis-config.xml";
-		InputStream inputStream = Resources.getResourceAsStream(resource);
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		try(SqlSession session = sqlSessionFactory.openSession()){
-			session.insert("com.information.mapper.MemoryMapper.select_Memorys", new Memory());
-			
-		}
-	}
+//	public void selectInformation() throws Exception{
+//		String resource = "com/mybatis/config/mybatis-config.xml";
+//		InputStream inputStream = Resources.getResourceAsStream(resource);
+//		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+//		try(SqlSession session = sqlSessionFactory.openSession()){
+//			Memory memory  = session.selectOne("com.information.mapper.MemoryMapper.select_Memorys", "8.46GB");
+//		} 
+//	}
+//	
+//	public void insertInformation() throws Exception{
+//		String resource = "com/mybatis/config/mybatis-config.xml";
+//		InputStream inputStream = Resources.getResourceAsStream(resource);
+//		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+//		try(SqlSession session = sqlSessionFactory.openSession()){
+//			session.insert("com.information.mapper.MemoryMapper.select_Memorys", new Memory());
+//			
+//		}
+//	}
 	 
 	@Override
-	public void channelRead(ChannelHandlerContext ctx, Object msg) throws ParseException {
-		
-		
-//		MemoryDAO  memoryDAO = new MemoryDAO();
-		Memory memory = new Memory();
-		String driver = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/server?useSSL=false";
-		String username = "root";
-		String password = "delab";
-		
+	public void channelRead(ChannelHandlerContext ctx, Object msg) throws ParseException, Exception{
+//		String driver = "com.mysql.jdbc.Driver";
+//		String url = "jdbc:mysql://localhost:3306/server?useSSL=false";
+//		String username = "root";
+//		String password = "delab";
+//		
 		String readMessage = ((ByteBuf) msg).toString(Charset.defaultCharset());
-		java.sql.Connection conn = null;
-		PreparedStatement pstmt = null;
- 		
+//		java.sql.Connection conn = null;
+//		PreparedStatement pstmt = null;
+// 		
 		JSONParser parser = new JSONParser();
 	    JSONObject json = (JSONObject)parser.parse(readMessage);
-	    
-	    try{
-	    	Class.forName(driver);
-	    	conn = DriverManager.getConnection(url, username, password);
-	    	String sql  = "Insert into memory values (?, ?, ?)";
-	    	pstmt = (PreparedStatement)conn.prepareStatement(sql);
-	    	pstmt.setString(1, (String)json.get("totalMemory"));
-	    	pstmt.setString(2, (String)json.get("usedMemory"));
-	    	pstmt.setString(3, (String)json.get("freeMemory"));
-	    	pstmt.executeUpdate();
-	    	System.out.println("success");
-	    }catch(Exception e){
-	    	e.printStackTrace();
-	    }finally {
-				if (pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			} else if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+//	    
+//	    try{
+//	    	Class.forName(driver);
+//	    	conn = DriverManager.getConnection(url, username, password);
+//	    	String sql  = "Insert into memory values (?, ?, ?)";
+//	    	pstmt = (PreparedStatement)conn.prepareStatement(sql);
+//	    	pstmt.setString(1, (String)json.get("totalMemory"));
+//	    	pstmt.setString(2, (String)json.get("usedMemory"));
+//	    	pstmt.setString(3, (String)json.get("freeMemory"));
+//	    	pstmt.executeUpdate();
+//	    	System.out.println("success");
+//	    }catch(Exception e){
+//	    	e.printStackTrace();
+//	    }finally {
+//				if (pstmt != null) {
+//				try {
+//					pstmt.close();
+//				} catch (SQLException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			} else if (conn != null) {
+//				try {
+//					conn.close();
+//				} catch (SQLException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+
+		Memory memory = new Memory();
+		String resource = "com/mybatis/config/mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		try(SqlSession session = sqlSessionFactory.openSession()){
+			memory.setFreeMemory(json.get("totalMemory").toString());
+		    memory.setTotalMemory(json.get("usedMemory").toString());
+		    memory.setUsedMemory(json.get("freeMemory").toString());
+			session.insert("com.information.mapper.MemoryMapper.insertMemory", memory);
 		}
 	    
-//	    MemoryDAO memoryDAO = new MemoryDAO(MyBatisConnectionFactory.getSqlSessionFactory());
-	    
-//	    memory.setFreeMemory(json.get("totalMemory").toString());
-//	    memory.setTotalMemory(json.get("usedMemory").toString());
-//	    memory.setUsedMemory(json.get("freeMemory").toString());
-//		memoryServiceimpl.insertMemory(memory);
 	    
 	    System.out.println(json.get("totalMemory"));
 	    System.out.println(json.get("usedMemory"));
