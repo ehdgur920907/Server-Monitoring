@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+    <mapper namespace="com.information.mapper.MemoryMapper">
+    	
+    	<select id="select_Memorys" resultMap="Memory">
+    		SELECT * FROM memory 
+    	</select>
+    	
+    	<insert id="insert_Memory" parameterType="Memory">
+    		INSERT INTO memory (usedMemory as used_memory, totalMemory as total_memory, freeMemory as free_memory)
+    			VALUSE(#{usedMemory},#{totalMemory},#{freeMemory})
+    	</insert>
+    	
+    	<delete id="delete_Memory" parameterType="Memory">
+    		DELETE FROM memory WHERE usedMemory as used_memory = #{usedMemory}
+    	</delete>
+    </mapper>

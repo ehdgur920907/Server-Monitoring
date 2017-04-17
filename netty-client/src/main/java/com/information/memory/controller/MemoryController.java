@@ -1,28 +1,37 @@
-package com.information.memory.controller;
-
-import java.io.InputStream;
-import java.io.Reader;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
-import com.information.get.Memory;
-
-
-public class MemoryController {
-	
-	public void gettingStrarted() throws Exception{
-		String resource = "com/mybatis/config/mybatis-config.xml";
-		InputStream inputStream = Resources.getResourceAsStream(resource);
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		SqlSession session = sqlSessionFactory.openSession();
-		try {
-			Memory memory = session.selectOne("com.information.mapper.MemoryMapper.select_Memorys", "8.86GB");
-		} finally {
-		  session.close();
-		}
-	}
-	
-	
-}
+//package com.information.memory.controller;
+//
+//import java.io.InputStream;
+//
+//import org.apache.ibatis.io.Resources;
+//import org.apache.ibatis.session.SqlSession;
+//import org.apache.ibatis.session.SqlSessionFactory;
+//import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+//import org.json.simple.JSONObject;
+//
+//import com.information.get.Memory;
+//import com.information.memory.service.impl.MemoryServiceimpl;
+//
+//
+//public class MemoryController {
+//	private MemoryServiceimpl memoryServiceimpl;
+//	
+//	private SqlSessionFactory sqlSessionFactory = null;
+//	
+//	public void insert() throws Exception{
+//		Memory memory = new Memory();
+//		JSONObject json = new JSONObject();
+//		InputStream is = Resources.getResourceAsStream("com/mybatis/config/mybatis-config.xml");
+//		sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+//		SqlSession session = sqlSessionFactory.openSession();
+//		try {
+//			memory.setFreeMemory("3.3GB");
+//			memory.setTotalMemory("4.4GB");
+//			memory.setUsedMemory("5.5GB");
+//					memoryServiceimpl.insertMemory(memory);
+//		} finally {
+//		  session.close();
+//		}
+//	}
+//	
+//	
+//}

@@ -1,5 +1,6 @@
 package com.server.netty;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.sql.DriverManager;
@@ -7,13 +8,15 @@ import java.sql.SQLException;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.information.dao.MemoryDAO;
 import com.information.get.Memory;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
@@ -25,12 +28,25 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	
-//	public void insert(){
-//		String resource = "com/mybatis/config/mybatis-config.xml";
-//		InputStream inputStream = Resources.getResourceAsStream(resource);
-//		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-//	}
-//	
+	public void selectInformation() throws Exception{
+		String resource = "com/mybatis/config/mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		try(SqlSession session = sqlSessionFactory.openSession()){
+			Memory memory  = session.selectOne("com.information.mapper.MemoryMapper.select_Memorys", "8.46GB");
+		} 
+	}
+	
+	public void insertInformation() throws Exception{
+		String resource = "com/mybatis/config/mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		try(SqlSession session = sqlSessionFactory.openSession()){
+			session.insert("com.information.mapper.MemoryMapper.select_Memorys", new Memory());
+			
+		}
+	}
+	 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws ParseException {
 		
@@ -78,6 +94,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 				}
 			}
 		}
+	    
 //	    MemoryDAO memoryDAO = new MemoryDAO(MyBatisConnectionFactory.getSqlSessionFactory());
 	    
 //	    memory.setFreeMemory(json.get("totalMemory").toString());
