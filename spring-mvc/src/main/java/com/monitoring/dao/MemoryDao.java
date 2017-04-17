@@ -37,6 +37,10 @@ public class MemoryDao {
 				String usedMemory = resultSet.getString("used_memroy");
 				String freeMemory = resultSet.getString("free_memroy");
 				
+				System.out.println(totalMemory);
+				System.out.println(usedMemory);
+				System.out.println(freeMemory);
+				
 				MemoryDto memoryDto = new MemoryDto();
 				memoryDto.setTotalMemory(totalMemory);
 				memoryDto.setUsedMemory(usedMemory);
