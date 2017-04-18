@@ -1,0 +1,5 @@
+package com.informatin.mapper.repository;
+
+public interface MemoryMapper {
+	public List<Memory> selectAllMemorys
+}

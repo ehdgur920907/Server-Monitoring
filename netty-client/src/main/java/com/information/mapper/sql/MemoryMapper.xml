@@ -5,7 +5,7 @@
   
     <mapper namespace="MemoryMapper">
     	
-    	<select id="selectMemorys" parameterType="java.util.HashMap" resultMap="java.util.HashMap">
+    	<select id="selectMemorys" parameterType="string" resultMap="hashmap">
     		SELECT * FROM memory WHERE used_memory = #{used_memory}
     	</select>
     	
