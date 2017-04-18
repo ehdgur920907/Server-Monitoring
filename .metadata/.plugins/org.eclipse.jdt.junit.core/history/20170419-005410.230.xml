@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MemberDAOImplTest" project="netty-server" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.server.controller.MemberDAOImplTest" time="0.443">
+    <testcase name="registerTest" classname="com.server.controller.MemberDAOImplTest" time="0.432"/>
+    <testcase name="getListTest" classname="com.server.controller.MemberDAOImplTest" time="0.0"/>
+    <testcase name="getTest" classname="com.server.controller.MemberDAOImplTest" time="0.003"/>
+    <testcase name="getTimeTest" classname="com.server.controller.MemberDAOImplTest" time="0.007"/>
+    <testcase name="test" classname="com.server.controller.MemberDAOImplTest" time="0.001"/>
+  </testsuite>
+</testrun>

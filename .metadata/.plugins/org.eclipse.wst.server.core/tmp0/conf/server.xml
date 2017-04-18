@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\kimsejune\Desktop\project\server-monitoring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\spring-mvc" path="" reloadable="true" source="org.eclipse.jst.jee.server:spring-mvc"/><Context docBase="C:\Users\kimsejune\Desktop\project\server-monitoring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\netty-server" path="/netty-server" reloadable="true" source="org.eclipse.jst.jee.server:netty-server"/></Host>
+      <Context docBase="C:\Users\kimsejune\Desktop\project\server-monitoring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\spring-mvc" path="" reloadable="true" source="org.eclipse.jst.jee.server:spring-mvc"/><Context docBase="C:\Users\kimsejune\Desktop\project\server-monitoring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\netty-server2" path="/netty-server2" reloadable="true" source="org.eclipse.jst.jee.server:netty-server2"/><Context docBase="C:\Users\kimsejune\Desktop\project\server-monitoring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\netty-server" path="/controller" reloadable="true" source="org.eclipse.jst.jee.server:netty-server"/></Host>
     </Engine>
   </Service>
 </Server>

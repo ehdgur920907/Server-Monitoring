@@ -1,5 +1,0 @@
-package com.informatin.mapper.repository;
-
-public interface MemoryMapper {
-	
-}
