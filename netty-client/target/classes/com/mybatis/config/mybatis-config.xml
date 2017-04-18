@@ -17,6 +17,6 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="com/information/mapper/MemoryMapper.xml"/>
+		<mapper resource="com/information/mapper/sql/MemoryMapper.xml"/>
 	</mappers>
 </configuration>
