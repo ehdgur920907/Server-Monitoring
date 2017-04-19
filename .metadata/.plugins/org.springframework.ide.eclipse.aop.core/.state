@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="netty-mybatis"/>
+<aop-project name="netty-server-pratice"/>
 <aop-project name="spring-mvc"/>
 <aop-project name="netty-server2"/>
 <aop-project name="netty-client"/>

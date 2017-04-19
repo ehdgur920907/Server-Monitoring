@@ -1,10 +1,10 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/server/persistence/GenericDAO.java=UTF-8
 encoding//src/main/java/com/server/persistence/GenericDAOImpl.java=UTF-8
-encoding//src/main/java/com/server/persistence/MemberDAO.java=UTF-8
+encoding//src/main/java/com/server/persistence/MemoryDAO.java=UTF-8
 encoding//src/test/java/com/server/controller/AbstractTest.java=UTF-8
 encoding//src/test/java/com/server/controller/ApplictationContextTest.java=UTF-8
 encoding//src/test/java/com/server/controller/DataSourceConnectionTest.java=UTF-8
-encoding//src/test/java/com/server/controller/MemberDAOImplTest.java=UTF-8
+encoding//src/test/java/com/server/controller/MemoryDAOImplTest.java=UTF-8
 encoding//src/test/java/com/server/controller/SqlSessionFactoryBeanTest.java=UTF-8
 encoding//src/test/java/com/server/controller/TimeDAOTest.java=UTF-8

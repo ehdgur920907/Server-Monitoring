@@ -3,7 +3,7 @@ package com.client.netty;
 import org.json.simple.JSONObject;
 
 import com.information.get.GetMemory;
-import com.information.get.Memory;
+import com.server.domain.Memory;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

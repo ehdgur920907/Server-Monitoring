@@ -15,15 +15,13 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.information.memory.service.impl.MemoryServiceimpl;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
-	private MemoryServiceimpl memoryServiceimpl;
+	// private MemoryServiceimpl memoryServiceimpl;
 	// public void selectInformation() throws Exception{
 	// String resource = "com/mybatis/config/mybatis-config.xml";
 	// InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -116,33 +114,30 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 		props.put("username", "root");
 		props.put("password", "delab");
 		SqlSession session = null;
-		 try{
-		 InputStream inputStream = Resources.getResourceAsStream(resource);
-		 SqlSessionFactory sqlSessionFactory = new
-		 SqlSessionFactoryBuilder().build(inputStream, props);
-		
-		 session = sqlSessionFactory.openSession(true);
-		 }catch(IOException e ){
-		 e.printStackTrace();
-		 return;
-		 }
-		 HashMap<String, String> input = new HashMap<String, String>();
-		 input.put("used_memory", "8.46GB");
-		
-		 List<HashMap<String, String>> outputs =
-		 session.selectList("MemoryMapper.selectMemorys",
-		 input);
-		 System.out.println(outputs.get(0));
+		try {
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, props);
 
+			session = sqlSessionFactory.openSession(true);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
+		HashMap<String, String> input = new HashMap<String, String>();
+		input.put("used_memory", "8.46GB");
 
+		List<HashMap<String, String>> outputs = session.selectList("MemoryMapper.selectMemorys", input);
+		System.out.println(outputs.get(0));
+
+		System.out.println("연결성공");
 		System.out.println(json.get("totalMemory"));
 		System.out.println(json.get("usedMemory"));
 		System.out.println(json.get("freeMemory"));
 		ByteBuf messageBuffer = Unpooled.buffer();
 		messageBuffer.writeBytes(json.toJSONString().getBytes());
 		ctx.writeAndFlush(messageBuffer);
-		 session.commit();
-		 session.close();
+		session.commit();
+		session.close();
 	}
 
 	@Override

@@ -11,6 +11,8 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+import com.server.domain.Memory;
+
 public class GetMemory implements Job {
 	 public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         getMemory();

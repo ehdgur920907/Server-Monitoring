@@ -25,7 +25,6 @@
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.InputStream"/>
 <fullyQualifiedTypeName name="com.information.repository.MemoryMapper"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
-<fullyQualifiedTypeName name="com.information.get.Memory"/>
 <fullyQualifiedTypeName name="com.information.memory.service.impl.MemoryServiceimpl"/>
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
@@ -42,4 +41,8 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="com.information.get.GetMemory"/>
+<fullyQualifiedTypeName name="com.information.get.Memory"/>
+<fullyQualifiedTypeName name="com.server.domain.MemberVO"/>
+<fullyQualifiedTypeName name="com.server.domain.Memory"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.mapper.MemoryMapper">
+
+	<select id="getNow" resultType="string">
+		select now()
+	</select>
+	
+	<insert id="register">
+		INSERT INTO memory(total_memory as totalmemory, used_memory as usedmemory, free_memory as freememory)
+		values(#{total_memory},#{used_memory},#{free_memory})
+	</insert>
+	
+	<select id="get" resultType="com.server.domain.Memory">
+		select * from memory
+		where regdate = #{regdate}
+	</select>
+	
+	<select id="getList" resultType="com.server.domain.Memory">
+		select*from memory;
+	</select>
+</mapper>

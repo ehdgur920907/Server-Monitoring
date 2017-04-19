@@ -1,0 +1,18 @@
+package com.server.persistence;
+
+
+import org.springframework.stereotype.Repository;
+import com.server.domain.Memory;
+
+@Repository
+public class MemberDAOImpl extends GenericDAOImpl<Memory, String> implements MemberDAO {
+	private MemberDAO dao;
+	
+	public void register(){
+		Memory vo = new Memory();
+		vo.setTotalMemory("9.0GB");
+		vo.setUsedMemory("4.0GB");
+		vo.setFreeMemory("5.0GB");
+		dao.register(vo);
+	}
+}
