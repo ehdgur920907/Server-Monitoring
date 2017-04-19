@@ -1,6 +1,7 @@
 1492310195606	Delete elements
 1492310625519	Delete element
 1492310658442	Delete elements
+<<<<<<< HEAD
 1492315726767	Delete element
 1492321784823	Rename package 'com.information.repository'
 1492323006166	Rename resource 'context-datasourcexml.xml'
@@ -33,3 +34,15 @@
 1492531247897	Copy package
 1492531308531	Copy file
 1492533030375	Copy packages
+=======
+1492321594274	Copy compilation unit
+1492321597856	Copy compilation unit
+1492325872900	Rename type 'Get'
+1492325953832	Rename type 'GetCommnad'
+1492326069906	Rename type 'GetCommand'
+1492326368226	Move compilation units
+1492330045115	Rename package 'com.mysql.mybatis'
+1492331382816	Delete elements
+1492331422104	Delete element
+1492393441953	Delete element
+>>>>>>> 09705ae62fee1fa61804aac8fc6714b0c2b4437d

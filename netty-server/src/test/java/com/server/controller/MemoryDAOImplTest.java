@@ -16,15 +16,15 @@ public class MemoryDAOImplTest extends AbstractTest{
 	@Inject
 	private MemoryDAO dao;
 	
-//	@Test
-//	public void test() {
-//		logger.info(""+dao);
-//	}
-//	
-//	@Test
-//	public void getTimeTest() {
-//		logger.info(""+dao.getTime());
-//	}
+	@Test
+	public void test() {
+		logger.info(""+dao);
+	}
+	
+	@Test
+	public void getTimeTest() {
+		logger.info(""+dao.getTime());
+	}
 	
 	@Test
 	public void registerTest(){
@@ -35,14 +35,14 @@ public class MemoryDAOImplTest extends AbstractTest{
 		dao.register(vo);
 	}
 	
-//	@Test
-//	public void getTest(){
-//		logger.info(""+dao.get("wjheoid"));
-//	}
-//	
-//	@Test
-//	public void getListTest(){
-//		logger.info(""+dao.getList());
-//	}
-//	
+	@Test
+	public void getTest(){
+		logger.info(""+dao.get("wjheoid"));
+	}
+	
+	@Test
+	public void getListTest(){
+		logger.info(""+dao.getList());
+	}
+	
 }// class

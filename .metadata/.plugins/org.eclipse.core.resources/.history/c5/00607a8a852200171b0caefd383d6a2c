@@ -1,0 +1,23 @@
+package com.information.get;
+
+import javax.naming.NamingException;
+
+import org.springframework.ui.Model;
+
+import com.monitoring.dao.MemoryDao;
+
+public class GetMemory implements Get {
+
+	@Override
+	public void execute(Model model) {
+		// TODO Auto-generated method stub
+		try {
+			MemoryDao monitoringDao = new MemoryDao();
+
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

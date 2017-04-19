@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
+<<<<<<< HEAD
   <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.5 Server at localhost" name="Tomcat v8.5 Server at localhost" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="4">
     <list key="modules" value0="spring-mvc::org.eclipse.jst.jee.server:spring-mvc::jst.web::2.5" value1="netty-server2::org.eclipse.jst.jee.server:netty-server2::jst.web::2.5" value2="netty-server::org.eclipse.jst.jee.server:netty-server::jst.web::2.5" value3="netty-server-pratice::org.eclipse.jst.jee.server:netty-server-pratice::jst.web::2.5"/>
+=======
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" saveSeparateContextFiles="true" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="false" timestamp="2">
+    <list key="modules" value0="spring-mvc::org.eclipse.jst.jee.server:spring-mvc::jst.web::2.5"/>
+>>>>>>> 09705ae62fee1fa61804aac8fc6714b0c2b4437d
   </server>
 </servers>

@@ -1,0 +1,33 @@
+package com.information.get;
+
+import java.io.File;
+
+public class GetDisk {
+	public static void main(String[] args) {
+		String  drive;
+		double  totalDisk, freeDisk, usedDisk;        
+		Disk disk = new Disk();
+		File[] roots = File.listRoots();
+		 
+		for (File root : roots) {
+		          
+		drive = root.getAbsolutePath();
+		              
+		totalDisk = root.getTotalSpace() / Math.pow(1024, 3);
+		usedDisk = root.getUsableSpace() / Math.pow(1024, 3);
+		
+		totalDisk = Math.round((totalDisk * 100) / 100.0);
+		usedDisk = Math.round((usedDisk * 100) / 100.0);
+		freeDisk = totalDisk - usedDisk;
+		
+		disk.setTotalDisk(String.valueOf(totalDisk  + "GB"));
+		disk.setUsedDisk(String.valueOf(usedDisk  + "GB"));
+		disk.setFreeDisk(String.valueOf(freeDisk  + "GB"));
+		
+		System.out.println("하드 디스크 이름 : " + drive + "\n");
+		System.out.println("전체 디스크 용량 : " + totalDisk + " GB \n");
+		System.out.println("디스크 사용 용량 : " + freeDisk + " GB \n");
+		System.out.println("디스크 남은 용량 : " + usedDisk + " GB \n");
+		}
+	}
+}
