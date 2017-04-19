@@ -4546,3 +4546,4 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognise
 2017-04-19 17:30:32,977 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-04-19 17:30:32,980 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-04-19 17:30:32,982 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-19 17:30:32,984 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
