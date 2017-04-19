@@ -20,6 +20,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 	    JSONObject memoryJsonObject = (JSONObject)jsonObject.get("memory");
 	    JSONObject diskJsonObject = (JSONObject)jsonObject.get("disk");
 	    
+	    
+	    
 	    System.out.println("====Memory====");
 	    System.out.println("total memory: " + memoryJsonObject.get("totalMemory"));
 	    System.out.println("used memory: " + memoryJsonObject.get("usedMemory"));
