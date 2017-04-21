@@ -1,0 +1,15 @@
+package com.server.persistence;
+
+import java.util.List;
+
+public interface GenericDAO<MemoberVO, String> {
+
+	public String getTime();
+	public void register(MemoberVO vo);
+	public MemoberVO get(String userid);
+	public List<MemoberVO> getList();
+	// �븘�옒�뒗 �벑濡�, 議고쉶 援ы쁽 �씠�썑�뿉 �븷 寃껋엫..
+	//public void update();
+	//public void delete();
+	
+}// interface

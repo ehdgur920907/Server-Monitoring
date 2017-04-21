@@ -1,0 +1,7 @@
+package com.information.dao;
+
+public class MemoryDAO {
+	public void insertMemory(Memory memory){
+		
+	}
+}

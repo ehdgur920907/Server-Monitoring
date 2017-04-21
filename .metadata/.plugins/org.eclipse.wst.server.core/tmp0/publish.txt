@@ -1,3 +1,8 @@
 #Tomcat publish data
+<<<<<<< HEAD
+#Wed Apr 19 17:28:25 KST 2017
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\kimsejune\\.m2\\repository\\org\\springframework\\spring-web\\4.2.3.RELEASE\\spring-web-4.2.3.RELEASE.jar=WEB-INF/lib/spring-web-4.2.3.RELEASE.jar
+=======
 #Sun Apr 16 18:50:16 KST 2017
 org.eclipse.jst.jee.server\:spring-mvc=/Users/donghyuk/Documents/dev/Java/apache-tomcat-9.0.0.M18/wtpwebapps/spring-mvc
+>>>>>>> 09705ae62fee1fa61804aac8fc6714b0c2b4437d

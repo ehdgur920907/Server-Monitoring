@@ -1,0 +1,38 @@
+package com.server.persistence;
+
+import java.util.List;
+import javax.inject.Inject;
+import org.apache.ibatis.session.SqlSession;
+
+// GenericDAO �씤�꽣�럹�씠�뒪�쓽 異붿긽�겢�옒�뒪�뱾�쓣 �삤踰꾨씪�씠�뵫 �빐二쇱뼱�빞 �븳�떎.
+// 利�, �뿬湲곗꽌 DB�� �뿰寃곗쓣 �븯怨� SQL臾몄쓣 泥섎━�빐二쇱뼱�빞 �븯誘�濡� sessionTemplate�쓣 �씤�뒪�꽩�뒪 蹂��닔濡� 媛뽮퀬�꽌 
+// �씠瑜� �넻�빐 CRUD �옉�뾽�쓣 泥섎━�빐二쇰㈃ �맂�떎.
+public abstract class GenericDAOImpl<E, K> implements GenericDAO<E, K> {
+
+	@Inject
+	private SqlSession sqlSession;
+	
+	private static final String namespace = 
+			"org.zerock.mapper.MemberMapper";
+	
+	@Override
+	public K getTime() {
+		return sqlSession.selectOne(namespace + ".getNow");
+	}
+
+	@Override
+	public void register(E vo) {
+		sqlSession.insert(namespace + ".register", vo);
+	}
+
+	@Override
+	public E get(K userid) {
+		return sqlSession.selectOne(namespace + ".get", userid);
+	}
+
+	@Override
+	public List<E> getList() {
+		return sqlSession.selectList(namespace + ".getList");
+	}
+
+}// class

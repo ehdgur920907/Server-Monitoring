@@ -1,6 +1,40 @@
 1492310195606	Delete elements
 1492310625519	Delete element
 1492310658442	Delete elements
+<<<<<<< HEAD
+1492315726767	Delete element
+1492321784823	Rename package 'com.information.repository'
+1492323006166	Rename resource 'context-datasourcexml.xml'
+1492323182654	Delete element
+1492323184667	Delete element
+1492324425787	Delete element
+1492326629953	Delete element
+1492330035470	Delete element
+1492331800995	Copy compilation unit
+1492331914848	Delete element
+1492331947524	Delete element
+1492332324474	Delete element
+1492332492752	Rename type 'MemoryServieimpl'
+1492354558211	Rename package 'com.information.get.service'
+1492354570523	Rename package 'com.information.get.service.impl'
+1492354668604	Copy packages
+1492407069100	Move compilation unit
+1492407071462	Delete element
+1492435217700	Delete element
+1492476429168	Move file
+1492479687670	Delete element
+1492480425006	Copy file
+1492480589354	Copy package
+1492480608030	Copy package
+1492480628850	Copy package
+1492480649795	Copy package
+1492480660263	Copy compilation units
+1492480828698	Copy file
+1492530951776	Copy package
+1492531247897	Copy package
+1492531308531	Copy file
+1492533030375	Copy packages
+=======
 1492321594274	Copy compilation unit
 1492321597856	Copy compilation unit
 1492325872900	Rename type 'Get'
@@ -11,3 +45,4 @@
 1492331382816	Delete elements
 1492331422104	Delete element
 1492393441953	Delete element
+>>>>>>> 09705ae62fee1fa61804aac8fc6714b0c2b4437d

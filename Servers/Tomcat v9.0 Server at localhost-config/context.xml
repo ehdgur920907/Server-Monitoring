@@ -25,13 +25,5 @@
     <!--
     <Manager pathname="" />
     -->
-    <Resource 
-    auth="Container" 
-    driverClassName="com.mysql.jdbc.Driver" 
-    maxActive="50" maxWait="1000" 
-    name="jdbc/MySQL" 
-    password="mju12345" 
-    type="javax.sql.DataSource" 
-    url="jdbc:mysql://localhost:3306/server?useSSL=false" 
-    username="root"/>
+    <Resource auth="Container" cachingAllowed="true" cacheMaxSize="100000"></Resource>
 </Context>

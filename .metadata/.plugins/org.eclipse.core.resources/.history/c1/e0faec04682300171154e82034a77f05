@@ -1,0 +1,39 @@
+package com.information.memory.controller;
+
+import java.io.Exception;
+import java.io.InputStream;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.json.simple.JSONObject;
+
+import com.information.get.Memory;
+
+
+public class MemoryController {
+	private SqlSessionFactory sqlSessionFactory = null;
+	
+	public void insert() throws Exception{
+		JSONObject json = new JSONObject();
+		InputStream is = Resources.getResourceAsStream("com/mybatis/config/mybatis-config.xml");
+		sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			Memory memory = new Memory("totalMemory","");
+			session.insert(arg0, arg1)
+			session.insert("com.information.mapper.MemoryMapper.insert_Memory", 
+					new Memory());
+					
+//				    memory.setFreeMemory(json.get("totalMemory").toString());
+//				    memory.setTotalMemory(json.get("usedMemory").toString());
+//				    memory.setUsedMemory(json.get("freeMemory").toString());
+//					memoryServiceimpl.insertMemory(memory);
+		} finally {
+		  session.close();
+		}
+	}
+	
+	
+}

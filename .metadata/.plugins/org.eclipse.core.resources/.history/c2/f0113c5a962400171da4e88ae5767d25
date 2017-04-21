@@ -1,0 +1,38 @@
+package com.server.persistence;
+
+import java.util.List;
+import javax.inject.Inject;
+import org.apache.ibatis.session.SqlSession;
+
+import com.server.domain.MemberVO;
+
+
+public abstract class GenericDAOImpl<E, K> implements GenericDAO<MemberVO, String> {
+
+	@Inject
+	private SqlSession sqlSession;
+	
+	private static final String namespace = 
+			"com.server.mapper.MemberMapper";
+	
+	@Override
+	public String getTime() {
+		return sqlSession.selectOne(namespace + ".getNow");
+	}
+
+	@Override
+	public void register(MemberVO vo) {
+		sqlSession.insert(namespace + ".register", vo);
+	}
+
+	@Override
+	public MemberVO get(MemberVO userid) {
+		return sqlSession.selectOne(namespace + ".get", userid);
+	}
+
+	@Override
+	public List<MemberVO> getList() {
+		return sqlSession.selectList(namespace + ".getList");
+	}
+
+}// class

@@ -1,0 +1,9 @@
+package com.information.repository;
+
+import java.awt.List;
+
+public interface MemoryMapper {
+	final String getMemory =
+			"SELECT * FROM TEST.MEMORY " + "WHERE usedMemory = #{usedMemory}";
+	
+}

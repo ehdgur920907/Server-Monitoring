@@ -1,0 +1,10 @@
+package com.server.persistence;
+
+
+import org.springframework.stereotype.Repository;
+import com.server.domain.MemoryVO;
+
+@Repository
+public class MemberDAOImpl extends GenericDAOImpl<MemoryVO, String> implements MemberDAO {
+
+}

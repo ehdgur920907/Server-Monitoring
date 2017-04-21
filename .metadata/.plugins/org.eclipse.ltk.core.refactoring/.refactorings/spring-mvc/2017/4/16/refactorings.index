@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+1492315744433	Delete element
+=======
 1492327604254	Delete elements
 1492327872231	Delete element
 1492328339563	Rename resource 'home.jsp'
@@ -6,3 +9,4 @@
 1492334195950	Rename type 'MonitoringDao'
 1492334207759	Rename type 'MonitoringController'
 1492335203343	Copy compilation unit
+>>>>>>> 09705ae62fee1fa61804aac8fc6714b0c2b4437d

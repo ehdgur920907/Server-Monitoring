@@ -1,0 +1,11 @@
+package com.information.repository;
+
+import java.awt.List;
+
+import com.information.get.Memory;
+
+public interface MemoryMapper {
+	 public List<com.information.get.Memory> selectAllUsers(); 
+	 public void insertMemory(Memory memory);
+	 public void deleteMemory(Memory memory);
+}

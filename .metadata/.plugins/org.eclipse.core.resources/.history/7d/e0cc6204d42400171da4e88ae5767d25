@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/test/java/com/server/pratice/AbstractTest.java=UTF-8
+encoding//src/test/java/com/server/pratice/ApplictationContextTest.java=UTF-8
+encoding//src/test/java/com/server/pratice/DataSourceConnectionTest.java=UTF-8
+encoding//src/test/java/com/server/pratice/MemoryDAOImplTest.java=UTF-8
+encoding//src/test/java/com/server/pratice/TimeDAOTest.java=UTF-8

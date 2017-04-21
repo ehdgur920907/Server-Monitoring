@@ -1,0 +1,5 @@
+package com.monitoring.mapper;
+
+public interface MemoryMapper {
+	public ArrayList<MemoryDto> selectMemory();
+}

@@ -28,10 +28,4 @@ public class MemoryDto {
 	public void setFreeMemory(String freeMemory) {
 		this.freeMemory = freeMemory;
 	}
-
-	@Override
-	public String toString() {
-		return "MemoryDto [totalMemory=" + totalMemory + ", usedMemory=" + usedMemory + ", freeMemory=" + freeMemory
-				+ "]";
-	}
 }

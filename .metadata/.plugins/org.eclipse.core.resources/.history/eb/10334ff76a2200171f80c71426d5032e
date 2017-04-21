@@ -1,0 +1,8 @@
+package com.information.repository;
+
+import java.awt.List;
+
+public interface MemoryMapper {
+	public List<Memory> selectAllMemory() throws Exception;
+	
+}

@@ -1,0 +1,30 @@
+package com.information.dao;
+
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class SampleSessionFactory {
+	public void demo(){
+		String resource = "com/mybatis/config/mybatis-config.xml";
+		
+		Properties props = new Properties();
+		
+		props.put("driver", "com.mysql.jabc.Driver");
+		props.put("url", "jdbc:mysql://localhost/server");
+		props.put("username", "root");
+		props.put("password", "delab");
+		
+		SqlSession session = null;
+		try{
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, props);
+			
+			session = sqlSessionFactory.openSession(true);
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package com.information.dao;
+
+import java.io.ObjectInputStream.GetField;
+
+import com.information.get.Memory;
+
+public class MemoryDAO {
+
+}

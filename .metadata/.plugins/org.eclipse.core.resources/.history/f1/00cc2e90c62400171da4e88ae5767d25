@@ -1,0 +1,8 @@
+package com.server.persistence;
+
+import com.server.domain.Memory;
+
+// ���엯留� 紐낆꽭
+public interface MemberDAO extends GenericDAO<Memory, String> {
+
+}// interface
