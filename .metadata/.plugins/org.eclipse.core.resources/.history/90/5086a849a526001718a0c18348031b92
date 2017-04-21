@@ -1,0 +1,20 @@
+package com.monitoring.controller;
+
+import java.util.Locale;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MemoryController {
+	@Autowired
+	private SqlSession sqlSession;
+	
+	@RequestMapping("/memory")
+	public String getMemory(Locale locale, Model model) {
+		return "memory";
+	}
+}

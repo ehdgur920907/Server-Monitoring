@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="/Users/donghyuk/Documents/dev/17-1/capstone/apache-tomcat-9.0.0.M20/wtpwebapps/spring-mvc" path="" reloadable="true" source="org.eclipse.jst.jee.server:spring-mvc"/>

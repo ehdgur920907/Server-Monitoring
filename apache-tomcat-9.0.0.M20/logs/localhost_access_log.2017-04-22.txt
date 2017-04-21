@@ -1,0 +1,15 @@
+127.0.0.1 - - [22/Apr/2017:00:36:09 +0900] "GET / HTTP/1.1" 500 12092
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:36:10 +0900] "GET /WEB-INF/classes/com/monitoring/controller/MemoryController.java HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:36:19 +0900] "GET / HTTP/1.1" 500 12092
+127.0.0.1 - - [22/Apr/2017:00:37:10 +0900] "GET / HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:37:11 +0900] "GET /WEB-INF/classes/com/monitoring/controller/MemoryController.java HTTP/1.1" 404 -
+127.0.0.1 - - [22/Apr/2017:00:41:10 +0900] "GET / HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:41:11 +0900] "GET /WEB-INF/classes/mybatis/mapper-memory.xml HTTP/1.1" 404 -
+127.0.0.1 - - [22/Apr/2017:00:44:00 +0900] "GET / HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:44:01 +0900] "GET /WEB-INF/classes/com/monitoring/controller/MemoryController.java HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:44:06 +0900] "GET / HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:44:08 +0900] "GET /memory HTTP/1.1" 500 26297
+127.0.0.1 - - [22/Apr/2017:00:47:11 +0900] "GET / HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:47:11 +0900] "GET /WEB-INF/classes/com/monitoring/controller/MemoryController.java HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:47:14 +0900] "GET / HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [22/Apr/2017:00:47:17 +0900] "GET /memory HTTP/1.1" 200 449

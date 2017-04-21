@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="com.board.mvc.command.BoardReplyViewCommand"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.board.mvc.dto.BoardDto"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionFactoryBean"/>
@@ -48,4 +47,5 @@
 <fullyQualifiedTypeName name="com.mysql.jdbc.Driver"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DriverManagerDataSource"/>
 <fullyQualifiedTypeName name="javax.el.ArrayELResolver"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
