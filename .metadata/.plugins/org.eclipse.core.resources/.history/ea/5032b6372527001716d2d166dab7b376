@@ -24,8 +24,13 @@ public class MonitoringController {
 		MemoryDto memoryDto = mapper.selectMemory().get(0);
 		DiskDto diskDto = mapper.selectDisk().get(0);
 		
-		model.addAttribute("memory", memoryDto);
-		model.addAttribute("disk", diskDto);
+		System.out.println(memoryDto.getTotalMemory());
+		System.out.println(memoryDto.getUsedMemory());
+		System.out.println(memoryDto.getFreeMemory());
+		System.out.println("");
+		System.out.println(diskDto.getTotalDisk());
+		System.out.println(diskDto.getUsedDisk());
+		System.out.println(diskDto.getFreeDisk());
 		return "monitoring";
 	}
 }
