@@ -1,0 +1,7 @@
+package com.monitoring.dao;
+
+import com.monitoring.dto.MemoryDto;
+
+public interface MemoryDao {
+	public void selectMemory(MemoryDto memoryDto);
+}

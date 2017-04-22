@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  
 <configuration>
     <mappers>
-        <mapper resource ="/mybatis/mapper-memory.xml"/>
+        <mapper resource="/mybatis/mapper-memory.xml"/>
+        <mapper resource="/mybatis/mapper-disk.xml" />
     </mappers>
 </configuration>
