@@ -12,14 +12,14 @@
 <body>
 <div class="container">
 	<h1>memory</h1>
-		<p>total memory: ${ memory.totalMemory }</p>
-		<p>used memory: ${ memory.usedMemory }</p>
-		<p>free memory: ${ memory.freeMemory }</p>
+		<h2>total memory: ${ memory.totalMemory }</h2>
+		<h2>used memory: ${ memory.usedMemory }</h2>
+		<h2>free memory: ${ memory.freeMemory }</h2>
 	<hr />
 	<h1>disk</h1>
-		<p>total disk: ${ disk.totalDisk }</p>
-		<p>used disk: ${ disk.usedDisk }</p>
-		<p>free disk: ${ disk.freeDisk }</p>
+		<h2>total disk: ${ disk.totalDisk }</h2>
+		<h2>used disk: ${ disk.usedDisk }</h2>
+		<h2>free disk: ${ disk.freeDisk }</h2>
 </div>
 </body>
 </html>
