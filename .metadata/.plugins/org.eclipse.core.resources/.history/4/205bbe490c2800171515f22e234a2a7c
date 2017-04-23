@@ -1,0 +1,10 @@
+package com.information.get;
+
+import com.information.model.HostNameAndIpAddress;
+
+public class GetHostNameAndIpAddress implements Get {
+	@Override
+	public HostNameAndIpAddress execute() {
+		
+	}
+}
