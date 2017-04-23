@@ -13,9 +13,9 @@ public class GetHostNameAndIpAddress implements Get {
 			InetAddress inetAddress = InetAddress.getLocalHost();
 			String hostName = inetAddress.getHostName();
 			int index = hostName.indexOf(".");
-			
+
 			hostName = hostName.substring(0, index);
-			
+
 			hostNameAndIpAddress.setHostName(hostName);
 			hostNameAndIpAddress.setIpAddress(inetAddress.getHostAddress());
 		} catch (UnknownHostException e) {

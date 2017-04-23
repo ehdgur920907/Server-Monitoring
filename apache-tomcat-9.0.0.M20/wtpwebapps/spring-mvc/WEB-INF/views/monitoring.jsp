@@ -20,6 +20,10 @@
 		<p>total disk: ${ disk.totalDisk }</p>
 		<p>used disk: ${ disk.usedDisk }</p>
 		<p>free disk: ${ disk.freeDisk }</p>
+	<hr />
+	<h1>host name and ip address</h1>
+		<p>host name: ${ hostNameAndIpAddress.hostName }</p>
+		<p>ip address: ${ hostNameAndIpAddress.ipAddress }</p>
 </div>
 </body>
 </html>

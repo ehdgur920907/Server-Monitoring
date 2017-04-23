@@ -2,10 +2,11 @@
 <!DOCTYPE configuration
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd" >
- 
+
 <configuration>
-    <mappers>
-        <mapper resource="/mybatis/mapper-memory.xml"/>
-        <mapper resource="/mybatis/mapper-disk.xml" />
-    </mappers>
+	<mappers>
+		<mapper resource="/mybatis/mapper-memory.xml" />
+		<mapper resource="/mybatis/mapper-disk.xml" />
+		<mapper resource="/mybatis/mapper-host-name-and-ip-address.xml" />
+	</mappers>
 </configuration>

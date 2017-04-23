@@ -16,24 +16,17 @@ public class QuartzScheduler {
 		try {
 			Scheduler scheduler = new StdSchedulerFactory().getScheduler();
 			scheduler.start();
-			
-			JobDetail job = newJob(EchoClient.class)
-				      .withIdentity("job","group")
-				      .build();
-			
-			Trigger trigger = newTrigger()
-			          .withIdentity("trigger","group")
-			          .startNow()
-			          .withSchedule(simpleSchedule()
-			              .withIntervalInSeconds(5)
-			              .repeatForever())
-			          .build();
-			
-			 scheduler.scheduleJob(job, trigger);
-		      
-		     Thread.sleep(60000);
-	
-		     scheduler.shutdown();
+
+			JobDetail job = newJob(EchoClient.class).withIdentity("job", "group").build();
+
+			Trigger trigger = newTrigger().withIdentity("trigger", "group").startNow()
+					.withSchedule(simpleSchedule().withIntervalInSeconds(5).repeatForever()).build();
+
+			scheduler.scheduleJob(job, trigger);
+
+			Thread.sleep(60000);
+
+			scheduler.shutdown();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

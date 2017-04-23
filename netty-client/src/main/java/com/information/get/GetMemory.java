@@ -17,12 +17,9 @@ public class GetMemory implements Get {
 			mem = sigar.getMem();
 
 			/* KB -> GB */
-			memory.setFreeMemory(
-					String.valueOf(Math.round(((double) mem.getFree() / 1000000000) * 100) / 100.0 + "GB"));
-			memory.setUsedMemory(
-					String.valueOf(Math.round(((double) mem.getUsed() / 1000000000) * 100) / 100.0 + "GB"));
-			memory.setTotalMemory(
-					String.valueOf(Math.round(((double) mem.getTotal() / 1000000000) * 100) / 100.0 + "GB"));
+			memory.setFreeMemory(String.valueOf(Math.round(((double) mem.getFree() / 1000000000) * 100) / 100.0));
+			memory.setUsedMemory(String.valueOf(Math.round(((double) mem.getUsed() / 1000000000) * 100) / 100.0));
+			memory.setTotalMemory(String.valueOf(Math.round(((double) mem.getTotal() / 1000000000) * 100) / 100.0));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

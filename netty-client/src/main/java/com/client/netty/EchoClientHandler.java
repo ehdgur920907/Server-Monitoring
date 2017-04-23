@@ -21,7 +21,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		GetHostNameAndIpAddress getHostNameAndIpAddress = new GetHostNameAndIpAddress();
 		GetMemory getMemory = new GetMemory();
 		GetDisk getDisk = new GetDisk();
-		
+
 		HostNameAndIpAddress hostNameAndIpAddress = getHostNameAndIpAddress.execute();
 		Disk disk = getDisk.execute();
 		Memory memory = getMemory.execute();
@@ -30,24 +30,24 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		JSONObject memoryJsonObject = new JSONObject();
 		JSONObject diskJsonObject = new JSONObject();
 		JSONObject totalJsonObject = new JSONObject();
-		
+
 		hostNameAndIpAddressJsonObject.put("hostName", hostNameAndIpAddress.getHostName());
 		hostNameAndIpAddressJsonObject.put("ipAddress", hostNameAndIpAddress.getIpAddress());
-		
+
 		memoryJsonObject.put("totalMemory", memory.getTotalMemory());
 		memoryJsonObject.put("usedMemory", memory.getUsedMemory());
 		memoryJsonObject.put("freeMemory", memory.getFreeMemory());
-		
+
 		diskJsonObject.put("totalDisk", disk.getTotalDisk());
 		diskJsonObject.put("usedDisk", disk.getUsedDisk());
 		diskJsonObject.put("freeDisk", disk.getFreeDisk());
-		
+
 		totalJsonObject.put("memory", memoryJsonObject);
 		totalJsonObject.put("disk", diskJsonObject);
 		totalJsonObject.put("hostNameAndIpAddress", hostNameAndIpAddressJsonObject);
-		
+
 		System.out.println(totalJsonObject);
-		
+
 		ByteBuf messageBuffer = Unpooled.buffer();
 		messageBuffer.writeBytes(totalJsonObject.toJSONString().getBytes());
 
