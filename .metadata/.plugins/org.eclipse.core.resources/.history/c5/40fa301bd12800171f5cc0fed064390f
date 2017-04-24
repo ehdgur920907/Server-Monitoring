@@ -27,8 +27,8 @@ public class MonitoringController {
 //		diskDto.setFreeDisk("2");
 //		
 //		mapper.insertDisk(diskDto);
-		int size = mapper.selectBasicInformation().size() - 1;
-		BasicInformationDto basicInformationDto = mapper.selectBasicInformation().get(size);
+		int size = mapper.selectBasicInformation().size();
+		BasicInformationDto basicInformationDto = mapper.selectBasicInformation().get(mapper.selectBasicInformation().size());
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation().get(0);
 
 		model.addAttribute("basicInformation", basicInformationDto);

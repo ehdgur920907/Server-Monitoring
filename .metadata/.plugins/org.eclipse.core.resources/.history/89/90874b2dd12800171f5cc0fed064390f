@@ -27,7 +27,7 @@ public class MonitoringController {
 //		diskDto.setFreeDisk("2");
 //		
 //		mapper.insertDisk(diskDto);
-		int size = mapper.selectBasicInformation().size() - 1;
+		int size = mapper.selectBasicInformation().size();
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation().get(size);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation().get(0);
 

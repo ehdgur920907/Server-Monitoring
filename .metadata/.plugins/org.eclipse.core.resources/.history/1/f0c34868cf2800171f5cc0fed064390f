@@ -25,6 +25,8 @@ public class QuartzScheduler {
 			scheduler.scheduleJob(job, trigger);
 
 			Thread.sleep(20000);
+
+			scheduler.shutdown();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
