@@ -20,7 +20,13 @@ public class MonitoringController {
 	@RequestMapping("/monitoring")
 	public String getMonitoring(Locale locale, Model model) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
-
+//		DiskDto diskDto = new DiskDto();
+//		
+//		diskDto.setTotalDisk("8");
+//		diskDto.setUsedDisk("6");
+//		diskDto.setFreeDisk("2");
+//		
+//		mapper.insertDisk(diskDto);
 		int size = mapper.selectBasicInformation().size() - 1;
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation().get(size);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation().get(0);
