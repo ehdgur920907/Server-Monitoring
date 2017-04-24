@@ -52,4 +52,5 @@
 <fullyQualifiedTypeName name="com.information.get.GetHostNameAndIpAddress"/>
 <fullyQualifiedTypeName name="com.information.model.HostNameAndIpAddress"/>
 <fullyQualifiedTypeName name="com.monitoring.dto.HostNameAndIpAddressDto"/>
+<fullyQualifiedTypeName name="com.monitoring.dto.ServerInformationDto"/>
 </qualifiedTypeNameHistroy>

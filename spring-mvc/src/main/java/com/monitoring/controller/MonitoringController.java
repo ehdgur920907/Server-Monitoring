@@ -17,7 +17,7 @@ public class MonitoringController {
 	@Autowired
 	private SqlSession sqlSession;
 
-	@RequestMapping("/monitoring")
+	@RequestMapping("/monitoring/{{id}}")
 	public String getMonitoring(Locale locale, Model model) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 

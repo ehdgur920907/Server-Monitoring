@@ -1,0 +1,73 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<title>monitoring</title>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/"><span
+					class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				<!-- </ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/posts">posts</a></li>
+					<li><a href="/users">users</a></li> {{#usering}}
+					<li><a href="/edit/{{id}}">edit</a></li>
+					<li><a href="/signout">signout</a></li> {{/usering}} {{^usering}}
+					<li><a href="/signin">signin</a></li>
+					<li><a href="/signup">signup</a></li> {{/usering}}
+				</ul> -->
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="jumbotron">
+				<table class="table table-condensed" style="text-align: center;">
+					<thead>
+						<tr>
+							<th>server id</th>
+							<th>host name</th>
+							<th>ip address</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="server" items="${ arrayListServerInformation }">
+							<tr>
+								<a href="/monitoring"><td>server ${ server.id }</td></a>
+								<td>${ server.hostName }</td>
+								<td>${ server.ipAddress }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				<a href="/monitoring" class="btn btn-primary" role="button">detail</a>
+			</div>
+		</div>
+		<div class="container">
+</body>
+</html>
