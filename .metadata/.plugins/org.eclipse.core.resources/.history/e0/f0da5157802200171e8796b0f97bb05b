@@ -1,7 +1,0 @@
-package com.information.get.service;
-
-public class MemoryService {
-	public List<Cpu> selectAllCpu() throws Exception;
-	public void insertMemory(Memory memory) throws Exception;
-	public void deleteUser(String user) throws Exception;
-}

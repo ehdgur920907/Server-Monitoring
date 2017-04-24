@@ -1,7 +1,0 @@
-package com.information.get;
-
-import org.springframework.ui.Model;
-
-public interface GetCommand {
-	public void execute(Model model);
-}

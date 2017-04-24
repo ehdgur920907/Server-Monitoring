@@ -1,1 +1,1 @@
-{}
+[[{"location":"/Users/donghyuk/Documents/dev/17-1/capstone/spring-mvc","type":"PROJECT","hints":{"PROJECT_NAME":"spring-mvc"}},"com.spring:mvc:1.0.0"],[{"location":"/Users/donghyuk/.m2/repository/org/springframework/spring-context/3.1.1.RELEASE/spring-context-3.1.1.RELEASE.jar","type":"JAR","hints":{}},"org.springframework.context:org.springframework.context:3.1.1"],[{"location":"/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.7"}},"jre:jre:1.7.0"]]

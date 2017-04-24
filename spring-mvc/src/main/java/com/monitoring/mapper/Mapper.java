@@ -8,6 +8,7 @@ import com.monitoring.dto.MemoryDto;
 
 public interface Mapper {
 	public ArrayList<DiskDto> selectDisk();
+//	public void insertDisk(DiskDto diskDto);
 
 	public ArrayList<MemoryDto> selectMemory();
 	

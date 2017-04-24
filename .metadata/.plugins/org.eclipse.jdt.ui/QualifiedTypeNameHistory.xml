@@ -48,4 +48,8 @@
 <fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DriverManagerDataSource"/>
 <fullyQualifiedTypeName name="javax.el.ArrayELResolver"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.net.InetAddress"/>
+<fullyQualifiedTypeName name="com.information.get.GetHostNameAndIpAddress"/>
+<fullyQualifiedTypeName name="com.information.model.HostNameAndIpAddress"/>
+<fullyQualifiedTypeName name="com.monitoring.dto.HostNameAndIpAddressDto"/>
 </qualifiedTypeNameHistroy>

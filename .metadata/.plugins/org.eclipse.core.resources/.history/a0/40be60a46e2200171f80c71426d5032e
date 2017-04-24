@@ -1,6 +1,0 @@
-package com.information.dao;
-
-public class MyBatisConnectionFactory {
-	private static SqlSessionFactory sqlSessionFactory;
-	
-}

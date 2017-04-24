@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.monitoring.mapper.Mapper">
+	<resultMap type="com.monitoring.dto.DiskDto" id="disk">
+		<result property="totalDisk" column="total_disk" />
+		<result property="usedDisk" column="used_disk" />
+		<result property="freeDisk" column="free_disk" />
+	</resultMap>
+
+	<select id="selectDisk" resultMap="disk">
+		SELECT * FROM disk
+	</select>
+</mapper>

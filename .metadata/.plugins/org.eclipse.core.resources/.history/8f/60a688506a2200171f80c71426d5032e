@@ -1,5 +1,0 @@
-package com.information.repository;
-
-public interface MemoryMapper {
-
-}
