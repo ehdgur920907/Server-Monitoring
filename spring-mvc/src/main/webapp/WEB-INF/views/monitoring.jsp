@@ -12,18 +12,18 @@
 <body>
 <div class="container">
 	<h1>memory</h1>
-		<p>total memory: ${ memory.totalMemory }</p>
-		<p>used memory: ${ memory.usedMemory }</p>
-		<p>free memory: ${ memory.freeMemory }</p>
+		<p>total memory: ${ basicInformation.totalMemory }</p>
+		<p>used memory: ${ basicInformation.usedMemory }</p>
+		<p>free memory: ${ basicInformation.freeMemory }</p>
 	<hr />
 	<h1>disk</h1>
-		<p>total disk: ${ disk.totalDisk }</p>
-		<p>used disk: ${ disk.usedDisk }</p>
-		<p>free disk: ${ disk.freeDisk }</p>
+		<p>total disk: ${ basicInformation.totalDisk }</p>
+		<p>used disk: ${ basicInformation.usedDisk }</p>
+		<p>free disk: ${ basicInformation.freeDisk }</p>
 	<hr />
 	<h1>host name and ip address</h1>
-		<p>host name: ${ hostNameAndIpAddress.hostName }</p>
-		<p>ip address: ${ hostNameAndIpAddress.ipAddress }</p>
+		<p>host name: ${ serverInformation.hostName }</p>
+		<p>ip address: ${ serverInformation.ipAddress }</p>
 </div>
 </body>
 </html>

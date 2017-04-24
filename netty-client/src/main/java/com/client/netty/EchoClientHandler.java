@@ -17,7 +17,6 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
-		System.out.println("channelActive");
 		GetHostNameAndIpAddress getHostNameAndIpAddress = new GetHostNameAndIpAddress();
 		GetMemory getMemory = new GetMemory();
 		GetDisk getDisk = new GetDisk();
@@ -46,6 +45,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		totalJsonObject.put("disk", diskJsonObject);
 		totalJsonObject.put("hostNameAndIpAddress", hostNameAndIpAddressJsonObject);
 
+		System.out.println("success that send to server.");
 		System.out.println(totalJsonObject);
 
 		ByteBuf messageBuffer = Unpooled.buffer();

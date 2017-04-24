@@ -10,6 +10,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
 	<select id="selectServerInformation" resultMap="serverInformation">
-		SELECT * FROM server_information
+		SELECT ip_address, host_name FROM server_information
 	</select>
 </mapper>

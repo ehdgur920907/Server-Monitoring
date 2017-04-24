@@ -20,11 +20,11 @@ public class QuartzScheduler {
 			JobDetail job = newJob(EchoClient.class).withIdentity("job", "group").build();
 
 			Trigger trigger = newTrigger().withIdentity("trigger", "group").startNow()
-					.withSchedule(simpleSchedule().withIntervalInSeconds(5).repeatForever()).build();
+					.withSchedule(simpleSchedule().withIntervalInSeconds(2).repeatForever()).build();
 
 			scheduler.scheduleJob(job, trigger);
 
-			Thread.sleep(60000);
+			Thread.sleep(20000);
 
 			scheduler.shutdown();
 		} catch (Exception e) {
