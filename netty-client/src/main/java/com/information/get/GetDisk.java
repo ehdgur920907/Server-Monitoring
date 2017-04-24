@@ -1,6 +1,7 @@
 package com.information.get;
 
 import java.io.File;
+import java.text.DecimalFormat;
 
 import com.information.model.Disk;
 
@@ -8,25 +9,14 @@ public class GetDisk implements Get {
 	@Override
 	public Disk execute() {
 		// String drive;
-		double totalDisk, freeDisk, usedDisk;
 		Disk disk = new Disk();
 		File[] roots = File.listRoots();
 
 		for (File root : roots) {
-
 			// drive = root.getAbsolutePath();
-
-			totalDisk = root.getTotalSpace() / Math.pow(1024, 3);
-			usedDisk = root.getUsableSpace() / Math.pow(1024, 3);
-			freeDisk = totalDisk - usedDisk;
-
-			totalDisk = Math.round((totalDisk * 100)) / 100.0;
-			usedDisk = Math.round((usedDisk * 100)) / 100.0;
-			freeDisk = Math.round((freeDisk * 100)) / 100.0;
-
-			disk.setTotalDisk(String.valueOf(totalDisk));
-			disk.setUsedDisk(String.valueOf(usedDisk));
-			disk.setFreeDisk(String.valueOf(freeDisk));
+			disk.setTotalDisk(String.valueOf(String.format("%.2f", root.getTotalSpace() / Math.pow(1024, 3))));
+			disk.setUsedDisk(String.valueOf(String.format("%.2f", root.getUsableSpace() / Math.pow(1024, 3))));
+			disk.setFreeDisk(String.valueOf(String.format("%.2f", (root.getTotalSpace() / Math.pow(1024, 3)) - (root.getUsableSpace() / Math.pow(1024, 3)))));
 		}
 		return disk;
 	}
