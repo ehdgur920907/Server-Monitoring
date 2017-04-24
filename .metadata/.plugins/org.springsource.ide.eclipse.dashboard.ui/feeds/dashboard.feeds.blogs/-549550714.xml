@@ -5,7 +5,20 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-04-21T10:28:36Z</updated>
+  <updated>2017-04-24T14:38:14Z</updated>
+  <entry>
+    <title>Spring REST Docs 1.1.3.RELEASE</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/04/24/spring-rest-docs-1-1-3-release" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2017-04-24:2907</id>
+    <updated>2017-04-24T14:38:14Z</updated>
+    <content type="html">&lt;p&gt;It&amp;rsquo;s my pleasure to announce that &lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;Spring REST Docs&lt;/a&gt; 1.1.3.RELEASE is available from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;. My thanks to everyone who contributed to this release by reporting bugs and opening pull requests.&lt;/p&gt;
+&lt;p&gt;This maintenance release includes a &lt;a href="https://github.com/spring-projects/spring-restdocs/issues?q=milestone%3A1.1.3.RELEASE"&gt;handful of bug fixes and documentation improvements&lt;/a&gt;. It is a recommend upgrade for all Spring REST Docs users. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-restdocs/docs/1.1.3.RELEASE"&gt;Documentation&lt;/a&gt; | &lt;a href="https://twitter.com/springrestdocs"&gt;Twitter&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-restdocs"&gt;Gitter&lt;/a&gt; | &lt;a href="https://stackoverflow.com/tags/spring-restdocs"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 1.5.3 Available Now</title>
     <link rel="alternate" href="https://spring.io/blog/2017/04/21/spring-boot-1-5-3-available-now" />
@@ -865,27 +878,5 @@ apply plugin: &amp;#39;io.spring.dependency-management&amp;#39;
   &lt;li&gt;I quite liked this &lt;a href="https://blog.philipphauer.de/idiomatic-kotlin-best-practices/"&gt;post introducing some Kotlin-language best practices&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Cloud ninja Dave Turanski put together a great post introducing &lt;a href="https://dturanski.wordpress.com/2017/03/26/spring-cloud-stream-for-event-driven-architectures/"&gt;Spring Cloud Stream for event driven architectures&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Team and Pivotal at OSCON Austin 2017</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/04/03/spring-team-and-pivotal-at-oscon-austin-2017" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2017-04-04:2888</id>
-    <updated>2017-04-03T21:36:00Z</updated>
-    <content type="html">&lt;p&gt;Join the Spring Team and Pivotal experts at &lt;a href="https://conferences.oreilly.com/oscon/oscon-tx/"&gt;OSCON Austin&lt;/a&gt; May 10-11, 2017!&lt;br/&gt;&lt;a href="http://pivotal.io"&gt;Pivotal&lt;/a&gt; will be at booth # 104&lt;br/&gt;9:45am - 7:00pm on Wednesday May 10&lt;br/&gt;9:45am - 4:30pm on Thursday May 11&lt;/p&gt;
-&lt;p&gt;We will have experts available to talk to you about leading open source projects like Cloud Foundry, Spring Framework, Apache Tomcat, and much more. Stop by and learn about Cloud Native applications from the leaders at Pivotal.&lt;/p&gt;
-&lt;p&gt;Don&amp;rsquo;t miss these talks on Cloud-Native applications, Microservices, Cloud Foundry, Product Management and much more!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tutorials - Tuesday May 9&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;9:00AM - 12:30PM Ballroom F&lt;br/&gt;Tutorial: Cloud-native Java - Josh Long&lt;br/&gt;&lt;a href="https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/56607"&gt;https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/56607&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1:30PM - 3:00PM - Ballroom F&lt;br/&gt;Tutorial: Building amazing cross-platform command-line apps in Go - Ashley McNamara&lt;br/&gt;&lt;a href="https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/56760"&gt;https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/56760&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Keynotes and Sessions - Wednesday May 10&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;5:05PM - 5:45PM - Meeting Room 9C&lt;br/&gt;Branding is the most cringeworthy term you want to know about - Neha Batra&lt;br/&gt;&lt;a href="https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/57034"&gt;https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/57034&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Keynotes and Sessions - Thursday May 11&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;11:50AM - 12:30PM Scaling massive, real-time data pipelines with Go - Jean de Klerk&lt;br/&gt;Meeting Room 9 A/B&lt;br/&gt;&lt;a href="https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/56357"&gt;https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/56357&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;5:05PM - 5:45PM - Meeting Room 12&lt;br/&gt;There is only Zuul: Configuring and customizing the Zuul API gateway - Spencer Gibb&lt;br/&gt;&lt;a href="https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/57109"&gt;https://conferences.oreilly.com/oscon/oscon-tx/public/schedule/detail/57109&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://hackernoon.com/oscon-has-a-big-deal-for-independent-consultants-and-freelancers-8a362856f62e"&gt;Update: a 50% discount for independent consultants and freelancers from the organizers!&lt;/a&gt; &lt;/p&gt;</content>
   </entry>
 </feed>
