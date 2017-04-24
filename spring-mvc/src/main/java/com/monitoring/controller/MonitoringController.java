@@ -8,9 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.monitoring.dto.DiskDto;
-import com.monitoring.dto.HostNameAndIpAddressDto;
-import com.monitoring.dto.MemoryDto;
+import com.monitoring.dto.BasicInformationDto;
+import com.monitoring.dto.ServerInformationDto;
 import com.monitoring.mapper.Mapper;
 
 @Controller
@@ -28,13 +27,11 @@ public class MonitoringController {
 //		diskDto.setFreeDisk("2");
 //		
 //		mapper.insertDisk(diskDto);
-		MemoryDto memoryDto = mapper.selectMemory().get(0);
-		DiskDto diskDto = mapper.selectDisk().get(0);
-		HostNameAndIpAddressDto hostNameAndIpAddressDto = mapper.selectHostNameAndIpAddress().get(0);
+		BasicInformationDto basicInformationDto = mapper.selectBasicInformation().get(0);
+		ServerInformationDto serverInformationDto = mapper.selectServerInformation().get(0);
 
-		model.addAttribute("memory", memoryDto);
-		model.addAttribute("disk", diskDto);
-		model.addAttribute("hostNameAndIpAddress", hostNameAndIpAddressDto);
+		model.addAttribute("basicInformation", basicInformationDto);
+		model.addAttribute("serverInformation", serverInformationDto);
 		return "monitoring";
 	}
 }

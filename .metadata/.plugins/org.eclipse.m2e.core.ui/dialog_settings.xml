@@ -2,14 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="org.client.netty"/>
 		</list>
 		<list key="name">
-			<item value="NettyClient"/>
 		</list>
 		<list key="artifactId">
-			<item value="netty-client"/>
-			<item value="netty"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -47,6 +43,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/Users/donghyuk/Documents/dev/17-1/capstone/spring-mvc/pom.xml"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

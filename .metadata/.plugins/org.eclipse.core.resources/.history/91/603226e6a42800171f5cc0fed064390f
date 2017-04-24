@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.monitoring.mapper.Mapper">
+	<resultMap type="com.monitoring.dto.ServerInformationDto" id="serverInformation">
+		<result property="hostName" column="host_name" />
+		<result property="ipAddress" column="ip_address" />
+	</resultMap>
+
+	<select id="selectServerInformation" resultMap=""serverInformation"">
+		SELECT * FROM host_name_and_ip_address
+	</select>
+</mapper>

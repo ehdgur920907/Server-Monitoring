@@ -9,6 +9,9 @@
 	</section>
 	<section name="ExternalProjectImportWizard">
 	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item value="/Users/donghyuk/Documents/dev/17-1/capstone" key="OUTSIDE_LOCATION"/>
+	</section>
 	<section name="NewWizardAction">
 	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">

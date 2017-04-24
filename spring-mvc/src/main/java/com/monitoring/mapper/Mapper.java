@@ -2,15 +2,10 @@ package com.monitoring.mapper;
 
 import java.util.ArrayList;
 
-import com.monitoring.dto.DiskDto;
-import com.monitoring.dto.HostNameAndIpAddressDto;
-import com.monitoring.dto.MemoryDto;
+import com.monitoring.dto.BasicInformationDto;
+import com.monitoring.dto.ServerInformationDto;
 
 public interface Mapper {
-	public ArrayList<DiskDto> selectDisk();
-//	public void insertDisk(DiskDto diskDto);
-
-	public ArrayList<MemoryDto> selectMemory();
-	
-	public ArrayList<HostNameAndIpAddressDto> selectHostNameAndIpAddress();
+	public ArrayList<BasicInformationDto> selectBasicInformation();
+	public ArrayList<ServerInformationDto> selectServerInformation();
 }

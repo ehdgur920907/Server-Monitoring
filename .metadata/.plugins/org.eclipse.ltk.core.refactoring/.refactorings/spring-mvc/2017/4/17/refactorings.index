@@ -2,3 +2,10 @@
 1492949139340	Copy compilation unit
 1492949147398	Rename type 'HostNameIpAddressDto'
 1492949155600	Rename resource 'mapper-host-name-ip-address.xml'
+1493006630177	Rename resource 'mapper-host-name-and-ip-address.xml'
+1493006905147	Delete element
+1493006908055	Delete element
+1493007147718	Rename type 'HostNameAndIpAddressDto'
+1493007198773	Rename type 'ServerInformation'
+1493007303686	Delete element
+1493007315514	Rename resource 'mapper-disk.xml'

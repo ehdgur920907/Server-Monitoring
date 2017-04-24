@@ -1,0 +1,11 @@
+package com.monitoring.mapper;
+
+import java.util.ArrayList;
+
+import com.monitoring.dto.BasicInformationDto;
+import com.monitoring.dto.ServerInformation;
+
+public interface Mapper {
+	public ArrayList<BasicInformationDto> selectBasicInformation();
+	public ArrayList<ServerInformation> selectHostNameAndIpAddress();
+}

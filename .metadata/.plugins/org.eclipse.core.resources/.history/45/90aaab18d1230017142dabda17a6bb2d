@@ -1,9 +1,0 @@
-package com.information.dao;
-
-public class SampleSessionFactory {
-	public void demo(){
-		String resource = "com/mybatis/config/mybatis-config.xml";
-		
-		
-	}
-}
