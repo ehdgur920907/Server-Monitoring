@@ -1,12 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<title>monitoring</title>
 </head>
 <body>
-	<h1>index page.</h1>
+	<div class="container">
+		<c:forEach var="server" items="${ arrayListServerInformation }">
+			<h1>server</h1>
+			<h5>${ server.hostName }</h5>
+			<h5>${ server.ipAddress }</h5>
+		</c:forEach>
+		<a href="/monitoring" class="btn btn-primary" role="button">detail</a>
+	</div>
 </body>
 </html>
