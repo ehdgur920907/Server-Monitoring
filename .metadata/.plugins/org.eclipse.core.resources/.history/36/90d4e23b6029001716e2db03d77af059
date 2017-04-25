@@ -1,0 +1,13 @@
+package com.scheduling.quartz;
+
+import oshi.SystemInfo;
+import oshi.hardware.HardwareAbstractionLayer;
+
+public class Test {
+	public static void main(String[] args) {
+		SystemInfo si = new SystemInfo();
+		HardwareAbstractionLayer hal = si.getHardware();
+		System.out.println(hal.getMemory().getTotal());
+		System.out.println(hal.getMemory().getAvailable());
+	}
+}
