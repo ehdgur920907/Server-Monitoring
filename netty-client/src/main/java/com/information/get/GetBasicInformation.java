@@ -11,8 +11,8 @@ public class GetBasicInformation implements Get {
 	@Override
 	public BasicInformation execute() {
 		BasicInformation basicInformation = new BasicInformation();
-		SystemInfo si = new SystemInfo();
-		HardwareAbstractionLayer hal = si.getHardware();
+		SystemInfo systemInfo = new SystemInfo();
+		HardwareAbstractionLayer hardwareAbstractionLayer = systemInfo.getHardware();
 		
 		File[] roots = File.listRoots();
 
@@ -23,10 +23,10 @@ public class GetBasicInformation implements Get {
 			basicInformation.setFreeDisk(String.valueOf(String.format("%.2f", (root.getTotalSpace() / Math.pow(1024, 3)) - (root.getUsableSpace() / Math.pow(1024, 3)))));
 		}
 		
-		basicInformation.setTotalMemory(String.valueOf(String.format("%.2f", (hal.getMemory().getTotal() * 0.00000001))));
-		basicInformation.setUsedMemory(String.valueOf(String.format("%.2f", (hal.getMemory().getAvailable() * 0.00000001))));
-		basicInformation.setFreeMemory(String.valueOf(String.format("%.2f", (hal.getMemory().getTotal() * 0.00000001) - (hal.getMemory().getAvailable() * 0.00000001))));
-	
+		basicInformation.setTotalMemory(String.valueOf(String.format("%.2f", (hardwareAbstractionLayer.getMemory().getTotal() * 0.000000001))));
+		basicInformation.setFreeMemory(String.valueOf(String.format("%.2f", (hardwareAbstractionLayer.getMemory().getAvailable() * 0.000000001))));
+		basicInformation.setUsedMemory(String.valueOf(String.format("%.2f", (hardwareAbstractionLayer.getMemory().getTotal() * 0.000000001) - (hardwareAbstractionLayer.getMemory().getAvailable() * 0.000000001))));
+		
 		return basicInformation;
 	}
 }

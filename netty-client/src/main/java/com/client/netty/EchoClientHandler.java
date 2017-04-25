@@ -33,6 +33,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		basicInformationJsonObject.put("totalMemory", basicInformation.getTotalMemory());
 		basicInformationJsonObject.put("usedMemory", basicInformation.getUsedMemory());
 		basicInformationJsonObject.put("freeMemory", basicInformation.getFreeMemory());
+		
 		basicInformationJsonObject.put("totalDisk", basicInformation.getTotalDisk());
 		basicInformationJsonObject.put("usedDisk", basicInformation.getUsedDisk());
 		basicInformationJsonObject.put("freeDisk", basicInformation.getFreeDisk());

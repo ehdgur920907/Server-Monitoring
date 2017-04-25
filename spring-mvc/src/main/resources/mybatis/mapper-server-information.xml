@@ -5,12 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.monitoring.mapper.Mapper">
 	<resultMap type="com.monitoring.dto.ServerInformationDto" id="serverInformation">
+		<result property="osName" column="os_name" />
 		<result property="hostName" column="host_name" />
 		<result property="ipAddress" column="ip_address" />
 		<result property="id" column="id" />
 	</resultMap>
 
 	<select id="selectServerInformation" resultMap="serverInformation">
-		SELECT id, ip_address, host_name FROM server_information
+		SELECT id, ip_address, host_name, os_name FROM server_information
 	</select>
 </mapper>

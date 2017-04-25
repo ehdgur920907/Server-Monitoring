@@ -18,7 +18,6 @@ h1 {
 }
 
 .jumbotron {
-	width: 800px;
 	margin: auto;
 	text-align: center;
 }
@@ -34,7 +33,7 @@ h1 {
 			</div>
 		</div>
 	</nav>
-	<h1>server monitoring</h1>
+	<h1>server list</h1>
 	<br />
 	<div class="jumbotron">
 		<table
@@ -48,14 +47,18 @@ h1 {
 						name</th>
 					<th style="text-align: center; vertical-align: middle;">ip
 						address</th>
+					<th style="text-align: center; vertical-align: middle;">os</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td style="text-align: center;"><a href="#">server ${ arrayListServerInformation.id }</a></td>
-					<td style="text-align: center;">${ arrayListServerInformation.hostName }</td>
-					<td style="text-align: center;">${ arrayListServerInformation.ipAddress }</td>
+				<c:forEach var="serverInformationList" items="${ serverInformation }">
+				<tr onclick="location.href='/monitoring'" style="cursor: pointer;">
+					<td style="text-align: center;"><a href="/monitoring">server ${ serverInformationList.id }</a></td>
+					<td style="text-align: center;">${ serverInformationList.hostName }</td>
+					<td style="text-align: center;">${ serverInformationList.ipAddress }</td>
+					<td style="text-align: center;">${ serverInformationList.osName }</td>
 				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>
