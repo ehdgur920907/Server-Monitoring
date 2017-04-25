@@ -6,6 +6,7 @@ import com.monitoring.dto.BasicInformationDto;
 import com.monitoring.dto.ServerInformationDto;
 
 public interface Mapper {
-	public ArrayList<BasicInformationDto> selectBasicInformation();
-	public ArrayList<ServerInformationDto> selectServerInformation();
+	public ArrayList<ServerInformationDto> selectServerInformationList();
+	public ArrayList<BasicInformationDto> selectBasicInformation(String id);
+	public ServerInformationDto selectServerInformation(String id);
 }

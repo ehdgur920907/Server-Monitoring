@@ -15,10 +15,8 @@ public class GetServerInformation implements Get {
 		try {
 			InetAddress inetAddress = InetAddress.getLocalHost();
 			String hostName = inetAddress.getHostName();
-			int index = hostName.indexOf(".");
-
-			hostName = hostName.substring(0, index);
 			
+			serverInformation.setId("1");
 			serverInformation.setOsName(properties.getProperty("os.name"));
 			serverInformation.setHostName(hostName);
 			serverInformation.setIpAddress(inetAddress.getHostAddress());

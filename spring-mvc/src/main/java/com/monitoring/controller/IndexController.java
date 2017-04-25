@@ -21,8 +21,10 @@ public class IndexController {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 	
-		arrayListServerInformation.add(mapper.selectServerInformation().get(0));
-		
+		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
+			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
+		}
+
 		model.addAttribute("arrayListServerInformation", arrayListServerInformation);
 		return "index";
 	}

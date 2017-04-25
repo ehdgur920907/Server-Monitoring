@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.monitoring.mapper.Mapper">
+	<resultMap type="com.monitoring.dto.BasicInformationDto" id="basicInformation">
+		<result property="totalDisk" column="total_disk" />
+		<result property="usedDisk" column="used_disk" />
+		<result property="freeDisk" column="free_disk" />
+		<result property="totalMemory" column="total_memory" />
+		<result property="usedMemory" column="used_memory" />
+		<result property="freeMemory" column="free_memory" />
+	</resultMap>
+
+	<select id="selectBasicInformation" resultMap="basicInformation">
+		SELECT total_memory, used_memory, free_memory, total_disk, used_disk, free_disk FROM basic_Information WHERE id= #{id}
+	</select>
+</mapper>

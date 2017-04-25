@@ -1,9 +1,18 @@
 package com.information.model;
 
 public class ServerInformation {
+	private String id;
 	private String osName;
 	private String ipAddress;
 	private String hostName;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getOsName() {
 		return osName;

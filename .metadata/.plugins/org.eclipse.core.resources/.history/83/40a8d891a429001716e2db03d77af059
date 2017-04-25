@@ -1,0 +1,79 @@
+package com.monitoring.dto;
+
+public class MonitoringInformationDto {
+	private String totalMemory;
+	private String usedMemory;
+	private String freeMemory;
+
+	private String totalDisk;
+	private String usedDisk;
+	private String freeDisk;
+	
+	private String id;
+	private String ipAddress;
+	private String hostName;
+	private String osName;
+	public String getTotalMemory() {
+		return totalMemory;
+	}
+	public void setTotalMemory(String totalMemory) {
+		this.totalMemory = totalMemory;
+	}
+	public String getUsedMemory() {
+		return usedMemory;
+	}
+	public void setUsedMemory(String usedMemory) {
+		this.usedMemory = usedMemory;
+	}
+	public String getFreeMemory() {
+		return freeMemory;
+	}
+	public void setFreeMemory(String freeMemory) {
+		this.freeMemory = freeMemory;
+	}
+	public String getTotalDisk() {
+		return totalDisk;
+	}
+	public void setTotalDisk(String totalDisk) {
+		this.totalDisk = totalDisk;
+	}
+	public String getUsedDisk() {
+		return usedDisk;
+	}
+	public void setUsedDisk(String usedDisk) {
+		this.usedDisk = usedDisk;
+	}
+	public String getFreeDisk() {
+		return freeDisk;
+	}
+	public void setFreeDisk(String freeDisk) {
+		this.freeDisk = freeDisk;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getIpAddress() {
+		return ipAddress;
+	}
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+	public String getHostName() {
+		return hostName;
+	}
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+	}
+	public String getOsName() {
+		return osName;
+	}
+	public void setOsName(String osName) {
+		this.osName = osName;
+	}
+	
+	
+	
+}

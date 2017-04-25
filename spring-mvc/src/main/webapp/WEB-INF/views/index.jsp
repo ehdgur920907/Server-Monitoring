@@ -21,6 +21,36 @@ h1 {
 	margin: auto;
 	text-align: center;
 }
+
+.status-normal {
+	border-radius: 50% 50%;
+	-moz-border-radius: 50% 50%;
+	-webkit-border-radius: 50% 50%;
+	background: #1DDB16;
+	height: 20px;
+	width: 20px;
+	margin: auto;
+}
+
+.status-danger {
+	border-radius: 50% 50%;
+	-moz-border-radius: 50% 50%;
+	-webkit-border-radius: 50% 50%;
+	background: #FF0000;
+	height: 20px;
+	width: 20px;
+	margin: auto;
+}
+
+.status-warning {
+	border-radius: 50% 50%;
+	-moz-border-radius: 50% 50%;
+	-webkit-border-radius: 50% 50%;
+	background: #FFBB00;
+	height: 20px;
+	width: 20px;
+	margin: auto;
+}
 </style>
 </head>
 
@@ -36,8 +66,7 @@ h1 {
 	<h1>server list</h1>
 	<br />
 	<div class="jumbotron">
-		<table
-			class="table table-hover table-striped table-bordered table-condensed"
+		<table class="table table-hover table-striped table-bordered"
 			style="width: 500px; margin: auto;">
 			<thead>
 				<tr style="background-color: white;">
@@ -51,13 +80,19 @@ h1 {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="serverInformationList" items="${ serverInformation }">
-				<tr onclick="location.href='/monitoring'" style="cursor: pointer;">
-					<td style="text-align: center;"><a href="/monitoring">server ${ serverInformationList.id }</a></td>
-					<td style="text-align: center;">${ serverInformationList.hostName }</td>
-					<td style="text-align: center;">${ serverInformationList.ipAddress }</td>
-					<td style="text-align: center;">${ serverInformationList.osName }</td>
-				</tr>
+				<c:forEach var="arrayListServerInformation" items="${ arrayListServerInformation }" varStatus="status">
+					<tr onclick="location.href='/monitoring/${ arrayListServerInformation[0].id }'" style="cursor: pointer;">
+						<td style="text-align: center;">${ arrayListServerInformation[0].id }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[0].hostName }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[0].ipAddress }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[0].osName }</td>
+					</tr>
+					<tr onclick="location.href='/monitoring/${ arrayListServerInformation[1].id }'" style="cursor: pointer;">
+						<td style="text-align: center;">${ arrayListServerInformation[1].id }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[1].hostName }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[1].ipAddress }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[1].osName }</td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

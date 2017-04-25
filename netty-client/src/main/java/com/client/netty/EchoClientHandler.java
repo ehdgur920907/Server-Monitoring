@@ -28,7 +28,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		serverInformationJsonObject.put("osName", serverInformation.getOsName());
 		serverInformationJsonObject.put("hostName", serverInformation.getHostName());
 		serverInformationJsonObject.put("ipAddress", serverInformation.getIpAddress());
-		
+		serverInformationJsonObject.put("id", serverInformation.getId());
 
 		basicInformationJsonObject.put("totalMemory", basicInformation.getTotalMemory());
 		basicInformationJsonObject.put("usedMemory", basicInformation.getUsedMemory());

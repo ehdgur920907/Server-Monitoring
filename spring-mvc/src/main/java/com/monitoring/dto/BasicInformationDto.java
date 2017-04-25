@@ -56,4 +56,12 @@ public class BasicInformationDto {
 	public void setFreeDisk(String freeDisk) {
 		this.freeDisk = freeDisk;
 	}
+
+	@Override
+	public String toString() {
+		return "BasicInformationDto [totalMemory=" + totalMemory + ", usedMemory=" + usedMemory + ", freeMemory="
+				+ freeMemory + ", totalDisk=" + totalDisk + ", usedDisk=" + usedDisk + ", freeDisk=" + freeDisk + "]";
+	}
+	
+	
 }

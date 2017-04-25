@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="freeMemory" column="free_memory" />
 	</resultMap>
 
-	<select id="selectBasicInformation" resultMap="basicInformation">
-		SELECT total_memory, used_memory, free_memory, total_disk, used_disk, free_disk FROM basic_Information
+	<select id="selectBasicInformation" parameterType="String" resultMap="basicInformation">
+		SELECT total_memory, used_memory, free_memory, total_disk, used_disk, free_disk FROM basic_information WHERE id=#{id}
 	</select>
 </mapper>

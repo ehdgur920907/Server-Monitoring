@@ -18,10 +18,10 @@ h1 {
 }
 
 .jumbotron {
-	width: 800px;
 	margin: auto;
 	text-align: center;
 }
+
 </style>
 </head>
 
@@ -37,7 +37,20 @@ h1 {
 	<h1>server monitoring</h1>
 	<br />
 	<div class="jumbotron">
-		
+		<h1>host name and ip address and os</h1>
+		<h4>${ serverInformation.ipAddress }</h4>
+		<h4>${ serverInformation.hostName }</h4>
+		<h4>${ serverInformation.osName }</h4>
+		<br />
+		<h1>Memory</h1>
+		<h4>${ basicInformation.totalMemory }</h4>
+		<h4>${ basicInformation.usedMemory }</h4>
+		<h4>${ basicInformation.freeMemory }</h4>
+		<br />
+		<h1>Disk</h1>
+		<h4>${ basicInformation.totalDisk }</h4>
+		<h4>${ basicInformation.usedDisk }</h4>
+		<h4>${ basicInformation.freeDisk }</h4>
 	</div>
 </body>
 

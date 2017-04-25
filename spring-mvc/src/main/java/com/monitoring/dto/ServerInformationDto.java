@@ -37,4 +37,11 @@ public class ServerInformationDto {
 	public void setHostName(String hostName) {
 		this.hostName = hostName;
 	}
+
+	@Override
+	public String toString() {
+		return "ServerInformationDto [id=" + id + ", ipAddress=" + ipAddress + ", hostName=" + hostName + ", osName="
+				+ osName + "]";
+	}
+	
 }
