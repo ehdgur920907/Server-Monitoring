@@ -21,8 +21,7 @@ public class MonitoringController {
 	@RequestMapping("/monitoring/{id}")
 	public String getMonitoring(Locale locale, Model model, @PathVariable String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
-		int size = mapper.selectBasicInformation(id).size() - 1;
-		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(size);
+		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 		
 		model.addAttribute("basicInformation", basicInformationDto);

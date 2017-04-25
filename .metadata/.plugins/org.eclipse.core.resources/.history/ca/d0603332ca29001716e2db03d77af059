@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<title>monitoring</title>
+<link rel="stylesheet" href="monitoring.css" type="text/css">
+<style>
+h1 {
+	text-align: center;
+	color: #5D5D5D;
+}
+
+.jumbotron {
+	margin: auto;
+	width: 100px;
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"><span
+					class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+			</div>
+		</div>
+	</nav>
+	<h1>${ serverInformation.hostName }</h1>
+	<br />
+	<div class="jumbotron">
+		<table class="table table-hover table-striped table-bordered"
+			style="width: 500px; margin: auto;">
+			<tr style="background-color: white;">
+				<th style="text-align: center; vertical-align: middle;">total disk</th>
+				<td style="text-align: center; vertical-align: middle;">${ basicInformation.totalDisk }GB
+			</tr>
+			<tr style="background-color: white;">
+				<th style="text-align: center; vertical-align: middle;">used disk</th>
+				<td style="text-align: center; vertical-align: middle;">${ basicInformation.usedDisk }GB
+			</tr>
+			<tr style="background-color: white;">
+				<th style="text-align: center; vertical-align: middle;">free disk</th>
+				<td style="text-align: center; vertical-align: middle;">${ basicInformation.freeDisk }GB
+			</tr>
+		</table>
+		<hr />
+		<table class="table table-hover table-striped table-bordered"
+			style="width: 500px; margin: auto;">
+			<tr style="background-color: white;">
+				<th style="text-align: center; vertical-align: middle;">total memory</th>
+				<td style="text-align: center; vertical-align: middle;">${ basicInformation.totalMemory }GB
+			</tr>
+			<tr style="background-color: white;">
+				<th style="text-align: center; vertical-align: middle;">used disk</th>
+				<td style="text-align: center; vertical-align: middle;">${ basicInformation.totalMemory }GB
+			</tr>
+			<tr style="background-color: white;">
+				<th style="text-align: center; vertical-align: middle;">free disk</th>
+				<td style="text-align: center; vertical-align: middle;">${ basicInformation.freeMemory }GB
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

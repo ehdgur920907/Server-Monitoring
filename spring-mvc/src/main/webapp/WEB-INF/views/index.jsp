@@ -18,6 +18,7 @@ h1 {
 }
 
 .jumbotron {
+	width: 800px;
 	margin: auto;
 	text-align: center;
 }
@@ -67,16 +68,16 @@ h1 {
 	<br />
 	<div class="jumbotron">
 		<table class="table table-hover table-striped table-bordered"
-			style="width: 500px; margin: auto;">
+			style="width: 600px; margin: auto;">
 			<thead>
 				<tr style="background-color: white;">
-					<th style="text-align: center; vertical-align: middle;">server
+					<th style="text-align: center; vertical-align: middle; font-size: 2rem;">server
 						id</th>
-					<th style="text-align: center; vertical-align: middle;">host
+					<th style="text-align: center; vertical-align: middle; font-size: 2rem;">host
 						name</th>
-					<th style="text-align: center; vertical-align: middle;">ip
+					<th style="text-align: center; vertical-align: middle; font-size: 2rem;">ip
 						address</th>
-					<th style="text-align: center; vertical-align: middle;">os</th>
+					<th style="text-align: center; vertical-align: middle; font-size: 2rem;">os</th>
 				</tr>
 			</thead>
 			<tbody>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -10,7 +11,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <title>monitoring</title>
-
+<script language="javascript">
+	setTimeout("history.go(0);", 3000);
+</script>
 <style>
 h1 {
 	text-align: center;
@@ -19,9 +22,9 @@ h1 {
 
 .jumbotron {
 	margin: auto;
+	width: 700px;
 	text-align: center;
 }
-
 </style>
 </head>
 
@@ -34,23 +37,62 @@ h1 {
 			</div>
 		</div>
 	</nav>
-	<h1>server monitoring</h1>
+	<h1>${ serverInformation.hostName }</h1>
 	<br />
 	<div class="jumbotron">
-		<h1>host name and ip address and os</h1>
-		<h4>${ serverInformation.ipAddress }</h4>
-		<h4>${ serverInformation.hostName }</h4>
-		<h4>${ serverInformation.osName }</h4>
+		<table class="table table-striped table-bordered"
+			style="width: 400px; margin: auto;">
+			<tr>
+				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
+				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
+			</tr>
+			<tr>
+				<td>
+					<table class="table table-striped table-bordered"
+						style="width: 200px; margin: auto;">
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">total
+								disk</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.totalDisk }GB
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">used
+								disk</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.usedDisk }GB
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">free
+								disk</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.freeDisk }GB
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table class="table table-striped table-bordered"
+						style="width: 200px; margin: auto;">
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">total
+								memory</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.totalMemory }GB
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">used
+								memory</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.usedMemory }GB
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">free
+								memory</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.freeMemory }GB
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<hr />
+		ip address: ${ serverInformation.ipAddress }
 		<br />
-		<h1>Memory</h1>
-		<h4>${ basicInformation.totalMemory }</h4>
-		<h4>${ basicInformation.usedMemory }</h4>
-		<h4>${ basicInformation.freeMemory }</h4>
-		<br />
-		<h1>Disk</h1>
-		<h4>${ basicInformation.totalDisk }</h4>
-		<h4>${ basicInformation.usedDisk }</h4>
-		<h4>${ basicInformation.freeDisk }</h4>
+		os: ${ serverInformation.osName }
 	</div>
 </body>
 
