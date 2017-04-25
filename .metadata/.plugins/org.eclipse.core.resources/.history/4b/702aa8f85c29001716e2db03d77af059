@@ -1,0 +1,10 @@
+package com.information.get;
+
+import com.information.model.BasicInformation;
+
+public class GetBasicInformation implements Get {
+	@Override
+	public BasicInformation execute() {
+		
+	}
+}

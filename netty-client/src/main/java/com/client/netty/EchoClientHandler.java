@@ -2,12 +2,10 @@ package com.client.netty;
 
 import org.json.simple.JSONObject;
 
-import com.information.get.GetDisk;
-import com.information.get.GetHostNameAndIpAddress;
-import com.information.get.GetMemory;
-import com.information.model.Disk;
-import com.information.model.HostNameAndIpAddress;
-import com.information.model.Memory;
+import com.information.get.GetBasicInformation;
+import com.information.get.GetServerInformation;
+import com.information.model.BasicInformation;
+import com.information.model.ServerInformation;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -17,35 +15,32 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
-		GetHostNameAndIpAddress getHostNameAndIpAddress = new GetHostNameAndIpAddress();
-		GetMemory getMemory = new GetMemory();
-		GetDisk getDisk = new GetDisk();
+		GetBasicInformation getBasicInforamtion = new GetBasicInformation();
+		GetServerInformation getServerInformation = new GetServerInformation();
 
-		HostNameAndIpAddress hostNameAndIpAddress = getHostNameAndIpAddress.execute();
-		Disk disk = getDisk.execute();
-		Memory memory = getMemory.execute();
+		BasicInformation basicInformation = getBasicInforamtion.execute();
+		ServerInformation serverInformation = getServerInformation.execute();
 
-		JSONObject hostNameAndIpAddressJsonObject = new JSONObject();
-		JSONObject memoryJsonObject = new JSONObject();
-		JSONObject diskJsonObject = new JSONObject();
+		JSONObject serverInformationJsonObject = new JSONObject();
+		JSONObject basicInformationJsonObject = new JSONObject();
 		JSONObject totalJsonObject = new JSONObject();
 
-		hostNameAndIpAddressJsonObject.put("hostName", hostNameAndIpAddress.getHostName());
-		hostNameAndIpAddressJsonObject.put("ipAddress", hostNameAndIpAddress.getIpAddress());
+		serverInformationJsonObject.put("osName", serverInformation.getOsName());
+		serverInformationJsonObject.put("hostName", serverInformation.getHostName());
+		serverInformationJsonObject.put("ipAddress", serverInformation.getIpAddress());
+		
 
-		memoryJsonObject.put("totalMemory", memory.getTotalMemory());
-		memoryJsonObject.put("usedMemory", memory.getUsedMemory());
-		memoryJsonObject.put("freeMemory", memory.getFreeMemory());
+		basicInformationJsonObject.put("totalMemory", basicInformation.getTotalMemory());
+		basicInformationJsonObject.put("usedMemory", basicInformation.getUsedMemory());
+		basicInformationJsonObject.put("freeMemory", basicInformation.getFreeMemory());
+		basicInformationJsonObject.put("totalDisk", basicInformation.getTotalDisk());
+		basicInformationJsonObject.put("usedDisk", basicInformation.getUsedDisk());
+		basicInformationJsonObject.put("freeDisk", basicInformation.getFreeDisk());
 
-		diskJsonObject.put("totalDisk", disk.getTotalDisk());
-		diskJsonObject.put("usedDisk", disk.getUsedDisk());
-		diskJsonObject.put("freeDisk", disk.getFreeDisk());
+		totalJsonObject.put("basicInformation", basicInformationJsonObject);
+		totalJsonObject.put("serverInformation", serverInformationJsonObject);
 
-		totalJsonObject.put("memory", memoryJsonObject);
-		totalJsonObject.put("disk", diskJsonObject);
-		totalJsonObject.put("hostNameAndIpAddress", hostNameAndIpAddressJsonObject);
-
-		System.out.println("success that send to server.");
+		System.out.println("success to send server.");
 		System.out.println(totalJsonObject);
 
 		ByteBuf messageBuffer = Unpooled.buffer();

@@ -1,0 +1,32 @@
+package com.information.get;
+
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
+import java.lang.management.MemoryUsage;
+
+public class GetMemory {
+	public static void main(String[] args) {
+//		Sigar sigar = new Sigar();
+//		Memory memory = new Memory();
+//
+//		Mem mem = null;
+//
+//		try {
+//			mem = sigar.getMem();
+//
+//			/* KB -> GB */
+//			memory.setTotalMemory(String.valueOf(String.format("%.2f", Math.round(((double) mem.getTotal() / 1000000000) * 100) / 100.0)));
+//			memory.setUsedMemory(String.valueOf(String.format("%.2f", Math.round(((double) mem.getUsed() / 1000000000) * 100) / 100.0)));
+//			memory.setFreeMemory(String.valueOf(String.format("%.2f", Math.round(((double) mem.getFree() / 1000000000) * 100) / 100.0)));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+		MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
+		MemoryUsage memoryUsageHeap = memoryMXBean.getHeapMemoryUsage();
+		MemoryUsage nonMemoryUsageHeap = memoryMXBean.getNonHeapMemoryUsage();
+		
+		System.out.println(memoryUsageHeap.toString());
+		System.out.println(nonMemoryUsageHeap.toString());
+		System.out.println("sadfsdfdsa);
+	}
+}

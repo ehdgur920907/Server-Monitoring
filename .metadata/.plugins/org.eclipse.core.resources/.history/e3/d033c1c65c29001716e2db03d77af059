@@ -1,0 +1,11 @@
+package com.information.model;
+
+public class BasicInformation {
+	private String totalDisk;
+	private String usedDisk;
+	private String freeDisk;
+	
+	private String totalMemory;
+	private String usedMemory;
+	private String freeMemory;
+}
