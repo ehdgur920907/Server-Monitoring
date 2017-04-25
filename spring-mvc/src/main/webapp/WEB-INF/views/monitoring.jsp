@@ -45,6 +45,7 @@ h1 {
 			<tr>
 				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
 				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
+				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">cpu</th>
 			</tr>
 			<tr>
 				<td>
@@ -65,6 +66,8 @@ h1 {
 								disk</th>
 							<td style="text-align: center; vertical-align: middle;">${ basicInformation.freeDisk }GB
 						</tr>
+						<tr>
+						</tr>
 					</table>
 				</td>
 				<td>
@@ -84,6 +87,32 @@ h1 {
 							<th style="text-align: center; vertical-align: middle;">free
 								memory</th>
 							<td style="text-align: center; vertical-align: middle;">${ basicInformation.freeMemory }GB
+						</tr>
+						<tr></tr>
+					</table>
+				</td>
+				<td>
+					<table class="table table-striped table-bordered"
+						style="width: 200px; margin: auto;">
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">total
+								cpu</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.totalCpu }
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">user
+								cpu</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.userCpu }
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">system
+								cpu</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.systemCpu }
+						</tr>
+						<tr style="background-color: white;">
+							<th style="text-align: center; vertical-align: middle;">idle
+								cpu</th>
+							<td style="text-align: center; vertical-align: middle;">${ basicInformation.idleCpu }
 						</tr>
 					</table>
 				</td>

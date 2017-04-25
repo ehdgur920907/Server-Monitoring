@@ -9,6 +9,43 @@ public class BasicInformationDto {
 	private String usedDisk;
 	private String freeDisk;
 
+	private String totalCpu;
+	private String userCpu;
+	private String systemCpu;
+	private String idleCpu;
+
+	public String getTotalCpu() {
+		return totalCpu;
+	}
+
+	public void setTotalCpu(String totalCpu) {
+		this.totalCpu = totalCpu;
+	}
+
+	public String getUserCpu() {
+		return userCpu;
+	}
+
+	public void setUserCpu(String userCpu) {
+		this.userCpu = userCpu;
+	}
+
+	public String getSystemCpu() {
+		return systemCpu;
+	}
+
+	public void setSystemCpu(String systemCpu) {
+		this.systemCpu = systemCpu;
+	}
+
+	public String getIdleCpu() {
+		return idleCpu;
+	}
+
+	public void setIdleCpu(String idleCpu) {
+		this.idleCpu = idleCpu;
+	}
+
 	public String getTotalMemory() {
 		return totalMemory;
 	}
@@ -62,6 +99,5 @@ public class BasicInformationDto {
 		return "BasicInformationDto [totalMemory=" + totalMemory + ", usedMemory=" + usedMemory + ", freeMemory="
 				+ freeMemory + ", totalDisk=" + totalDisk + ", usedDisk=" + usedDisk + ", freeDisk=" + freeDisk + "]";
 	}
-	
-	
+
 }

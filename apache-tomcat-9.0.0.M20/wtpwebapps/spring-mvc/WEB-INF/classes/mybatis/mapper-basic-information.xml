@@ -11,9 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="totalMemory" column="total_memory" />
 		<result property="usedMemory" column="used_memory" />
 		<result property="freeMemory" column="free_memory" />
+		<result property="totalCpu" column="total_cpu" />
+		<result property="userCpu" column="user_cpu" />
+		<result property="systemCpu" column="system_cpu" />
+		<result property="idleCpu" column="idle_cpu" />
 	</resultMap>
 
 	<select id="selectBasicInformation" parameterType="String" resultMap="basicInformation">
-		SELECT total_memory, used_memory, free_memory, total_disk, used_disk, free_disk FROM basic_information WHERE id=#{id}
+		SELECT total_cpu, user_cpu, idle_cpu, system_cpu, total_memory, used_memory, free_memory, total_disk, used_disk, free_disk FROM basic_information WHERE id=#{id}
 	</select>
 </mapper>
