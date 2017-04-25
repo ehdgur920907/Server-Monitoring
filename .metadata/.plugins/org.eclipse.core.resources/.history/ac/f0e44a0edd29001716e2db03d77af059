@@ -10,12 +10,12 @@ public class GetServerInformation implements Get {
 	@Override
 	public ServerInformation execute() {
 		ServerInformation serverInformation = new ServerInformation();
-		Properties properties = System.getProperties();
-
+		Properties properties = System.getProperties(); 
+		
 		try {
 			InetAddress inetAddress = InetAddress.getLocalHost();
 			String hostName = inetAddress.getHostName();
-
+			
 			serverInformation.setId("1");
 			serverInformation.setOsName(properties.getProperty("os.name"));
 			serverInformation.setHostName(hostName);
