@@ -23,6 +23,8 @@ public class QuartzScheduler {
 					.withSchedule(simpleSchedule().withIntervalInSeconds(2).repeatForever()).build();
 
 			scheduler.scheduleJob(job, trigger);
+			Thread.sleep(20000);
+			scheduler.shutdown();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
