@@ -14,6 +14,16 @@ public class BasicInformationDto {
 	private String systemCpu;
 	private String idleCpu;
 
+	private String registerDate;
+
+	public String getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(String registerDate) {
+		this.registerDate = registerDate;
+	}
+
 	public String getTotalCpu() {
 		return totalCpu;
 	}

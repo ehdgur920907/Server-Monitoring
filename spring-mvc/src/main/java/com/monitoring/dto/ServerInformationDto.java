@@ -5,7 +5,7 @@ public class ServerInformationDto {
 	private String ipAddress;
 	private String hostName;
 	private String osName;
-
+	
 	public String getOsName() {
 		return osName;
 	}

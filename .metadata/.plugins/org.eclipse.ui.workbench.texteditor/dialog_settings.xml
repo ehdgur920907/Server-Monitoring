@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="package com.monitoring.dto;"/>
 			<item value="package com.client.netty;"/>
 			<item value="sigar"/>
 			<item value="port"/>
@@ -15,7 +16,6 @@
 			<item value="jdbc"/>
 			<item value="spring"/>
 			<item value="quartz"/>
-			<item value="SLF"/>
 		</list>
 		<list key="replacehistory">
 		</list>

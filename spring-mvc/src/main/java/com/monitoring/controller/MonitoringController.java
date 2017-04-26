@@ -24,6 +24,8 @@ public class MonitoringController {
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 4);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 		
+		basicInformationDto.setRegisterDate(basicInformationDto.getRegisterDate().substring(0, 19));
+		
 		model.addAttribute("basicInformation", basicInformationDto);
 		model.addAttribute("serverInformation", serverInformationDto);
 		return "monitoring";
