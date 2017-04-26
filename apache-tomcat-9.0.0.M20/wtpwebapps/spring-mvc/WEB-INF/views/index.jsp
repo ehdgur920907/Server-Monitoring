@@ -94,6 +94,12 @@ h1 {
 						<td style="text-align: center;">${ arrayListServerInformation[1].ipAddress }</td>
 						<td style="text-align: center;">${ arrayListServerInformation[1].osName }</td>
 					</tr>
+					<tr onclick="location.href='/monitoring/${ arrayListServerInformation[2].id }'" style="cursor: pointer;">
+						<td style="text-align: center;">${ arrayListServerInformation[2].id }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[2].hostName }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[2].ipAddress }</td>
+						<td style="text-align: center;">${ arrayListServerInformation[2].osName }</td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

@@ -6,6 +6,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.fusesource/sigar -->
+		<dependency>
+		    <groupId>org.fusesource</groupId>
+		    <artifactId>sigar</artifactId>
+		    <version>1.6.4</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/com.github.dblock/oshi-core -->
 		<dependency>
 		    <groupId>com.github.dblock</groupId>
