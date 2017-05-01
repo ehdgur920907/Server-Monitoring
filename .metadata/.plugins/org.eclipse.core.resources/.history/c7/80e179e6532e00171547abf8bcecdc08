@@ -1,0 +1,31 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<h1>
+	Hello world!  
+</h1>
+
+<P>  The time on the server is ${serverTime}. </P>
+<h1><div id="random"></div></h1>
+</body>
+<script>
+		$(document).ready(function() {
+			setTimeout(function() {
+				$.ajax({
+					type: "GET",
+					url: "/status",
+					success: function(res) {
+						$('random').innerHTML() = res.random;	
+					},
+					error: function(err) {
+						console.log('cannot receive status model.');
+					}
+				})
+			}, 1000)
+		});
+	</script>
+</html>

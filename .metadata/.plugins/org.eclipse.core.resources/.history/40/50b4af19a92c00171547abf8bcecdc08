@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>change</title>
+{{> /include/setting}}
+</head>
+<body>
+	{{> /include/nav}}
+	<div class="container">
+		<div class="jumbotron">
+			{{#post}}
+			<form action="/change/{{id}}" method="post">
+				<input type="hidden" name="_method" value="put" />
+				<div class="form-group">
+					<label for="title">subject</label><input type="text"
+						class="form-control" name="title" placeholder="title" value={{title}}>
+				</div>
+				<div class="form-group">
+					<label for="contents">contents</label>
+					<textarea name="contents" class="form-control" name="contents" placeholder="contents" rows="5">{{contents}}</textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">change</button>
+			</form>
+			{{/post}}
+		</div>
+	</div>
+</body>
+</html>

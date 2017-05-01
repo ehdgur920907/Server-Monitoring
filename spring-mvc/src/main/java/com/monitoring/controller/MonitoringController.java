@@ -21,11 +21,12 @@ public class MonitoringController {
 	@RequestMapping("/monitoring/{id}")
 	public String getMonitoring(Locale locale, Model model, @PathVariable String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
-		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 4);
+		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
+				.get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
-		
+
 		basicInformationDto.setRegisterDate(basicInformationDto.getRegisterDate().substring(0, 19));
-		
+
 		model.addAttribute("basicInformation", basicInformationDto);
 		model.addAttribute("serverInformation", serverInformationDto);
 		return "monitoring";

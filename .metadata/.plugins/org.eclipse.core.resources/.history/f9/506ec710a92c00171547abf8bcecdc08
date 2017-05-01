@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>read</title> 
+{{> /include/setting}}
+</head>
+<body>
+	{{> /include/nav}}
+	<div class="container">
+		<div class="jumbotron">
+			{{#post}}
+			<p>
+				<a href="/posts" class="btn btn-default" role="button">list</a>
+			{{#master}} 
+				<a href="/change/{{id}}" class="btn btn-primary" role="button">change</a>
+				<a href="/remove/{{id}}" class="btn btn-danger" role="button">remove</a>
+			{{/master}}
+			</p>
+
+			<div id="article" class="content" role="main">
+				<div class="panel panel-default clearfix">
+					<div class="panel-heading clearfix">
+						<div class='avatar avatar-medium clearfix pull-left'>
+							<div class="avatar-info">
+								<a href="#">{{writer.name}}</a> | {{localDateTime}} | #{{id}}
+							</div>
+						</div>
+						<div class="pull-right" style="font-size: 1rem; color: #8C8C8C;">{{hits}}</div>
+					</div>
+					<div class="content-container clearfix">
+						<div id="content-body" class="panel-body content-body pull-left">
+							<h2 class="panel-title">{{title}}</h2>
+							<hr />
+							<article class="content-text"
+								style="word-break: break-all; word-wrap: break-word;">{{contents}}</article>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{^master}}
+			<div></div>
+			{{/master}}
+			<h3>reply</h3>
+			{{#replies}}
+			<div class="panel panel-default clearfix">
+				<div class="content-container clearfix">
+					<div id="content-body" class="panel-body content-body pull-left">
+						<article class="article">
+							<div class="article-header">
+								<div class="article-header-text">
+									<a href="#" class="article-author-name">{{writer.name}}</a>
+									({{localDateTime}})
+								</div>
+							</div>
+							<div class="article-doc comment-doc">
+								<p>{{contents}}</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			{{/replies}}
+			<form class="submit-write" method="post" action="/reply/{{id}}">
+				<div class="form-group" style="">
+					<textarea class="form-control" placeholder="append your opinion."
+						name="contents"></textarea>
+				</div>
+				<input type="submit" class="btn btn-success pull-right"
+					value="reply">
+				<div class="clearfix" />
+			</form>
+			{{/post}}
+		</div>
+	</div>
+</body>
+</html>

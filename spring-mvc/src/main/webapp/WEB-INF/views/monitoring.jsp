@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>monitoring</title>
-<script language="javascript">
-	setTimeout("history.go(0);", 1000);
-</script>
+
 <style>
 h1 {
 	text-align: center;
@@ -30,12 +42,12 @@ h1 {
 
 <body>
 	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/"><span
-					class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-			</div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/"><span
+				class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
 		</div>
+	</div>
 	</nav>
 	<h1>${ serverInformation.hostName }</h1>
 	<br />
@@ -43,9 +55,12 @@ h1 {
 		<table class="table table-striped table-bordered"
 			style="width: 400px; margin: auto;">
 			<tr>
-				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
-				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
-				<th style="text-align: center; vertical-align: middle; font-size: 3rem;">cpu</th>
+				<th
+					style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
+				<th
+					style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
+				<th
+					style="text-align: center; vertical-align: middle; font-size: 3rem;">cpu</th>
 			</tr>
 			<tr>
 				<td>
@@ -120,9 +135,7 @@ h1 {
 		</table>
 		<h3>${ basicInformation.registerDate }</h3>
 		<hr />
-		ip address: ${ serverInformation.ipAddress }
-		<br />
-		os: ${ serverInformation.osName }
+		ip address: ${ serverInformation.ipAddress } / os: ${ serverInformation.osName }
 	</div>
 </body>
 

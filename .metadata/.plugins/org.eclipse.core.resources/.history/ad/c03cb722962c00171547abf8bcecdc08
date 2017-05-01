@@ -1,0 +1,102 @@
+package com.nghy.controller;
+
+import java.time.LocalDateTime;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.nghy.model.Post;
+import com.nghy.model.PostRepository;
+import com.nghy.model.ReplyRepository;
+import com.nghy.model.User;
+
+@Controller
+public class PostController {
+	@Autowired
+	private ReplyRepository replyRepository;
+	
+	@Autowired
+	private PostRepository postRepository;
+
+	@GetMapping("/posts")
+	public String posts(Model model) {
+		System.out.println("posts");
+		model.addAttribute("post", postRepository.findAll());
+		return "/post/posts";
+	}
+	
+	@GetMapping("/read/{post_id}/{writer_id}")
+	public String getRead(@PathVariable Long post_id, @PathVariable Long writer_id, Model model, HttpSession session) {
+		User sessionedUser = (User)session.getAttribute("sessionedUser");
+		Object tempForOwner = new Object();
+		Post post = postRepository.findOne(post_id);
+		
+		if (sessionedUser == null) {
+			return "/user/signin";
+		}
+		
+		if (sessionedUser.getId().equals(writer_id)) {
+			model.addAttribute("owner", tempForOwner);
+		}
+
+		model.addAttribute("post", post);
+		return "/post/read";
+	}
+	
+	@GetMapping("/write")
+	public String getWrite() {
+		return "/post/write";
+	}
+	
+	@GetMapping("/change/{id}")
+	public String getChange(@PathVariable Long id, Model model) {
+		model.addAttribute("post", postRepository.findOne(id));
+		return "/post/change";
+	}
+	
+	@PutMapping("/change/{id}")
+	public String setEdit(@PathVariable Long id, Post editPost, HttpSession session) {
+		System.out.println("change");
+		User usering = (User)session.getAttribute("usering");
+		LocalDateTime localDateTime = LocalDateTime.now();
+		editPost.setLocalDateTime(localDateTime);
+		editPost.setWriter(usering);
+		
+		Post post = postRepository.findOne(id);
+		post.editPost(editPost);
+		postRepository.save(post);
+		return "redirect:/posts";
+	}
+	
+	@GetMapping("/remove/{id}")
+	public String getRemove(@PathVariable Long id) {
+		System.out.println("remove");
+		postRepository.delete(id);
+		return "redirect:/posts";
+	}
+	
+	@PostMapping("/write")
+	public String setWrite(String title, String contents, HttpSession session) {
+		System.out.println("write");
+		LocalDateTime localDateTime = LocalDateTime.now();
+		User usering = (User)session.getAttribute("usering");
+		if (usering == null) {
+			return "/user/signin";
+		} else {
+			Post post = new Post();
+			post.setWriter(usering);
+			post.setTitle(title);
+			post.setContents(contents);
+			post.setLocalDateTime(localDateTime);
+			postRepository.save(post);
+			return "redirect:/posts";
+		}
+	}
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>posts</title>
+{{> /include/setting}}
+</head>
+<body>
+	{{> /include/nav}}
+	<div class="container">
+		<div class="jumbotron">
+		<table class="table table-hover table-striped table-bordered table-condensed">
+			<thead>
+				<tr style="background-color: white;">
+					<th class="col-md-7" style="text-align: center; vertical-align: middle;">title</th>
+					<th style="text-align: center; vertical-align: middle;">name</th>
+					<th style="text-align: center; vertical-align: middle;">date</th>
+					<th style="text-align: center; vertical-align: middle;">hits</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#post}}
+				<tr>
+					<td><a href="/read/{{id}}/{{writer.id}}">{{title}}</a><div class="pull-right" style="font-size: 1rem; color: #8C8C8C;">#{{id}}</div></td>
+					<td style="text-align: center; vertical-align: middle;"><a href="#">{{writer.name}}</a></td>
+					<td style="text-align: center;">{{localDateTime}}</td>
+					<td style="text-align: center;">{{hits}}</td>
+				</tr>
+				{{/post}}
+			</tbody>
+		</table>
+		
+		{{#usering}}
+		<a href="/write" class="btn btn-primary pull-right" role="button">write</a>
+		{{/usering}}
+		<div class="text-center">
+			<ul class="pagination">
+				<li><a href="#">#</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">#</a></li>
+			</ul>
+	  	</div>
+	</div>
+</div>
+</body>
+</html>
