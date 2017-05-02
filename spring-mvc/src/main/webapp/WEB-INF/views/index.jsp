@@ -1,3 +1,4 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -82,7 +83,7 @@ h1 {
 	<h1>server list</h1>
 	<br />
 	<div class="jumbotron">
-		<h4></h4>
+		<h4><div id="time"></div></h4>
 		<table class="table table-hover table-striped table-bordered"
 			style="width: 600px; margin: auto;">
 			<thead>
@@ -106,53 +107,67 @@ h1 {
 				<c:forEach var="arrayListServerInformation"
 					items="${ arrayListServerInformation }" varStatus="status">
 					<tr
-						onclick="location.href='/monitoring/${ arrayListServerInformation[status.index].id }'"
+						onclick="location.href='/monitoring/${ arrayListServerInformation.id }'"
 						style="cursor: pointer;">
-						<td style="text-align: center;">${ arrayListServerInformation[status.index].id }</td>
-						<td style="text-align: center;">${ arrayListServerInformation[status.index].hostName }</td>
-						<td style="text-align: center;">${ arrayListServerInformation[status.index].ipAddress }</td>
-						<td style="text-align: center;">${ arrayListServerInformation[status.index].osName }</td>
-						<td><div class="status-normal"></div></td>
+						<td style="text-align: center;">${ arrayListServerInformation.id }</td>
+						<td style="text-align: center;">${ arrayListServerInformation.hostName }</td>
+						<td style="text-align: center;">${ arrayListServerInformation.ipAddress }</td>
+						<td style="text-align: center;">${ arrayListServerInformation.osName }</td>
+						<td><div id="status"></div></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 	<script>
-		$(document).ready(
-				function() {
-					setTimeout(function() {
-						$.ajax({
-							type : "GET",
-							url : "localhost:8181/status",
-							success : function(res) {
-								var data = JSON.parse(res);
-								if (data.res === "danger") {
-									$('.status-normal').attr('class',
-											'status-danger');
-									$('.status-warning').attr('class',
-											'status-danger');
-									$('h4').innerHtml = res.time;
-								} else if (data.res === "warning") {
-									$('.status-normal').attr('class',
-											'status-warning');
-									$('.status-danger').attr('class',
-											'status-warning');
-									$('h4').innerHtml = res.time;
-								} else if (data.res === "normal") {
-									$('.status-warning').attr('class',
-											'status-normal');
-									$('.status-danger').attr('class',
-											'status-normal');
-									$('h4').innerHtml = res.time;
-								}
-							},
-							error : function(err) {
-								console.log('cannot receive status model.');
-							}
-						})
-					}, 1000)
+		$(document).ready(function() {
+			setInterval(function() {
+				$.ajax({
+					type: 'GET',
+					url: '/status',
+					success: function(res) {
+						console.log(res);
+						var data = JSON.parse(res);
+						$('#time').text(data.time);
+						
+						if (data.status === 'warning') {
+							$('#status').css({
+								"border-radius": "50% 50%",
+								"-moz-border-radius": "50% 50%",
+								"-webkit-border-radius": "50% 50%",
+								"background": "#1DDB16",
+								"height": "20px",
+								"width": "20px",
+								"margin": "auto"
+							});
+						} else if (data.status === 'danger') {
+							$('#status').css({
+								"border-radius": "50% 50%",
+								"-moz-border-radius": "50% 50%",
+								"-webkit-border-radius": "50% 50%",
+								"background": "#FF0000",
+								"height": "20px",
+								"width": "20px",
+								"margin": "auto"
+							});
+						} else {
+							$('#status').css({
+								"border-radius": "50% 50%",
+								"-moz-border-radius": "50% 50%",
+								"-webkit-border-radius": "50% 50%",
+								"background": "#FFBB00",
+								"height": "20px",
+								"width": "20px",
+								"margin": "auto"
+							});
+						}
+					},
+					error: function(err) {
+						console.log('cannot receive status model.');
+					}
 				});
+			}, 1000)
+		})
 	</script>
 </body>
 

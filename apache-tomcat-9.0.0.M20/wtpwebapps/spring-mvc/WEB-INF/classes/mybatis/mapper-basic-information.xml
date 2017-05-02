@@ -1,4 +1,4 @@
-<!-- <?xml version="1.0" encoding= "UTF-8" ?>
+<?xml version="1.0" encoding= "UTF-8" ?>
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
@@ -21,4 +21,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectBasicInformation" parameterType="String" resultMap="basicInformation">
 		SELECT register_date, total_cpu, user_cpu, idle_cpu, system_cpu, total_memory, used_memory, free_memory, total_disk, used_disk, free_disk FROM basic_information WHERE id=#{id}
 	</select>
-</mapper> -->
+</mapper>

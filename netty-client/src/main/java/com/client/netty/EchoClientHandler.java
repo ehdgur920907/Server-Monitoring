@@ -29,6 +29,14 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		serverInformationJsonObject.put("hostName", serverInformation.getHostName());
 		serverInformationJsonObject.put("ipAddress", serverInformation.getIpAddress());
 		serverInformationJsonObject.put("id", serverInformation.getId());
+		
+		if (Double.parseDouble(basicInformation.getFreeMemory()) <= 3.50 && Double.parseDouble(basicInformation.getFreeMemory()) > 3.20) {
+			serverInformationJsonObject.put("status", "warning");
+		} else if (Double.parseDouble(basicInformation.getFreeMemory()) < 3.20) {
+			serverInformationJsonObject.put("status", "danger");
+		} else {
+			serverInformationJsonObject.put("status", serverInformation.getStatus());
+		}
 
 		basicInformationJsonObject.put("totalMemory", basicInformation.getTotalMemory());
 		basicInformationJsonObject.put("usedMemory", basicInformation.getUsedMemory());
@@ -45,7 +53,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 
 		totalJsonObject.put("basicInformation", basicInformationJsonObject);
 		totalJsonObject.put("serverInformation", serverInformationJsonObject);
-
+		
 		System.out.println("success to send server.");
 		System.out.println(totalJsonObject);
 

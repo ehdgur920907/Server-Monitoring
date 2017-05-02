@@ -5,6 +5,15 @@ public class ServerInformation {
 	private String osName;
 	private String ipAddress;
 	private String hostName;
+	private String status;
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getId() {
 		return id;

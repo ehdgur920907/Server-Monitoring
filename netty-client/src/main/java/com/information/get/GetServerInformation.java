@@ -20,6 +20,7 @@ public class GetServerInformation implements Get {
 			serverInformation.setOsName(properties.getProperty("os.name"));
 			serverInformation.setHostName(hostName);
 			serverInformation.setIpAddress(inetAddress.getHostAddress());
+			serverInformation.setStatus("normal");
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

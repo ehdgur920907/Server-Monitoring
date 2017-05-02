@@ -5,7 +5,16 @@ public class ServerInformationDto {
 	private String ipAddress;
 	private String hostName;
 	private String osName;
-	
+	private String status;
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getOsName() {
 		return osName;
 	}
@@ -43,5 +52,5 @@ public class ServerInformationDto {
 		return "ServerInformationDto [id=" + id + ", ipAddress=" + ipAddress + ", hostName=" + hostName + ", osName="
 				+ osName + "]";
 	}
-	
+
 }

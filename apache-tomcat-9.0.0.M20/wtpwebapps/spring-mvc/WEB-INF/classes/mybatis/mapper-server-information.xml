@@ -1,4 +1,4 @@
-<!-- <?xml version="1.0" encoding= "UTF-8" ?>
+<?xml version="1.0" encoding= "UTF-8" ?>
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
@@ -8,7 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="osName" column="os_name" />
 		<result property="hostName" column="host_name" />
 		<result property="ipAddress" column="ip_address" />
+		<!-- <result property="status" column="status" /> -->
 		<result property="id" column="id" />
+		<result property="status" column="status" />
 	</resultMap>
 	
 	<resultMap type="com.monitoring.dto.ServerInformationDto" id="serverInformation">
@@ -18,10 +20,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
 	<select id="selectServerInformationList" resultMap="serverInformation">
-		SELECT id, ip_address, host_name, os_name FROM server_information
+		<!-- SELECT id, ip_address, host_name, os_name, status FROM server_information -->
+		SELECT status, id, ip_address, host_name, os_name FROM server_information
 	</select>
 	
 	<select id="selectServerInformation" parameterType="String" resultMap="serverInformation">
 		SELECT ip_address, host_name, os_name FROM server_information WHERE id=#{id}
 	</select>
-</mapper> -->
+</mapper>
