@@ -61,7 +61,8 @@ public class IndexController {
 			}
 		}
 		JSONObject jsonObject = new JSONObject();
-		String jsonString = jsonObject.toJSONString(hashMap);
+		String jsonString = "";
+		jsonString = jsonObject.toJSONString(hashMap);
 		return jsonString;
 	}
 }

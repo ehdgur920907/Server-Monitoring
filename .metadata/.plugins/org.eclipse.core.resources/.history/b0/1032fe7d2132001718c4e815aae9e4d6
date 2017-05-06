@@ -23,7 +23,7 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String getServerlist(Model model) {
-		// System.out.println("index");
+		System.out.println("index");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 
@@ -35,9 +35,9 @@ public class IndexController {
 		return "index";
 	}
 	
-	@RequestMapping("/index")
+	@RequestMapping("/status")
 	@ResponseBody
-	public String index(Model model) {
+	public String timeAndStatus(Model model) {
 		// System.out.println("ajax");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
@@ -61,7 +61,8 @@ public class IndexController {
 			}
 		}
 		JSONObject jsonObject = new JSONObject();
-		String jsonString = jsonObject.toJSONString(hashMap);
+		String jsonString = "";
+		jsonString = jsonObject.toJSONString(hashMap);
 		return jsonString;
 	}
 }

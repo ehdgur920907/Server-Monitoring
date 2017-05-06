@@ -38,38 +38,34 @@ public class MonitoringController {
 		return "monitoring";
 	}
 	
-	@RequestMapping("/detail/{id}")
+	@RequestMapping("/monitoring")
 	@ResponseBody
-	public String monitoring(Model model, @PathVariable String id) {
+	public String timeAndStatus(Model model) {
+		// System.out.println("ajax");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
-		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
-				.get(mapper.selectBasicInformation(id).size() - 1);
-		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
-
-		basicInformationDto.setRegisterDate(basicInformationDto.getRegisterDate().substring(0, 19));
+		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 		HashMap<String, String> hashMap = new HashMap<String, String>();
 		
-		hashMap.put("totalDisk", basicInformationDto.getTotalDisk());
-		hashMap.put("usedDisk", basicInformationDto.getUsedDisk());
-		hashMap.put("freeDisk", basicInformationDto.getFreeDisk());
-		
-		hashMap.put("totalMemory", basicInformationDto.getTotalMemory());
-		hashMap.put("usedMemory", basicInformationDto.getUsedMemory());
-		hashMap.put("freeMemory", basicInformationDto.getFreeMemory());
-		
-		hashMap.put("totalCpu", basicInformationDto.getTotalCpu());
-		hashMap.put("userCpu", basicInformationDto.getUserCpu());
-		hashMap.put("systemCpu", basicInformationDto.getSystemCpu());
-		hashMap.put("idleCpu", basicInformationDto.getIdleCpu());
-		
-		hashMap.put("registerDate", basicInformationDto.getRegisterDate());
-		
-		hashMap.put("osName", serverInformationDto.getOsName());
-		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
-		hashMap.put("hostName", serverInformationDto.getHostName());
-		
-		JSONObject json = new JSONObject();
-		String jsonString = json.toJSONString(hashMap);
+		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
+			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
+			
+			if (arrayListServerInformation.get(i).getStatus().equals("warning")) {
+				hashMap.put("status", "warning");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+				// System.out.println(hashMap);
+			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
+				hashMap.put("status", "danger");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+				// System.out.println(hashMap);
+			} else {
+				hashMap.put("status", "normal");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+				// System.out.println(hashMap);
+			}
+		}
+		JSONObject jsonObject = new JSONObject();
+		String jsonString = "";
+		jsonString = jsonObject.toJSONString(hashMap);
 		return jsonString;
 	}
 }

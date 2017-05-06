@@ -62,14 +62,6 @@ public class MonitoringController {
 		hashMap.put("systemCpu", basicInformationDto.getSystemCpu());
 		hashMap.put("idleCpu", basicInformationDto.getIdleCpu());
 		
-		hashMap.put("registerDate", basicInformationDto.getRegisterDate());
-		
-		hashMap.put("osName", serverInformationDto.getOsName());
-		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
-		hashMap.put("hostName", serverInformationDto.getHostName());
-		
-		JSONObject json = new JSONObject();
-		String jsonString = json.toJSONString(hashMap);
-		return jsonString;
+		return null;
 	}
 }

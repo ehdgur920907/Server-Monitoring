@@ -66,7 +66,6 @@ public class MonitoringController {
 		
 		hashMap.put("osName", serverInformationDto.getOsName());
 		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
-		hashMap.put("hostName", serverInformationDto.getHostName());
 		
 		JSONObject json = new JSONObject();
 		String jsonString = json.toJSONString(hashMap);

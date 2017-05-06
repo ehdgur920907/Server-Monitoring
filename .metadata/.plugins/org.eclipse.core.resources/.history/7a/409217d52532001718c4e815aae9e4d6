@@ -133,9 +133,9 @@ h1 {
 				</td>
 			</tr>
 		</table>
-		<h3 id="register-date">${ basicInformation.registerDate }</h3>
+		<h3 id="register-date"></h3>
 		<hr />
-		<div id="ip-address">${ serverInformation.ipAddress }</div> / <div id="os-name">${ serverInformation.osName }</div>
+		<div id="ip-address"></div> / <div id="os-name"></div>
 	</div>
 	<script>
 		$(document).ready(function() {
@@ -148,13 +148,13 @@ h1 {
 						
 						$('#register-date').text(data.registerDate);
 						
-						$('#total-disk').text(data.totalDisk + 'GB');
-						$('#used-disk').text(data.usedDisk + 'GB');
-						$('#free-disk').text(data.freeDisk + 'GB');
+						$('#total-disk').text(data.totalDisk);
+						$('#used-disk').text(data.usedDisk);
+						$('#free-disk').text(data.freeDisk);
 						
-						$('#total-memory').text(data.totalMemroy + 'GB');
-						$('#used-memory').text(data.usedMemory + 'GB');
-						$('#free-memory').text(data.freeMemory + 'GB');
+						$('#total-memory').text(data.totalMemroy);
+						$('#used-memory').text(data.usedMemory);
+						$('#free-memory').text(data.freeMemory);
 						
 						$('#total-cpu').text(data.totalCpu);
 						$('#user-cpu').text(data.userCpu);

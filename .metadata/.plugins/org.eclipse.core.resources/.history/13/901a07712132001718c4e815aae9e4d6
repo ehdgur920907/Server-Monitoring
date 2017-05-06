@@ -125,8 +125,9 @@ h1 {
 			setInterval(function() {
 				$.ajax({
 					type: 'GET',
-					url: '/index',
+					url: '/status',
 					success: function(res) {
+						console.log(res);
 						var data = JSON.parse(res);
 						$('#time').text(data.time);
 						

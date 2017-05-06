@@ -148,13 +148,13 @@ h1 {
 						
 						$('#register-date').text(data.registerDate);
 						
-						$('#total-disk').text(data.totalDisk + 'GB');
-						$('#used-disk').text(data.usedDisk + 'GB');
-						$('#free-disk').text(data.freeDisk + 'GB');
+						$('#total-disk').text(data.totalDisk);
+						$('#used-disk').text(data.usedDisk);
+						$('#free-disk').text(data.freeDisk);
 						
 						$('#total-memory').text(data.totalMemroy + 'GB');
-						$('#used-memory').text(data.usedMemory + 'GB');
-						$('#free-memory').text(data.freeMemory + 'GB');
+						$('#used-memory').text(data.usedMemory);
+						$('#free-memory').text(data.freeMemory);
 						
 						$('#total-cpu').text(data.totalCpu);
 						$('#user-cpu').text(data.userCpu);

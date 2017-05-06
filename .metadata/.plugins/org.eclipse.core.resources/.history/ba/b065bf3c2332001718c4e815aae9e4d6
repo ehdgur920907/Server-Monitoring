@@ -41,6 +41,7 @@ public class MonitoringController {
 	@RequestMapping("/detail/{id}")
 	@ResponseBody
 	public String monitoring(Model model, @PathVariable String id) {
+		// System.out.println("monitoring");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
 				.get(mapper.selectBasicInformation(id).size() - 1);
@@ -49,27 +50,6 @@ public class MonitoringController {
 		basicInformationDto.setRegisterDate(basicInformationDto.getRegisterDate().substring(0, 19));
 		HashMap<String, String> hashMap = new HashMap<String, String>();
 		
-		hashMap.put("totalDisk", basicInformationDto.getTotalDisk());
-		hashMap.put("usedDisk", basicInformationDto.getUsedDisk());
-		hashMap.put("freeDisk", basicInformationDto.getFreeDisk());
-		
-		hashMap.put("totalMemory", basicInformationDto.getTotalMemory());
-		hashMap.put("usedMemory", basicInformationDto.getUsedMemory());
-		hashMap.put("freeMemory", basicInformationDto.getFreeMemory());
-		
-		hashMap.put("totalCpu", basicInformationDto.getTotalCpu());
-		hashMap.put("userCpu", basicInformationDto.getUserCpu());
-		hashMap.put("systemCpu", basicInformationDto.getSystemCpu());
-		hashMap.put("idleCpu", basicInformationDto.getIdleCpu());
-		
-		hashMap.put("registerDate", basicInformationDto.getRegisterDate());
-		
-		hashMap.put("osName", serverInformationDto.getOsName());
-		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
-		hashMap.put("hostName", serverInformationDto.getHostName());
-		
-		JSONObject json = new JSONObject();
-		String jsonString = json.toJSONString(hashMap);
-		return jsonString;
+		return null;
 	}
 }
