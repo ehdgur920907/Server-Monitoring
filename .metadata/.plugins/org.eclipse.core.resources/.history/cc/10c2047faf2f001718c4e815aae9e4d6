@@ -84,7 +84,6 @@ h1 {
 	<br />
 	<div class="jumbotron">
 		<h4><div id="time"></div></h4>
-		<br />
 		<table class="table table-hover table-striped table-bordered"
 			style="width: 600px; margin: auto;">
 			<thead>
