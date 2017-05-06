@@ -36,9 +36,9 @@ public class MonitoringController {
 		return "monitoring";
 	}
 	
-	@RequestMapping("/monitoring/detail")
+	@RequestMapping("/monitoring")
 	@ResponseBody
-	public String monitoringDetail(Model model, @RequestBody String id) {
+	public String monitoring(Model model, @RequestBody String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
 				.get(mapper.selectBasicInformation(id).size() - 1);

@@ -144,7 +144,7 @@ h1 {
 			setInterval(function() {
 				$.ajax({
 					type: 'GET',
-					url: '/monitoring/detail',
+					url: '/monitoring'
 					dataType: 'String',
 					data: JSON.stringify(id),
 					success: function(res) {

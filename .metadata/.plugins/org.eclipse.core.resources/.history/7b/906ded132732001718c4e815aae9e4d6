@@ -138,15 +138,13 @@ h1 {
 		<div id="ip-address">${ serverInformation.ipAddress }</div> / <div id="os-name">${ serverInformation.osName }</div>
 	</div>
 	<script>
-		var id = document.location.pathname;
+		var link = document.location.pathname;
 		
 		$(document).ready(function() {
 			setInterval(function() {
 				$.ajax({
 					type: 'GET',
-					url: '/monitoring/detail',
-					dataType: 'String',
-					data: JSON.stringify(id),
+					url: '/monitoring/${  }',
 					success: function(res) {
 						var data = JSON.parse(res);
 						
