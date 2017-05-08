@@ -28,6 +28,14 @@
 			width: 700px;
 			text-align: center;
 		}
+
+		.footer {
+			text-align: center;
+		}
+
+		hr {
+			color: black;
+		}
 	</style>
 </head>
 

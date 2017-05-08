@@ -28,6 +28,14 @@
 			width: 700px;
 			text-align: center;
 		}
+
+		.footer {
+			text-align: center;
+		}
+
+		hr {
+			color: black;
+		}
 	</style>
 </head>
 
@@ -122,6 +130,7 @@
 				</tr>
 			</table>
 			<h3 id="register-date">0000-00-00 00:00:00</h3>
+			<hr />
 			<span id="ip-address">000.000.000.000</span> / <span id="os-name">Mac OS x</span>
 		</div>
 	</div>

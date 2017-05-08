@@ -18,7 +18,7 @@
 	<title>monitoring</title>
 
 	<style>
-		h2 {
+		h1 {
 			text-align: center;
 			color: #5D5D5D;
 		}
@@ -27,6 +27,14 @@
 			margin: auto;
 			width: 700px;
 			text-align: center;
+		}
+
+		.footer {
+			text-align: center;
+		}
+
+		hr {
+			color: black;
 		}
 	</style>
 </head>
@@ -40,14 +48,14 @@
 			</div>
 		</div>
 	</nav>
-	<h2><div id="host-name">SSL server</div></h2>
-	<hr />
+	<h1><div id="host-name">SSL server</div></h1>
+	<br />
 	<div class="jumbotron">
 		<div class="container">
 			<a href="/" class="btn btn-default pull-left" role="button">list</a>
 			<hr style="color: black;">
 
-			<table id="table" class="table table-striped table-bordered">
+			<table id="table" class="table table-striped table-bordered" style="width: 400px;">
 				<tr>
 					<th style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
 					<th style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
@@ -122,8 +130,15 @@
 				</tr>
 			</table>
 			<h3 id="register-date">0000-00-00 00:00:00</h3>
+			<hr />
 			<span id="ip-address">000.000.000.000</span> / <span id="os-name">Mac OS x</span>
 		</div>
+	</div>
+	<hr />
+	<div class="footer">
+		<blockquote>
+			<footer>contact copyright clearance center via email at ehdgur920907@gmail.com</footer>
+		</blockquote>
 	</div>
 	<script>
 		var id = document.location.pathname;

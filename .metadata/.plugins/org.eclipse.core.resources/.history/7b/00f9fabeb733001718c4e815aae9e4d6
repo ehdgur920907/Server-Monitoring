@@ -28,6 +28,10 @@
 			width: 700px;
 			text-align: center;
 		}
+
+		.footer {
+			text-align: center;
+		}
 	</style>
 </head>
 
@@ -47,7 +51,7 @@
 			<a href="/" class="btn btn-default pull-left" role="button">list</a>
 			<hr style="color: black;">
 
-			<table id="table" class="table table-striped table-bordered">
+			<table id="table" class="table table-striped table-bordered" style="width: 400px;">
 				<tr>
 					<th style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
 					<th style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
