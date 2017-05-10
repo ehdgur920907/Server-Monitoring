@@ -96,35 +96,11 @@ h1 {
 						$('#time').text(data.time);
 						
 						if (data.status === 'warning') {
-							$('#status').css({
-								"border-radius": "50% 50%",
-								"-moz-border-radius": "50% 50%",
-								"-webkit-border-radius": "50% 50%",
-								"background": "#FFBB00",
-								"height": "20px",
-								"width": "20px",
-								"margin": "auto"
-							});
+							$('#status').text('warning');
 						} else if (data.status === 'danger') {
-							$('#status').css({
-								"border-radius": "50% 50%",
-								"-moz-border-radius": "50% 50%",
-								"-webkit-border-radius": "50% 50%",
-								"background": "#FF0000",
-								"height": "20px",
-								"width": "20px",
-								"margin": "auto"
-							});
+							$('#status').text('danger');
 						} else {
-							$('#status').css({
-								"border-radius": "50% 50%",
-								"-moz-border-radius": "50% 50%",
-								"-webkit-border-radius": "50% 50%",
-								"background": "#1DDB16",
-								"height": "20px",
-								"width": "20px",
-								"margin": "auto"
-							});
+							$('#status').text('normal');
 						}
 					},
 					error: function(err) {

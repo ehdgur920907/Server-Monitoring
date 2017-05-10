@@ -8,7 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
 
 <!-- Optional theme -->
 <link rel="stylesheet"
@@ -16,7 +18,9 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>index</title>
@@ -100,7 +104,7 @@ h1 {
 								"border-radius": "50% 50%",
 								"-moz-border-radius": "50% 50%",
 								"-webkit-border-radius": "50% 50%",
-								"background": "#FFBB00",
+								"background": "#1DDB16",
 								"height": "20px",
 								"width": "20px",
 								"margin": "auto"
@@ -120,7 +124,7 @@ h1 {
 								"border-radius": "50% 50%",
 								"-moz-border-radius": "50% 50%",
 								"-webkit-border-radius": "50% 50%",
-								"background": "#1DDB16",
+								"background": "#FFBB00",
 								"height": "20px",
 								"width": "20px",
 								"margin": "auto"

@@ -1,7 +1,5 @@
 package com.monitoring.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -30,7 +28,7 @@ public class MonitoringController {
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 
-		basicInformationDto.setRegisterDate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+		basicInformationDto.setRegisterDate(basicInformationDto.getRegisterDate().substring(0, 19));
 
 		model.addAttribute("basicInformation", basicInformationDto);
 		model.addAttribute("serverInformation", serverInformationDto);
@@ -60,7 +58,7 @@ public class MonitoringController {
 		hashMap.put("systemCpu", basicInformationDto.getSystemCpu());
 		hashMap.put("idleCpu", basicInformationDto.getIdleCpu());
 
-		hashMap.put("registerDate", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+		hashMap.put("registerDate", basicInformationDto.getRegisterDate());
 
 		hashMap.put("osName", serverInformationDto.getOsName());
 		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
