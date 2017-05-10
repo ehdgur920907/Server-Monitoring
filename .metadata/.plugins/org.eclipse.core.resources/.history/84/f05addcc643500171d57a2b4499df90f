@@ -25,9 +25,12 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		JSONObject basicInformationJsonObject = new JSONObject();
 		JSONObject totalJsonObject = new JSONObject();
 		
+		String tempStatusCpu = "";
+		
 		serverInformationJsonObject.put("osName", serverInformation.getOsName());
 		serverInformationJsonObject.put("hostName", serverInformation.getHostName());
 		serverInformationJsonObject.put("ipAddress", serverInformation.getIpAddress());
+		serverInformationJsonObject.put("id", serverInformation.getId());
 		
 		if (Double.parseDouble(basicInformation.getFreeMemory()) < 3.50 && Double.parseDouble(basicInformation.getFreeMemory()) > 3.20) {
 			serverInformationJsonObject.put("status", "warning");
@@ -37,7 +40,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 			serverInformationJsonObject.put("status", "warning");
 		} else if (Double.parseDouble(basicInformation.getFreeDisk()) < 30.00) {
 			serverInformationJsonObject.put("status", "danger");
-		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 30.00 && Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) > 15.00) {
+		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 30.00 && Double.parseDouble(tempStatusCpu) > 15.00) {
 			serverInformationJsonObject.put("status", "warning");
 		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 15.00) {
 			serverInformationJsonObject.put("status", "danger");

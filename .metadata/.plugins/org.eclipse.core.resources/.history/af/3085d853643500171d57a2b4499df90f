@@ -34,27 +34,27 @@ public class IndexController {
 		return "index";
 	}
 	
-//	@RequestMapping("/detail")
-//	@ResponseBody
-//	public String detail(Model model) {
-//		Mapper mapper = sqlSession.getMapper(Mapper.class);
-//		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
-//		HashMap<String, String> hashMap = new HashMap<String, String>();
-//		
-//		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
-//			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
-//			
-//			if (arrayListServerInformation.get(i).getStatus().equals("warning")) {
-//				hashMap.put("status", "warning");
-//				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-//			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
-//				hashMap.put("status", "danger");
-//				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-//			} else {
-//				hashMap.put("status", "normal");
-//				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-//			}
-//		}
-//		return JSONObject.toJSONString(hashMap);
-//	}
+	@RequestMapping("/detail")
+	@ResponseBody
+	public String detail(Model model) {
+		Mapper mapper = sqlSession.getMapper(Mapper.class);
+		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
+		HashMap<String, String> hashMap = new HashMap<String, String>();
+		
+		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
+			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
+			
+			if (arrayListServerInformation.get(i).getStatus().equals("warning")) {
+				hashMap.put("status", "warning");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
+				hashMap.put("status", "danger");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+			} else {
+				hashMap.put("status", "normal");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+			}
+		}
+		return JSONObject.toJSONString(hashMap);
+	}
 }

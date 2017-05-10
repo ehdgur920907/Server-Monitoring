@@ -84,7 +84,7 @@ h1 {
 			</tbody>
 		</table>
 	</div>
-	<script>
+	<!-- <script>
 		$(document).ready(function() {
 			setInterval(function() {
 				$.ajax({
@@ -133,7 +133,7 @@ h1 {
 				});
 			}, 1000)
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>

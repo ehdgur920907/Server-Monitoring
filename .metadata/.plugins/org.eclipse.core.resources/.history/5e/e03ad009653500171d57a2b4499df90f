@@ -16,6 +16,7 @@ public class GetServerInformation implements Get {
 			InetAddress inetAddress = InetAddress.getLocalHost();
 			String hostName = inetAddress.getHostName();
 
+			serverInformation.setId("1");
 			serverInformation.setOsName(properties.getProperty("os.name"));
 			serverInformation.setHostName(hostName);
 			serverInformation.setIpAddress(inetAddress.getHostAddress());

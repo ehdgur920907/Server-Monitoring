@@ -25,6 +25,8 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		JSONObject basicInformationJsonObject = new JSONObject();
 		JSONObject totalJsonObject = new JSONObject();
 		
+		String tempStatusCpu = "";
+		
 		serverInformationJsonObject.put("osName", serverInformation.getOsName());
 		serverInformationJsonObject.put("hostName", serverInformation.getHostName());
 		serverInformationJsonObject.put("ipAddress", serverInformation.getIpAddress());
