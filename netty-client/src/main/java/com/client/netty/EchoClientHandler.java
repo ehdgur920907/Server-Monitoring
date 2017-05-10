@@ -63,9 +63,6 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 
 		totalJsonObject.put("basicInformation", basicInformationJsonObject);
 		totalJsonObject.put("serverInformation", serverInformationJsonObject);
-		
-		System.out.println("success to send server.");
-		System.out.println(totalJsonObject);
 
 		ByteBuf messageBuffer = Unpooled.buffer();
 		messageBuffer.writeBytes(totalJsonObject.toJSONString().getBytes());

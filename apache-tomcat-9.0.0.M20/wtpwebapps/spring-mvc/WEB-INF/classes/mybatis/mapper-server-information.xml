@@ -8,7 +8,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="osName" column="os_name" />
 		<result property="hostName" column="host_name" />
 		<result property="ipAddress" column="ip_address" />
-		<!-- <result property="status" column="status" /> -->
 		<result property="id" column="id" />
 		<result property="status" column="status" />
 	</resultMap>
@@ -17,14 +16,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="osName" column="os_name" />
 		<result property="hostName" column="host_name" />
 		<result property="ipAddress" column="ip_address" />
+		<result property="id" column="id" />
 	</resultMap>
 
-	<select id="selectServerInformationList" resultMap="serverInformation">
-		<!-- SELECT id, ip_address, host_name, os_name, status FROM server_information -->
+	<select id="selectServerInformationList" resultMap="serverInformationList">
 		SELECT status, id, ip_address, host_name, os_name FROM server_information
 	</select>
 	
 	<select id="selectServerInformation" parameterType="String" resultMap="serverInformation">
-		SELECT ip_address, host_name, os_name FROM server_information WHERE id=#{id}
+		SELECT id, ip_address, host_name, os_name FROM server_information WHERE id=#{id}
 	</select>
 </mapper>

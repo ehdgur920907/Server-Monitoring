@@ -84,6 +84,7 @@ h1 {
 	<br />
 	<div class="jumbotron">
 		<h4><div id="time"></div></h4>
+		<br />
 		<table class="table table-hover table-striped table-bordered"
 			style="width: 600px; margin: auto;">
 			<thead>
@@ -124,7 +125,7 @@ h1 {
 			setInterval(function() {
 				$.ajax({
 					type: 'GET',
-					url: '/status',
+					url: '/detail',
 					success: function(res) {
 						console.log(res);
 						var data = JSON.parse(res);
@@ -167,7 +168,7 @@ h1 {
 					}
 				});
 			}, 1000)
-		})
+		});
 	</script>
 </body>
 

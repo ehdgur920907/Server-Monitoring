@@ -1,7 +1,0 @@
-package com.scheduling.quartz;
-
-public class Test {
-	public static void main(String[] args) {
-		
-	}
-}

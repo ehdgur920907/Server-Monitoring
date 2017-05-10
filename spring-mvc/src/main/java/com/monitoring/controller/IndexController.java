@@ -23,7 +23,6 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String getServerlist(Model model) {
-		// System.out.println("index");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 
@@ -38,7 +37,6 @@ public class IndexController {
 	@RequestMapping("/detail")
 	@ResponseBody
 	public String detail(Model model) {
-		// System.out.println("ajax");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 		HashMap<String, String> hashMap = new HashMap<String, String>();
@@ -49,19 +47,14 @@ public class IndexController {
 			if (arrayListServerInformation.get(i).getStatus().equals("warning")) {
 				hashMap.put("status", "warning");
 				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-				// System.out.println(hashMap);
 			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
 				hashMap.put("status", "danger");
 				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-				// System.out.println(hashMap);
 			} else {
 				hashMap.put("status", "normal");
 				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-				// System.out.println(hashMap);
 			}
 		}
-		JSONObject jsonObject = new JSONObject();
-		String jsonString = jsonObject.toJSONString(hashMap);
-		return jsonString;
+		return JSONObject.toJSONString(hashMap);
 	}
 }

@@ -127,6 +127,7 @@ h1 {
 					type: 'GET',
 					url: '/detail',
 					success: function(res) {
+						console.log(res);
 						var data = JSON.parse(res);
 						$('#time').text(data.time);
 						
@@ -167,7 +168,7 @@ h1 {
 					}
 				});
 			}, 1000)
-		})
+		});
 	</script>
 </body>
 
