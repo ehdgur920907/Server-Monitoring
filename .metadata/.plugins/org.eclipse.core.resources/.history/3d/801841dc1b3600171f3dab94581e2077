@@ -81,7 +81,7 @@ h1 {
 						<td style="text-align: center;">${ arrayListServerInformation.hostName }</td>
 						<td style="text-align: center;">${ arrayListServerInformation.ipAddress }</td>
 						<td style="text-align: center;">${ arrayListServerInformation.osName }</td>
-						<td style="text-align: center;"></td>
+						<td id="status" style="text-align: center;"></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -105,12 +105,11 @@ h1 {
 						}
 						for (var i = 0; i < $('#server-list tbody tr').length; i++) {
 							if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'danger') {
-								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
-								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FF0000; height: 20px; width: 20px; margin: auto;"></div>';
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<span style="background-color: red">danger</span>';
 							} else if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'warning') {
-								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FFBB00; height: 20px; width: 20px; margin: auto;"></div>';
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<span style="background-color: orange">warning</span>';
 							} else {
-								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #1DDB16; height: 20px; width: 20px; margin: auto;"></div>';
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<td style="background-color: green">normal</span>';
 							}
 						}
 						

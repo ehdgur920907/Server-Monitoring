@@ -108,9 +108,9 @@ h1 {
 								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
 								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FF0000; height: 20px; width: 20px; margin: auto;"></div>';
 							} else if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'warning') {
-								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FFBB00; height: 20px; width: 20px; margin: auto;"></div>';
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<span style="background-color: orange">warning</span>';
 							} else {
-								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #1DDB16; height: 20px; width: 20px; margin: auto;"></div>';
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<span style="background-color: green">normal</span>';
 							}
 						}
 						
