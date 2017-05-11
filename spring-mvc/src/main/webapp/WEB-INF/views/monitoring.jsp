@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,8 +20,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>monitoring</title>
 
 <style>
@@ -42,7 +43,25 @@ h2 {
 			<a class="navbar-brand" href="/"><span
 				class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
 		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+			</ul>
+  			<c:choose>
+  			<c:when test="${sessionedAdmin == null }">
+  				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/signin">signin</a></li>
+				</ul>
+			</c:when>
+  			<c:when test="${sessionedAdmin != null }">
+  				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/signout">signout</a></li>
+				</ul>
+			</c:when>
+    		</c:choose>
+		</div>
 	</div>
+	
 	</nav>
 	<h2>
 		<div id="host-name">${ serverInformation.hostName }</div>

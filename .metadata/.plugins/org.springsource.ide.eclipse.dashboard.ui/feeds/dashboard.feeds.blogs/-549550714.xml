@@ -15,10 +15,17 @@
     </author>
     <id>tag:spring.io,2017-04-19:2902</id>
     <updated>2017-05-10T15:20:00Z</updated>
-    <content type="html">&lt;h1&gt;&lt;a href="#introduction" class="anchor" name="introduction"&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
+    <content type="html">&lt;style&gt;&#xD;
+.blog--container .blog--post ul {&#xD;
+    margin: 15px 0 0px 25px;&#xD;
+}&#xD;
+.blog--container .blog--post ul li {&#xD;
+    padding-bottom: 8px;&#xD;
+}&#xD;
+&lt;/style&gt;&lt;h1&gt;&lt;a href="#introduction" class="anchor" name="introduction"&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;It has been almost 10 years now since I taught my first Core Spring class. At that time almost everything was XML and configuring JPA or Spring Security, for example, could be a lot of hard work. Spring has matured a great deal in the meantime with component-scanning, Java Configuration and Spring Boot making it much more fun to use. And the number of &lt;a href="https://spring.io/projects"&gt;Spring Projects&lt;/a&gt; has increased considerably. &lt;/p&gt;
-&lt;p&gt;Pivotal Training continues to enhance our Spring curriculum and introduce new courses - including Spring Boot Developer and Spring Cloud Services. I have provided an overview of these courses and some of the newest features below.&lt;/p&gt;
-&lt;p&gt;We also recently announced an exciting change to our Spring Certification Program. &lt;strong&gt;Spring Certification Exams are now available for &lt;em&gt;individual&lt;/em&gt; purchase, without the enrolling in the course&lt;/strong&gt;. Yes, you read that right!. Experienced Java developers - with extensive Spring knowledge already - can purchase a Spring Certification Exam &lt;em&gt;directly&lt;/em&gt; from Pivotal.&lt;/p&gt;
+&lt;p&gt;Pivotal Training continues to enhance our Spring curriculum and introduce new courses - including Spring Boot Developer and Spring Cloud Services. I have provided an overview of these courses and some of the newest features below. Most importantly, how you obtain Certification has changed.&lt;/p&gt;
+&lt;p&gt;We recently announced this exciting change to our Spring Certification Program. &lt;strong&gt;Spring Certification Exams are now available for &lt;em&gt;individual&lt;/em&gt; purchase, without the enrolling in the course&lt;/strong&gt;. Yes, you read that right!. Experienced Java developers - with extensive Spring knowledge already - can purchase a Spring Certification Exam &lt;em&gt;directly&lt;/em&gt; from Pivotal.&lt;/p&gt;
 &lt;p&gt;That said, the best way to prepare for a Spring Certification Exam is to attend the corresponding Spring course. However, this change to our &lt;a href="https://pivotal.io/training/certification"&gt;Certification Program&lt;/a&gt; makes proving your Spring expertise even more accessible. &lt;/p&gt;
 &lt;img src="https://raw.githubusercontent.com/paulc4/spring-blog/master/images/badge.png" title="Click to enlarge" alt="Sample Certification Badge" style="width: 100px; float: right; margin: 0px 5px 5px 10px"/&gt;
 &lt;p&gt;In addition to your actual certificate, we have partnered with &lt;a href="https://bcert.me"&gt;Badge Cert&lt;/a&gt; so that you can add a validated certification badge to your LinkedIn or other profile, proving you have the certification for real. This is what a badge looks like.&lt;/p&gt;
