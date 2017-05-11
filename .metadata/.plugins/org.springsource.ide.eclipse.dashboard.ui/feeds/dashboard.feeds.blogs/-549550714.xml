@@ -5,16 +5,16 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-05-10T15:20:41Z</updated>
+  <updated>2017-05-10T15:20:00Z</updated>
   <entry>
-    <title>Spring Training and Certification</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/05/10/spring-training-and-certification" />
+    <title>Pivotal Announces Spring Curriculum &amp; Certification Changes</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/05/10/pivotal-announces-spring-curriculum-certification-changes" />
     <category term="engineering" label="Engineering" />
     <author>
       <name>Paul Chapman</name>
     </author>
     <id>tag:spring.io,2017-04-19:2902</id>
-    <updated>2017-05-10T15:20:41Z</updated>
+    <updated>2017-05-10T15:20:00Z</updated>
     <content type="html">&lt;h1&gt;&lt;a href="#introduction" class="anchor" name="introduction"&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;It has been almost 10 years now since I taught my first Core Spring class. At that time almost everything was XML and configuring JPA or Spring Security, for example, could be a lot of hard work. Spring has matured a great deal in the meantime with component-scanning, Java Configuration and Spring Boot making it much more fun to use. And the number of &lt;a href="https://spring.io/projects"&gt;Spring Projects&lt;/a&gt; has increased considerably. &lt;/p&gt;
 &lt;p&gt;Pivotal Training continues to enhance our Spring curriculum and introduce new courses - including Spring Boot Developer and Spring Cloud Services. I have provided an overview of these courses and some of the newest features below.&lt;/p&gt;
@@ -76,7 +76,9 @@
 &lt;/ul&gt;
 &lt;p&gt;Microservice applications involve many collaborating processes making them harder to deploy without a smart underlying infrastructure. The course deploys applications to Pivotal’s Cloud Foundry PaaS to show the benefits of one-step deployment, automated recovery, and scalability.&lt;/p&gt;
 &lt;p&gt;A reasonable familiarity with Spring is useful for this course. We recommend that students that are new to Spring attend either the &lt;a href="#core-spring"&gt;Core Spring&lt;/a&gt; or &lt;a href="#spring-boot"&gt;Spring Boot&lt;/a&gt; class first.&lt;/p&gt;
-&lt;p&gt;To learn more, view the course datasheet, and register in an upcoming class, visit our &lt;a href="https://pivotal.io/training/courses/spring-cloud-services-training"&gt;Spring Cloud Services&lt;/a&gt; page.&lt;/p&gt;</content>
+&lt;p&gt;To learn more, view the course datasheet, and register in an upcoming class, visit our &lt;a href="https://pivotal.io/training/courses/spring-cloud-services-training"&gt;Spring Cloud Services&lt;/a&gt; page.&lt;/p&gt;&lt;h1&gt;&lt;a href="#more-information" class="anchor" name="more-information"&gt;&lt;/a&gt;More Information&lt;/h1&gt;
+&lt;p&gt;Pivotal Training has made an array of exciting changes to align our curriculum with the latest Spring features. We have also made it easier to earn an industry-recognize Spring Certification by making Spring Exams available for individual purchase. &lt;/p&gt;
+&lt;p&gt;Learn more about our Spring offerings by visiting &lt;a href="http://pivotal.io/training"&gt;http://pivotal.io/training&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
   <entry>
     <title>Spring Data Release Train Kay M3 Released</title>

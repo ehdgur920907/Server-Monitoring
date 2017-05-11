@@ -29,9 +29,9 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		serverInformationJsonObject.put("hostName", serverInformation.getHostName());
 		serverInformationJsonObject.put("ipAddress", serverInformation.getIpAddress());
 		
-		if (Double.parseDouble(basicInformation.getFreeMemory()) < 3.50 && Double.parseDouble(basicInformation.getFreeMemory()) > 3.20) {
+		if (Double.parseDouble(basicInformation.getFreeMemory()) < 3.50 && Double.parseDouble(basicInformation.getFreeMemory()) > 2.00) {
 			serverInformationJsonObject.put("status", "warning");
-		} else if (Double.parseDouble(basicInformation.getFreeMemory()) < 3.20) {
+		} else if (Double.parseDouble(basicInformation.getFreeMemory()) < 2.00) {
 			serverInformationJsonObject.put("status", "danger");
 		} else if (Double.parseDouble(basicInformation.getFreeDisk()) < 60.00 && Double.parseDouble(basicInformation.getFreeDisk()) > 30.00) {
 			serverInformationJsonObject.put("status", "warning");

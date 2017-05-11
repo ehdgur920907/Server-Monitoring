@@ -32,6 +32,9 @@ h1 {
 	margin: auto;
 	text-align: center;
 }
+.danger {
+	color: red;
+}
 </style>
 </head>
 
@@ -100,6 +103,16 @@ h1 {
 								}	
 							}
 						}
+						for (var i = 0; i < $('#server-list tbody tr').length; i++) {
+							if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'danger') {
+								
+							} else if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'warning') {
+								
+							} else {
+								
+							}
+						}
+						
 					},
 					error: function(err) {
 						console.log('cannot receive status model.');
