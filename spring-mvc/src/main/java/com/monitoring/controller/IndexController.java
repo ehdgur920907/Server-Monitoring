@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
-import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,27 +34,40 @@ public class IndexController {
 		return "index";
 	}
 	
-//	@RequestMapping("/detail")
-//	@ResponseBody
-//	public String detail(Model model) {
-//		Mapper mapper = sqlSession.getMapper(Mapper.class);
-//		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
-//		HashMap<String, String> hashMap = new HashMap<String, String>();
-//		
-//		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
-//			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
-//			
-//			if (arrayListServerInformation.get(i).getStatus().equals("warning")) {
-//				hashMap.put("status", "warning");
-//				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-//			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
-//				hashMap.put("status", "danger");
-//				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-//			} else {
-//				hashMap.put("status", "normal");
-//				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-//			}
-//		}
-//		return JSONObject.toJSONString(hashMap);
-//	}
+	@RequestMapping("/detail")
+	@ResponseBody
+	public String detail(Model model) {
+		Mapper mapper = sqlSession.getMapper(Mapper.class);
+		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
+		ArrayList<HashMap<String, String>> arrayListHashMap = new ArrayList<HashMap<String, String>>();
+		
+		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
+			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
+
+			if (arrayListServerInformation.get(i).getStatus().equals("warning")) {
+				HashMap<String, String> hashMap = new HashMap<String, String>();
+				hashMap.put("id", arrayListServerInformation.get(i).getId());
+				hashMap.put("status", "warning");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
+				arrayListHashMap.add(hashMap);
+			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
+				HashMap<String, String> hashMap = new HashMap<String, String>();
+				hashMap.put("id", arrayListServerInformation.get(i).getId());
+				hashMap.put("status", "danger");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
+				arrayListHashMap.add(hashMap);
+			} else {
+				HashMap<String, String> hashMap = new HashMap<String, String>();
+				hashMap.put("id", arrayListServerInformation.get(i).getId());
+				hashMap.put("status", "normal");
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+	
+				arrayListHashMap.add(hashMap);
+			}
+		}
+		
+		return JSONArray.toJSONString(arrayListHashMap);
+	}
 }

@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="hostName" column="host_name" />
 		<result property="ipAddress" column="ip_address" />
 		<result property="id" column="id" />
+		<result property="status" column="status" />
 	</resultMap>
 
 	<select id="selectServerInformationList" resultMap="serverInformationList">
@@ -24,6 +25,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="selectServerInformation" parameterType="String" resultMap="serverInformation">
-		SELECT id, ip_address, host_name, os_name FROM server_information WHERE id=#{id}
+		SELECT status, id, ip_address, host_name, os_name FROM server_information WHERE id=#{id}
 	</select>
 </mapper>

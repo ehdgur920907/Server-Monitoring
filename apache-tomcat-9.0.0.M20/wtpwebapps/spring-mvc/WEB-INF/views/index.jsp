@@ -49,7 +49,7 @@ h1 {
 	<div class="jumbotron">
 		<h4><div id="time"></div></h4>
 		<br />
-		<table class="table table-hover table-striped table-bordered"
+		<table id="server-list" class="table table-hover table-striped table-bordered"
 			style="width: 600px; margin: auto;">
 			<thead>
 				<tr style="background-color: white;">
@@ -70,7 +70,7 @@ h1 {
 			</thead>
 			<tbody>
 				<c:forEach var="arrayListServerInformation"
-					items="${ arrayListServerInformation }" varStatus="status">
+					items="${ arrayListServerInformation }">
 					<tr
 						onclick="location.href='/monitoring/${ arrayListServerInformation.id }'"
 						style="cursor: pointer;">
@@ -78,53 +78,27 @@ h1 {
 						<td style="text-align: center;">${ arrayListServerInformation.hostName }</td>
 						<td style="text-align: center;">${ arrayListServerInformation.ipAddress }</td>
 						<td style="text-align: center;">${ arrayListServerInformation.osName }</td>
-						<td><div id="status"></div></td>
+						<td id="status" style="text-align: center;"></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-	<!-- <script>
+	<script>
 		$(document).ready(function() {
 			setInterval(function() {
 				$.ajax({
 					type: 'GET',
 					url: '/detail',
 					success: function(res) {
-						console.log(res);
 						var data = JSON.parse(res);
-						$('#time').text(data.time);
-						
-						if (data.status === 'warning') {
-							$('#status').css({
-								"border-radius": "50% 50%",
-								"-moz-border-radius": "50% 50%",
-								"-webkit-border-radius": "50% 50%",
-								"background": "#FFBB00",
-								"height": "20px",
-								"width": "20px",
-								"margin": "auto"
-							});
-						} else if (data.status === 'danger') {
-							$('#status').css({
-								"border-radius": "50% 50%",
-								"-moz-border-radius": "50% 50%",
-								"-webkit-border-radius": "50% 50%",
-								"background": "#FF0000",
-								"height": "20px",
-								"width": "20px",
-								"margin": "auto"
-							});
-						} else {
-							$('#status').css({
-								"border-radius": "50% 50%",
-								"-moz-border-radius": "50% 50%",
-								"-webkit-border-radius": "50% 50%",
-								"background": "#1DDB16",
-								"height": "20px",
-								"width": "20px",
-								"margin": "auto"
-							});
+						$('#time').text(data[0].time);
+						for (var i = 0; i < $('#server-list tbody tr').length; i++) {
+							for (var j = 0; j < data.length; j++) {
+								if ($('#server-list tbody tr td:nth-child(1)')[i].innerHTML === data[j].id) {
+									$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = data[j].status;
+								}	
+							}
 						}
 					},
 					error: function(err) {
@@ -133,7 +107,7 @@ h1 {
 				});
 			}, 1000)
 		});
-	</script> -->
+	</script>
 </body>
 
 </html>
