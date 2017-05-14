@@ -204,7 +204,7 @@ h2 {
 						console.log('cannot receive status model.');
 					}
 				});
-			}, 1000)
+			}, 5000)
 		});
 	</script>
 </body>

@@ -48,19 +48,22 @@ public class IndexController {
 				HashMap<String, String> hashMap = new HashMap<String, String>();
 				hashMap.put("id", arrayListServerInformation.get(i).getId());
 				hashMap.put("status", "warning");
-				
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
 				arrayListHashMap.add(hashMap);
 			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
 				HashMap<String, String> hashMap = new HashMap<String, String>();
 				hashMap.put("id", arrayListServerInformation.get(i).getId());
 				hashMap.put("status", "danger");
-				
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
 				arrayListHashMap.add(hashMap);
 			} else {
 				HashMap<String, String> hashMap = new HashMap<String, String>();
 				hashMap.put("id", arrayListServerInformation.get(i).getId());
 				hashMap.put("status", "normal");
-				
+				hashMap.put("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+	
 				arrayListHashMap.add(hashMap);
 			}
 		}

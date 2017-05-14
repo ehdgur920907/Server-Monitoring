@@ -144,7 +144,7 @@ h1 {
 						console.log('cannot receive status model.');
 					}
 				});
-			}, 5000)
+			}, 1000)
 		});
 	</script>
 </body>

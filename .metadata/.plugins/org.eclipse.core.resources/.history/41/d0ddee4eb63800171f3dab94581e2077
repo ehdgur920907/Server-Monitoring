@@ -35,7 +35,7 @@ h1 {
 </style>
 </head>
 
-<body>
+<body onload="realtimeClock()">
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -120,7 +120,7 @@ h1 {
 					url: '/detail',
 					success: function(res) {
 						var data = JSON.parse(res);
-						$('#time').text(data[0].time);
+						
 						for (var i = 0; i < $('#server-list tbody tr').length; i++) {
 							for (var j = 0; j < data.length; j++) {
 								if ($('#server-list tbody tr td:nth-child(1)')[i].innerHTML === data[j].id) {
@@ -133,8 +133,10 @@ h1 {
 								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
 								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FF0000; height: 20px; width: 20px; margin: auto;"></div>';
 							} else if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'warning') {
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
 								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FFBB00; height: 20px; width: 20px; margin: auto;"></div>';
 							} else {
+								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
 								$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #1DDB16	; height: 20px; width: 20px; margin: auto;"></div>';
 							}
 						}
