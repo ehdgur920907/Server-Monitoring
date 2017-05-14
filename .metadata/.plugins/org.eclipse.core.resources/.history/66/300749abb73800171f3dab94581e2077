@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.monitoring.mapper.Mapper">
 	<resultMap type="com.monitoring.dto.BasicInformationDto" id="basicInformation">
+		<result property="registerDate" column="register_date" />
 		<result property="totalDisk" column="total_disk" />
 		<result property="usedDisk" column="used_disk" />
 		<result property="freeDisk" column="free_disk" />

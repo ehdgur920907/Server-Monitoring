@@ -36,7 +36,7 @@ h2 {
 </style>
 </head>
 
-<body onload="realtimeClock()">
+<body>
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -47,21 +47,21 @@ h2 {
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 			</ul>
-			<c:choose>
-				<c:when test="${sessionedAdmin == null }">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/signin">signin</a></li>
-					</ul>
-				</c:when>
-				<c:when test="${sessionedAdmin != null }">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/signout">signout</a></li>
-					</ul>
-				</c:when>
-			</c:choose>
+  			<c:choose>
+  			<c:when test="${sessionedAdmin == null }">
+  				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/signin">signin</a></li>
+				</ul>
+			</c:when>
+  			<c:when test="${sessionedAdmin != null }">
+  				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/signout">signout</a></li>
+				</ul>
+			</c:when>
+    		</c:choose>
 		</div>
 	</div>
-
+	
 	</nav>
 	<h2>
 		<div id="host-name">${ serverInformation.hostName }</div>
@@ -162,44 +162,14 @@ h2 {
 					</td>
 				</tr>
 			</table>
-			<h3 id="time"></h3>
+			<h3 id="register-date">${ basicInformation.registerDate }</h3>
 			<span id="ip-address">${ serverInformation.ipAddress }</span> / <span
 				id="os-name">${ serverInformation.osName }</span>
 		</div>
 	</div>
 	<script>
-		function realtimeClock() {
-			$('#time').text(getTimeStamp());
-			setTimeout("realtimeClock()", 1000);
-		}
-		function getTimeStamp() {
-			var d = new Date();
-
-			var s = leadingZeros(d.getFullYear(), 4) + '-'
-					+ leadingZeros(d.getMonth() + 1, 2) + '-'
-					+ leadingZeros(d.getDate(), 2) + ' ' +
-
-					leadingZeros(d.getHours(), 2) + ':'
-					+ leadingZeros(d.getMinutes(), 2) + ':'
-					+ leadingZeros(d.getSeconds(), 2);
-
-			return s;
-		}
-
-		function leadingZeros(n, digits) {
-			var zero = '';
-			n = n.toString();
-
-			if (n.length < digits) {
-				for (i = 0; i < digits - n.length; i++)
-					zero += '0';
-			}
-			return zero + n;
-		}
-		
 		var url = location.href;
 		var id = url.substring(url.lastIndexOf('/') + 1);
-		
 		$(document).ready(function() {
 			setInterval(function() {
 				$.ajax({

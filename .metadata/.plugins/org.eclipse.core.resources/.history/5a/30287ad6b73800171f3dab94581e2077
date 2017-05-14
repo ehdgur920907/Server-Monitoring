@@ -36,7 +36,7 @@ h2 {
 </style>
 </head>
 
-<body onload="realtimeClock()">
+<body>
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -162,7 +162,7 @@ h2 {
 					</td>
 				</tr>
 			</table>
-			<h3 id="time"></h3>
+			<h3 id="register-date">${ basicInformation.registerDate }</h3>
 			<span id="ip-address">${ serverInformation.ipAddress }</span> / <span
 				id="os-name">${ serverInformation.osName }</span>
 		</div>
