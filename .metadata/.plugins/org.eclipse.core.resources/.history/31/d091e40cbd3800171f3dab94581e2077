@@ -41,6 +41,8 @@ public class MonitoringController {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
+		
+		basicInformationDto.setRegisterDate(basicInformationDto.getRegisterDate().substring(0, 19));
 		HashMap<String, String> hashMap = new HashMap<String, String>();
 
 		hashMap.put("totalDisk", basicInformationDto.getTotalDisk());
