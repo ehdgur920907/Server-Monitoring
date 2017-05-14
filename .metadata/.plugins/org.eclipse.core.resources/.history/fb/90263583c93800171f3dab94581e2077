@@ -1,5 +1,7 @@
 package com.monitoring.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,14 +33,14 @@ public class IndexController {
 		model.addAttribute("arrayListServerInformation", arrayListServerInformation);
 		return "index";
 	}
-
+	
 	@RequestMapping("/detail")
 	@ResponseBody
 	public String detail(Model model) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 		ArrayList<HashMap<String, String>> arrayListHashMap = new ArrayList<HashMap<String, String>>();
-
+		
 		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
 			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
 
@@ -46,23 +48,23 @@ public class IndexController {
 				HashMap<String, String> hashMap = new HashMap<String, String>();
 				hashMap.put("id", arrayListServerInformation.get(i).getId());
 				hashMap.put("status", "warning");
-
+				
 				arrayListHashMap.add(hashMap);
 			} else if (arrayListServerInformation.get(i).getStatus().equals("danger")) {
 				HashMap<String, String> hashMap = new HashMap<String, String>();
 				hashMap.put("id", arrayListServerInformation.get(i).getId());
 				hashMap.put("status", "danger");
-
+				
 				arrayListHashMap.add(hashMap);
 			} else {
 				HashMap<String, String> hashMap = new HashMap<String, String>();
 				hashMap.put("id", arrayListServerInformation.get(i).getId());
 				hashMap.put("status", "normal");
-
+				
 				arrayListHashMap.add(hashMap);
 			}
 		}
-
+		
 		return JSONArray.toJSONString(arrayListHashMap);
 	}
 }

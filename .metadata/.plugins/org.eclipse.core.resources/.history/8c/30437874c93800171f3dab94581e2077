@@ -161,7 +161,8 @@ h2 {
 				</tr>
 			</table>
 			<h3 id="time"></h3>
-			<span id="ip-address">${ serverInformation.ipAddress }</span> / <span id="os-name">${ serverInformation.osName }</span>
+			<span id="ip-address">${ serverInformation.ipAddress }</span> / <span
+				id="os-name">${ serverInformation.osName }</span>
 		</div>
 	</div>
 	<script src="/js/monitoring.js"></script>

@@ -1,6 +1,9 @@
 package com.monitoring.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.Locale;
 
 import org.apache.ibatis.session.SqlSession;
 import org.json.simple.JSONObject;
@@ -24,8 +27,7 @@ public class MonitoringController {
 	@RequestMapping("/monitoring/{id}")
 	public String getMonitoring(Model model, @PathVariable String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
-		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
-				.get(mapper.selectBasicInformation(id).size() - 1);
+		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 
 		model.addAttribute("basicInformation", basicInformationDto);
@@ -37,8 +39,7 @@ public class MonitoringController {
 	@ResponseBody
 	public String monitoringDetail(Model model, @RequestParam("id") String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
-		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
-				.get(mapper.selectBasicInformation(id).size() - 1);
+		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id).get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 		HashMap<String, String> hashMap = new HashMap<String, String>();
 
@@ -58,7 +59,7 @@ public class MonitoringController {
 		hashMap.put("osName", serverInformationDto.getOsName());
 		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
 		hashMap.put("hostName", serverInformationDto.getHostName());
-
+		
 		return JSONObject.toJSONString(hashMap);
 	}
 }
