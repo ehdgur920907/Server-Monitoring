@@ -19,7 +19,7 @@ public class AdminController {
 
 	@RequestMapping("/signin")
 	public String signin() {
-		return "signin";
+		return "/jsp/signin";
 	}
 
 	@RequestMapping("/signout")
@@ -37,7 +37,7 @@ public class AdminController {
 			session.setAttribute("sessionedAdmin", adminInformationDto);
 			return "redirect:/";
 		} else {
-			return "signin";
+			return "/jsp/signin";
 		}
 	}
 }

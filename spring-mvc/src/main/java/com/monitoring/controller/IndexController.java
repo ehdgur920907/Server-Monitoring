@@ -29,7 +29,7 @@ public class IndexController {
 		}
 
 		model.addAttribute("arrayListServerInformation", arrayListServerInformation);
-		return "index";
+		return "/jsp/index";
 	}
 
 	@RequestMapping("/detail")

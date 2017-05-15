@@ -1,0 +1,19 @@
+h2 {
+	text-align: center;
+	color: #5D5D5D;
+}
+
+.jumbotron {
+	margin: auto;
+	width: 700px;
+	text-align: center;
+}
+
+tr {
+	background-color: white;
+}
+
+th, td {
+	text-align: center;
+	vertical-align: middle;
+}

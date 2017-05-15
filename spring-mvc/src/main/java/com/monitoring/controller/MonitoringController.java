@@ -30,7 +30,7 @@ public class MonitoringController {
 
 		model.addAttribute("basicInformation", basicInformationDto);
 		model.addAttribute("serverInformation", serverInformationDto);
-		return "monitoring";
+		return "/jsp/monitoring";
 	}
 
 	@RequestMapping("/monitoring/detail")

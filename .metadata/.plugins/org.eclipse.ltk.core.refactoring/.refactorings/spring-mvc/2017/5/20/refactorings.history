@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;index.jsp, monitoring.jsp, signin.jsp&apos; to &apos;jsp&apos;" description="Move 3 resources to &apos;jsp&apos;" destination="src/main/webapp/WEB-INF/views/jsp" element1="src/main/webapp/WEB-INF/views/index.jsp" element2="src/main/webapp/WEB-INF/views/monitoring.jsp" element3="src/main/webapp/WEB-INF/views/signin.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="3" stamp="1494836567993" updateReferences="true"/>
+</session>
