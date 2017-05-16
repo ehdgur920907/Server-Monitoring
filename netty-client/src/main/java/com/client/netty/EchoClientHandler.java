@@ -61,10 +61,10 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 		totalJsonObject.put("basicInformation", basicInformationJsonObject);
 		totalJsonObject.put("serverInformation", serverInformationJsonObject);
 		
-		System.out.println(totalJsonObject);
 		ByteBuf messageBuffer = Unpooled.buffer();
 		messageBuffer.writeBytes(totalJsonObject.toJSONString().getBytes());
 		
+		System.out.println("netty client sended to netty server successfully.");
 		ctx.writeAndFlush(messageBuffer);
 	}
 

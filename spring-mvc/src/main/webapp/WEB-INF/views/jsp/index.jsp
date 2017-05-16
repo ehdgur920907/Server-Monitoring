@@ -84,13 +84,27 @@
 							<td>${ arrayListServerInformation.hostName }</td>
 							<td>${ arrayListServerInformation.ipAddress }</td>
 							<td>${ arrayListServerInformation.osName }</td>
-							<td></td>
+							<td>${ arrayListServerInformation.status }</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
+	<script>
+		for (var i = 0; i < $('#server-list tbody tr').length; i++) {
+			if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'danger') {
+				$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
+				$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FF0000; height: 20px; width: 20px; margin: auto;"></div>';
+			} else if ($('#server-list tbody tr td:nth-child(5)')[i].innerHTML === 'warning') {
+				$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
+				$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #FFBB00; height: 20px; width: 20px; margin: auto;"></div>';
+			} else {
+				$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = null;
+				$('#server-list tbody tr td:nth-child(5)')[i].innerHTML = '<div style="border-radius: 50% 50%; -moz-border-radius: 50% 50%; -webkit-border-radius: 50% 50%; background: #1DDB16	; height: 20px; width: 20px; margin: auto;"></div>';
+			}
+		}
+	</script>
 </body>
 
 </html>

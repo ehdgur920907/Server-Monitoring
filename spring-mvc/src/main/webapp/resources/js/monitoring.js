@@ -42,8 +42,7 @@ $(document).ready(function() {
 			},
 			success : function(res) {
 				var data = JSON.parse(res);
-				console.log(res);
-
+				console.log(data);
 				$('#total-disk').text(data.totalDisk + 'GB');
 				$('#used-disk').text(data.usedDisk + 'GB');
 				$('#free-disk').text(data.freeDisk + 'GB');
