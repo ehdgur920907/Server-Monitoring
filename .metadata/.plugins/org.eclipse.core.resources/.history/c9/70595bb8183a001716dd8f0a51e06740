@@ -38,7 +38,7 @@ public class IndexController {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 		ArrayList<HashMap<String, String>> arrayListHashMap = new ArrayList<HashMap<String, String>>();
-		
+
 		for (int i = 0; i < mapper.selectServerInformationList().size(); i++) {
 			arrayListServerInformation.add(mapper.selectServerInformationList().get(i));
 
@@ -62,6 +62,7 @@ public class IndexController {
 				arrayListHashMap.add(hashMap);
 			}
 		}
+
 		return JSONArray.toJSONString(arrayListHashMap);
 	}
 }
