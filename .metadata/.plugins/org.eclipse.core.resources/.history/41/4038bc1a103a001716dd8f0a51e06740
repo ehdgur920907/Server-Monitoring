@@ -25,7 +25,7 @@ public class MonitoringController {
 	public String getMonitoring(Model model, @PathVariable String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
-				.get(mapper.selectBasicInformation(id).size() - 2);
+				.get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 
 		model.addAttribute("basicInformation", basicInformationDto);
@@ -38,7 +38,7 @@ public class MonitoringController {
 	public String monitoringDetail(Model model, @RequestParam("id") String id) {
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
-				.get(mapper.selectBasicInformation(id).size() - 2);
+				.get(mapper.selectBasicInformation(id).size() - 1);
 		ServerInformationDto serverInformationDto = mapper.selectServerInformation(id);
 		HashMap<String, String> hashMap = new HashMap<String, String>();
 
