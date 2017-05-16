@@ -56,4 +56,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="com.monitoring.mapper.Mapper"/>
 <fullyQualifiedTypeName name="com.monitoring.dto.ServerInformationDto"/>
+<fullyQualifiedTypeName name="org.springframework.util.SystemPropertyUtils"/>
+<fullyQualifiedTypeName name="com.monitoring.dto.AdminInformationDto"/>
 </qualifiedTypeNameHistroy>

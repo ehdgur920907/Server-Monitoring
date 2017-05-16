@@ -58,7 +58,8 @@ public class MonitoringController {
 		hashMap.put("osName", serverInformationDto.getOsName());
 		hashMap.put("ipAddress", serverInformationDto.getIpAddress());
 		hashMap.put("hostName", serverInformationDto.getHostName());
-
+		
+		System.out.println(JSONObject.toJSONString(hashMap));
 		return JSONObject.toJSONString(hashMap);
 	}
 }

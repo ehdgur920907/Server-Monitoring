@@ -25,7 +25,7 @@ public class EchoClient implements Job {
 					p.addLast(new EchoClientHandler());
 				}
 			});
-			ChannelFuture f = b.connect("192.168.53.159", 8891).sync();
+			ChannelFuture f = b.connect("192.168.53.170", 8891).sync();
 			f.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
