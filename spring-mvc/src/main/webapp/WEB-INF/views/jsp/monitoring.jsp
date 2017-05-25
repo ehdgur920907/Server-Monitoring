@@ -21,6 +21,7 @@
 
 <link href="<c:url value="/resources/css/monitoring.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/monitoring.js" />"></script>
+
 <title>monitoring</title>
 </head>
 

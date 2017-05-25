@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.monitoring.dto.MemoryUsedInformationDto.java&apos; to &apos;UsedInformationDto.java&apos;&#x0A;- Original project: &apos;spring-mvc&apos;&#x0A;- Original element: &apos;com.monitoring.dto.MemoryUsedInformationDto.java&apos;&#x0A;- Renamed element: &apos;com.monitoring.dto.UsedInformationDto.java&apos;" description="Rename compilation unit &apos;MemoryUsedInformationDto.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.monitoring.dto{MemoryUsedInformationDto.java" name="UsedInformationDto.java" references="false" stamp="1495522905119" version="1.0"/>
+</session>

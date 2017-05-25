@@ -1,0 +1,26 @@
+package com.monitoring.dto;
+
+public class UsedInformationDto {
+	public String usedMemory;
+	public String usedCpu;
+	public String usedDisk;
+	
+	public String getUsedMemory() {
+		return usedMemory;
+	}
+	public void setUsedMemory(String usedMemory) {
+		this.usedMemory = usedMemory;
+	}
+	public String getUsedCpu() {
+		return usedCpu;
+	}
+	public void setUsedCpu(String usedCpu) {
+		this.usedCpu = usedCpu;
+	}
+	public String getUsedDisk() {
+		return usedDisk;
+	}
+	public void setUsedDisk(String usedDisk) {
+		this.usedDisk = usedDisk;
+	}	
+}

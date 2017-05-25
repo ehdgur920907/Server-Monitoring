@@ -1,0 +1,5 @@
+package com.monitoring.dto;
+
+public class MemoryUsedInformationDto {
+	public d
+}

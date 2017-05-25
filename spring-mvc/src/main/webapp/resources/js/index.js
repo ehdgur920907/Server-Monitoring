@@ -40,7 +40,7 @@ $(document)
 											url : '/detail',
 											success : function(res) {
 												var data = JSON.parse(res);
-												console.log(res);
+												console.log(data);
 
 												for (var i = 0; i < $('#server-list tbody tr').length; i++) {
 													for (var j = 0; j < data.length; j++) {
