@@ -36,7 +36,6 @@ public class MonitoringController {
 	@RequestMapping("/monitoring/detail")
 	@ResponseBody
 	public String monitoringDetail(Model model, @RequestParam("id") String id) {
-		System.out.println("AJAX Request");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		BasicInformationDto basicInformationDto = mapper.selectBasicInformation(id)
 				.get(mapper.selectBasicInformation(id).size() - 2);

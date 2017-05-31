@@ -35,7 +35,6 @@ public class IndexController {
 	@RequestMapping("/detail")
 	@ResponseBody
 	public String detail(Model model) {
-		System.out.println("AJAX Request");
 		Mapper mapper = sqlSession.getMapper(Mapper.class);
 		ArrayList<ServerInformationDto> arrayListServerInformation = new ArrayList<ServerInformationDto>();
 		ArrayList<HashMap<String, String>> arrayListHashMap = new ArrayList<HashMap<String, String>>();
