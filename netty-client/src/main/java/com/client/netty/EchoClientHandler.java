@@ -37,9 +37,9 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 			serverInformationJsonObject.put("status", "warning");
 		} else if (Double.parseDouble(basicInformation.getFreeDisk()) < 30.00) {
 			serverInformationJsonObject.put("status", "danger");
-		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 30.00 && Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) > 15.00) {
+		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 20.00 && Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) > 5.00) {
 			serverInformationJsonObject.put("status", "warning");
-		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 15.00) {
+		} else if (Double.parseDouble(basicInformation.getIdleCpu().replace("%", "")) < 5.00) {
 			serverInformationJsonObject.put("status", "danger");
 		} else {
 			serverInformationJsonObject.put("status", "normal");

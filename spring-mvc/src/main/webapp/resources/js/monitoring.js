@@ -42,7 +42,7 @@ $(document).ready(function() {
 			},
 			success : function(res) {
 				var data = JSON.parse(res);
-				console.log(data);
+				
 				$('#total-disk').text(data.totalDisk + 'GB');
 				$('#used-disk').text(data.usedDisk + 'GB');
 				$('#free-disk').text(data.freeDisk + 'GB');
@@ -64,5 +64,5 @@ $(document).ready(function() {
 				console.log('cannot receive status model.');
 			}
 		});
-	}, 1000);
+	}, 2000);
 });

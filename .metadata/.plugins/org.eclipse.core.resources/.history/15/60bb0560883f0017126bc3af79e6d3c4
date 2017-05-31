@@ -1,7 +1,0 @@
-package com.monitoring.controller;
-
-import com.monitoring.mapper.Mapper;
-
-public class UsedController {
-
-}
