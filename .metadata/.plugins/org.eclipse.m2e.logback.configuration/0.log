@@ -10611,3 +10611,5 @@ java.lang.NullPointerException: null
 2017-05-31 15:44:29,254 [Worker-422] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
 2017-05-31 15:44:49,100 [Worker-422] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-05-31 15:44:49,102 [Worker-422] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2017-06-01 11:42:57,156 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-01 11:42:57,182 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
