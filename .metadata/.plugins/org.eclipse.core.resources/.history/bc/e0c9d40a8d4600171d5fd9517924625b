@@ -34,7 +34,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 			</ul>
-			<%-- <c:choose>
+			<c:choose>
 				<c:when test="${sessionedAdmin == null }">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/signin">signin</a></li>
@@ -45,7 +45,7 @@
 						<li><a href="/signout">signout</a></li>
 					</ul>
 				</c:when>
-			</c:choose> --%>
+			</c:choose>
 		</div>
 
 	</div>
