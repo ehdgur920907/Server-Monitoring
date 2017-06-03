@@ -50,20 +50,20 @@
 
 	</div>
 	</nav>
-	<h1>server list</h1>
-	<br />
+	<h2>server list</h2>
+	<hr />
 	<div class="jumbotron">
 		<div class="container">
 			<h4><div id="time"></div></h4>
 			<br />
-			<c:choose>
+			<%-- <c:choose>
 				<c:when test="${sessionedAdmin == null }">
 				</c:when>
 				<c:when test="${sessionedAdmin != null }">
 					<a href="/add" class="btn btn-primary pull-right" role="button">add</a>
 					<hr />
 				</c:when>
-			</c:choose>
+			</c:choose> --%>
 			<table id="server-list"
 				class="table table-hover table-striped table-bordered">
 				<thead>

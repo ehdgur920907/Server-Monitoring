@@ -7,8 +7,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
-<script src="/liquidFillGauge.js" language="JavaScript"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -20,21 +18,32 @@
 </style>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/disk.js" />"></script>
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+	src="<c:url value="/resources/js/liquidFillGauge.js" language="JavaScript" />"></script>
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
-<link href="<c:url value=" /resources/css/monitoring.css" />"
-	rel="stylesheet">
-<script src="<c:url value=" /resources/js/monitoring.js" />"></script>
+	src="<c:url value="http://d3js.org/d3.v3.min.js" language="JavaScript" />"></script>
+<script
+	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
+<script
+	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" />"></script>
+<script
+	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
 </head>
+
 <body>
 	<div class="big-chart-div">
-		<h1 style="margin-left: 650px; color: white;" class="big-chart-title">DISK</h1>
+		<h1 class="big-chart-title">DISK</h1>
 		<div class="big-chart-container">
-			<canvas id="diskChartLine" class="big-chart" width="100" height="100"></canvas>
+			<h1 style="text-align: center">used disk</h1>
+			<svg id="fillgauge1" width="500px" height="500"
+				onclick="gauge1.update(NewValue());"></svg>
 		</div>
+		<h3 id="time" style="text-align: center"></h3>
 	</div>
 </body>
-<script src="<c:url value="/resources/js/disk.js" /"></script>
+<script src="./resources/js/disk.js"></script>
+
+
 </html>

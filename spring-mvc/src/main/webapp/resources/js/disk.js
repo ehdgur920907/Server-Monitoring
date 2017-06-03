@@ -1,3 +1,9 @@
+function realtimeClock() {
+    $('#time').text(getTimeStamp());
+    setTimeout("realtimeClock()", 1000);
+}
+realtimeClock();
+
 function getTimeStamp() {
     var d = new Date();
 
@@ -27,20 +33,6 @@ function leadingZeros(n, digits) {
 var url = location.href;
 var id = url.substring(url.lastIndexOf('/') + 1);
 
-window.chartColors = {
-    blue: "rgb(54, 162, 235)",
-    green: "rgb(75, 192, 192)",
-    grey: "rgb(201, 203, 207)",
-    orange: "rgb(255, 159, 64)",
-    purple: "rgb(153, 102, 255)",
-    red: "rgb(255, 99, 132)",
-    yellow: "rgb(255, 205, 86)"
-};
-
-var randomScalingFactor = function() {
-    return Math.round(Math.random() * 100);
-};
-
 function getRandomData() {
     return {
         totalDisk: Math.round(Math.random() * 100),
@@ -57,72 +49,22 @@ function getRandomData() {
     }
 }
 
-var ctx;
-var diskChart;
-var config = {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            label: "usedDisk",
-            backgroundColor: window.chartColors.red,
-            borderColor: window.chartColors.red,
-            data: [],
-            fill: false,
-        }, {
-            label: "freeDisk",
-            fill: false,
-            backgroundColor: window.chartColors.blue,
-            borderColor: window.chartColors.blue,
-            data: [],
-        }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'DISK chart'
-        },
-        tooltips: {
-            mode: 'index',
-            intersect: false,
-        },
-        hover: {
-            mode: 'nearest',
-            intersect: true
-        },
-        scales: {
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Time'
-                }
-            }],
-            yAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Value'
-                }
-            }]
-        }
-    }
-};
+
+var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
+var config1 = liquidFillGaugeDefaultSettings();
+config1.circleColor = "#FF7777";
+config1.textColor = "#FF4444";
+config1.waveTextColor = "#FFAAAA";
+config1.waveColor = "#FFDDDD";
+config1.circleThickness = 0.2;
+config1.textVertPosition = 0.2;
+config1.waveAnimateTime = 1000;
 
 function diskUpdate(data) {
-    config.data.labels.push(getTimeStamp());
-
-    config.data.datasets[0].data.push(data.usedDisk);
-    config.data.datasets[1].data.push(data.freeDisk);
-
-    window.diskChart.update();
+    gauge1.update(data.usedDisk);
 }
 
 $(document).ready(function() {
-    ctx = document.getElementById("diskChartLine").getContext("2d");
-
-    diskChart = new Chart(ctx, config);
     setInterval(function() {
         $.ajax({
             type: 'GET',
@@ -140,6 +82,7 @@ $(document).ready(function() {
             },
             error: function(err) {
                 console.log('cannot receive status model.');
+                diskUpdate(getRandomData());
             }
         });
     }, 2000);

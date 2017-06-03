@@ -1,7 +1,5 @@
 package com.monitoring.controller;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,11 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class DetailController {
-	@Autowired
-	private SqlSession sqlSession;
-	
 	@RequestMapping("/monitoring/memory/{id}")
-	public String getMonitoring(Model model, @PathVariable String id) {
+	public String getMemory(Model model, @PathVariable String id) {
 		return "/jsp/memory";
+	}
+	
+	@RequestMapping("/monitoring/cpu/bar/{id}")
+	public String getCpuBar(Model model, @PathVariable String id) {
+		return "/jsp/cpu_bar";
+	}
+	
+	@RequestMapping("/monitoring/cpu/wave/{id}")
+	public String getCpuWave(Model model, @PathVariable String id) {
+		return "/jsp/cpu_wave";
+	}
+	
+	@RequestMapping("/monitoring/disk/{id}")
+	public String getDisk(Model model, @PathVariable String id) {
+		return "/jsp/disk";
 	}
 }

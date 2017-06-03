@@ -33,7 +33,7 @@
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
 <script
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" />"></script>
-<title>monitoring</title>
+<title>memory</title>
 </head>
 <meta charset="utf-8">
 
@@ -48,7 +48,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 			</ul>
-			<c:choose>
+			<%-- <c:choose>
 				<c:when test="${sessionedAdmin == null }">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/signin">signin</a></li>
@@ -59,12 +59,15 @@
 						<li><a href="/signout">signout</a></li>
 					</ul>
 				</c:when>
-			</c:choose>
+			</c:choose> --%>
 		</div>
 	</div>
 
 	</nav>
-	<h1>memory</h1>
-	<canvas id="memoryChartLine" class="big-chart" width="100" height="100"></canvas>
+	<div class="container">
+		<h1>memory chart</h1>
+		<h3 id="time" style="text-align: center;"></h3>
+		<canvas id="memoryChartLine" class="big-chart" width="100" height="100"></canvas>
+	</div>
 </body>
 </html>
