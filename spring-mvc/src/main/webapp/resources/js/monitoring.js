@@ -83,19 +83,20 @@ cpuChart.config = {
         datasets: [{
             data: [
                 getRandomData().userCpu,
-                getRandomData().idleCpu,
-                getRandomData().systemCpu
+                getRandomData().systemCpu,
+                getRandomData().idleCpu
             ],
             backgroundColor: [
                 window.chartColors.red,
-                window.chartColors.orange
+                window.chartColors.blue,
+                window.chartColors.grey
             ],
             label: 'cpu'
         }],
         labels: [
             "user cpu",
-            "idle cpu",
-            "system cpu"
+            "system cpu",
+            "idle cpu"
         ]
     },
     options: {
@@ -127,7 +128,7 @@ memoryChart.config = {
             ],
             backgroundColor: [
                 window.chartColors.red,
-                window.chartColors.orange
+                window.chartColors.grey
             ],
             label: 'memory'
         }],
@@ -157,8 +158,6 @@ memoryChart.config = {
 memoryChart.update = function(data) {
     this.config.data.datasets[0].data[0] = data.usedMemory;
     this.config.data.datasets[0].data[1] = data.freeMemory;
-
-    console.log("fuck");
     this.chart.update();
 }
 
@@ -173,7 +172,7 @@ diskChart.config = {
             ],
             backgroundColor: [
                 window.chartColors.red,
-                window.chartColors.orange
+                window.chartColors.grey
             ],
             label: 'disk'
         }],

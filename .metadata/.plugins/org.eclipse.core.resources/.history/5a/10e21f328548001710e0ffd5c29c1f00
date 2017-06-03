@@ -128,7 +128,7 @@ memoryChart.config = {
             ],
             backgroundColor: [
                 window.chartColors.red,
-                window.chartColors.grey
+                window.chartColors.orange
             ],
             label: 'memory'
         }],
@@ -158,6 +158,8 @@ memoryChart.config = {
 memoryChart.update = function(data) {
     this.config.data.datasets[0].data[0] = data.usedMemory;
     this.config.data.datasets[0].data[1] = data.freeMemory;
+
+    console.log("fuck");
     this.chart.update();
 }
 
@@ -172,7 +174,7 @@ diskChart.config = {
             ],
             backgroundColor: [
                 window.chartColors.red,
-                window.chartColors.grey
+                window.chartColors.orange
             ],
             label: 'disk'
         }],
