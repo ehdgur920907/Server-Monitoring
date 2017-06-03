@@ -1,0 +1,15 @@
+package kr.or.connect.todo.service.persistence;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsertOperations;
+
+public class TodoDao {
+	DataSource dataSource;
+	NamedParameterJdbcOperations jdbc = new NamedParameterJdbcTemplate(dataSource);
+	SimpleJdbcInsertOperations insert = new SimpleJdbcInsert(dataSource).withTableName("todos").usingGeneratedKeyColumns("id");
+	
+}

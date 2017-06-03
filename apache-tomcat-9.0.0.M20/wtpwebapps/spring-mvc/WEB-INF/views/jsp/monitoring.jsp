@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <script src="liquidFillGauge.js" language="JavaScript"></script> -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -19,11 +19,23 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<link href="<c:url value="/resources/css/monitoring.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/monitoring.js" />"></script>
+<style>
+.liquidFillGaugeText {
+	font-family: Helvetica;
+	font-weight: bold;
+}
+</style>
 
+<link href="<c:url value="/resources/css/monitoring.css" />"
+	rel="stylesheet">
+<script src="<c:url value="/resources/js/monitoring.js" />"></script>
+<script
+	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
+<script
+	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" />"></script>
 <title>monitoring</title>
 </head>
+<meta charset="utf-8">
 
 <body onload="realtimeClock()">
 	<nav class="navbar navbar-default">
@@ -36,7 +48,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 			</ul>
-			<%-- <c:choose>
+			<c:choose>
 				<c:when test="${sessionedAdmin == null }">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/signin">signin</a></li>
@@ -47,7 +59,7 @@
 						<li><a href="/signout">signout</a></li>
 					</ul>
 				</c:when>
-			</c:choose> --%>
+			</c:choose>
 		</div>
 	</div>
 
@@ -58,83 +70,36 @@
 	<hr />
 	<div class="jumbotron">
 		<div class="container">
-			<a href="/" class="btn btn-default pull-left" role="button">list</a>
-			<hr style="color: black;">
-
-			<table class="table table-striped table-bordered">
-				<tr>
-					<th
-						style="text-align: center; vertical-align: middle; font-size: 3rem;">disk</th>
-					<th
-						style="text-align: center; vertical-align: middle; font-size: 3rem;">memory</th>
-					<th
-						style="text-align: center; vertical-align: middle; font-size: 3rem;">cpu</th>
-				</tr>
-				<tr>
-					<td>
-						<table class="table table-striped table-bordered"
-							style="width: 200px; margin: auto;">
-							<tr>
-								<th>total disk</th>
-								<td id="total-disk">${ basicInformation.totalDisk }GB</td>
-							</tr>
-							<tr>
-								<th>used disk</th>
-								<td id="used-disk">${ basicInformation.usedDisk }GB</td>
-							</tr>
-							<tr>
-								<th>free disk</th>
-								<td id="free-disk">${ basicInformation.freeDisk }GB</td>
-							</tr>
-							<tr>
-							</tr>
-						</table>
-					</td>
-					<td>
-						<table class="table table-striped table-bordered"
-							style="width: 200px; margin: auto;">
-							<tr>
-								<th>total memory</th>
-								<td id="total-memory">${ basicInformation.totalMemory }GB</td>
-							</tr>
-							<tr>
-								<th>used memory</th>
-								<td id="used-memory">${ basicInformation.usedMemory }GB</td>
-							</tr>
-							<tr>
-								<th>free memory</th>
-								<td id="free-memory">${ basicInformation.freeMemory }GB</td>
-							</tr>
-							<tr></tr>
-						</table>
-					</td>
-					<td>
-						<table class="table table-striped table-bordered"
-							style="width: 200px; margin: auto;">
-							<tr>
-								<th>total cpu</th>
-								<td id="total-cpu">${ basicInformation.totalCpu }</td>
-							</tr>
-							<tr>
-								<th>user cpu</th>
-								<td id="user-cpu">${ basicInformation.userCpu }</td>
-							</tr>
-							<tr>
-								<th>system cpu</th>
-								<td id="system-cpu">${ basicInformation.systemCpu }</td>
-							</tr>
-							<tr>
-								<th>idle cpu</th>
-								<td id="idle-cpu">${ basicInformation.idleCpu }</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			<h3 id="time"></h3>
-			<span id="ip-address">${ serverInformation.ipAddress }</span> / <span id="os-name">${ serverInformation.osName }</span>
+			<div>
+				<a href="/" class="btn btn-default pull-left" role="button">list</a>
+				<hr style="color: black;">
+				<div id="grf"></div>
+				<table class="table table-striped table-bordered">
+					<tr>
+						<th
+							style="text-align: center; vertical-align: middle; font-size: 3rem; cursor: pointer;"
+							onclick="location.href='/monitoring/disk/${ serverInformation.id }'">disk</th>
+						<th
+							style="text-align: center; vertical-align: middle; font-size: 3rem; cursor: pointer;"
+							onclick="location.href='/monitoring/memory/${ serverInformation.id }'">memory</th>
+						<th
+							style="text-align: center; vertical-align: middle; font-size: 3rem; cursor: pointer;"
+							onclick="location.href='/monitoring/cpu/${ serverInformation.id }'">cpu</th>
+					</tr>
+					<tr>
+						<td><canvas id="diskChartDoughnut" width="100" height="100"></canvas>
+						</td>
+						<td><canvas id="memoryChartDoughnut" width="100" height="100"></canvas>
+						</td>
+						<td><canvas id="cpuChartDoughnut" width="100" height="100"></canvas>
+						</td>
+					</tr>
+				</table>
+				<h3 id="time"></h3>
+				<span id="ip-address">${ serverInformation.ipAddress }</span> <span
+					id="os-name">${ serverInformation.osName }</span>
+			</div>
 		</div>
 	</div>
 </body>
-
 </html>

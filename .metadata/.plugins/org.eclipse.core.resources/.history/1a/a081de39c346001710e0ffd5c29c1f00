@@ -1,0 +1,45 @@
+package kr.or.connect.todo.api;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import kr.or.connect.todo.service.Todo;
+import kr.or.connect.todo.service.TodoService;
+
+@Controller
+public class TodoController {
+	private TodoService todoService;
+	
+	@GetMapping("/")
+	public String getIndex() {
+		return "here";
+	}
+	
+	@PostMapping("/post")
+	@ResponseBody
+	public void post(@RequestParam("data") String data, @RequestParam("status") String status) {
+		System.out.println(data);
+		Todo tempTodo = new Todo();
+		tempTodo.setData(data);
+		tempTodo.setStatus(status);
+		
+		System.out.println(tempTodo);
+		
+		todoService.insert(tempTodo);
+	}
+	
+	@DeleteMapping("/api/todos")
+	public String delete() {
+		return null;
+	}
+	
+	@PutMapping("/api/todos")
+	public String put() {
+		return null;
+	}
+}

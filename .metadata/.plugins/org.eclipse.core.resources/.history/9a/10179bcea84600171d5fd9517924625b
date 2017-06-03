@@ -1,0 +1,2 @@
+CREATE TABLE todos(id INT(11) NOT NULL AUTO_INCREMENT, todo VARCHAR(50), status VARCHAR(20));
+INSERT INTO todos(todo, status) VALUES('coding', 'active');

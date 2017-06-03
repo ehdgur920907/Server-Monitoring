@@ -1,0 +1,38 @@
+package kr.or.connect.todo.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Todo {
+	@Id
+	@GeneratedValue
+	public Long id;
+	
+	@Column(nullable=false, length=200)
+	public String todo;
+	
+	@Column(nullable=false, length=50)
+	public String status;
+	
+	public Todo(String todo, String status) {
+		super();
+		this.todo = todo;
+		this.status = status;
+	}
+	
+	public String getTodo() {
+		return todo;
+	}
+	public void setTodo(String todo) {
+		this.todo = todo;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+}

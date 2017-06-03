@@ -1,0 +1,33 @@
+package kr.or.connect.todo.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.connect.todo.service.persistence.TodoDao;
+
+@Service
+public class TodoService {
+	private TodoDao todoDao;
+	
+	public boolean delete(String id) {
+		int affected = todoDao.delete(id);
+		return affected == 1;
+	}
+	
+	public int insert(Todo todo) {
+		return todoDao.insert(todo);
+	}
+	
+	public List<Todo> selectAll() {
+		return todoDao.selectAll();
+	}
+	
+	public List<Todo> selectAllActive() {
+		return todoDao.selectAllAcitve();
+	}
+	
+	public List<Todo> selectAllCompleted() {
+		return todoDao.selectAllCompleted();
+	}
+}

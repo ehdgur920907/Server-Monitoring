@@ -1,0 +1,22 @@
+package kr.or.connect.todo.service.persistence;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+
+import kr.or.connect.todo.service.Todo;
+
+public class TodoDao {
+	DataSource dataSource;
+	private NamedParameterJdbcTemplate jdbc = new NamedParameterJdbcTemplate(dataSource);
+	private SimpleJdbcInsert insert = new SimpleJdbcInsert(dataSource).withTableName("todos").usingGeneratedKeyColumns("id");
+
+	public Integer insert(Todo todo) {
+		System.out.println("i am dao.");
+		SqlParameterSource params = new BeanPropertySqlParameterSource(todo);
+		return insert.executeAndReturnKey(params).intValue();
+	}
+}

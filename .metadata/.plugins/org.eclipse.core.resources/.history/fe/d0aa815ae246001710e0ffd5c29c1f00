@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>todo</title>
+</head>
+<body>
+	<input type="form" id="input-form">
+	<button id="add-button">add</button>
+	
+	<div id="todo-list-form">
+		<ul></ul>
+	</div>
+	<div id="must"></div>
+	<div id="style-choice">
+		<button id="all-button">ALL</button>
+		<button id="active-button">Active</button>
+		<button id="completed-button">Completed</button>
+	</div>
+</body>
+<script>
+	
+	$('#add-button').click(function() {
+		if ($('#input-form').val().length === 0) {
+			alert('input your todo.');
+		} else {
+			$.ajax({
+				type: 'POST',
+				url: '/api/todos/post',
+				data: {
+					"data": $('#input-form').val(),
+					"status": "active"
+				},
+				success: function(res) {
+					var data = JSON.parse(res);
+					$('#todo-list-form ul').prepend('<li class="active todo">' + data.todo + '</li>');
+					$('#input-form').val('');
+				},
+				error: function(err) {
+					conosole.log(err);
+				}
+			});
+		}
+	});
+	
+	$('#todo-list-form ul').on('mouseenter', '.todo', function() {
+		$(this).prepend('<button id="complete-button">O</button>');
+		$(this).append('<button id="delete-button">X</button>');
+	});
+
+	$('#todo-list-form ul').on('mouseleave', '.todo', function() {
+		$(this).find('button').remove();
+	});
+	
+	$('#todo-list-form ul').on('click', '#complete-button', function() {
+		$(this).closest('li').eq(0).css('text-decoration', 'line-through');
+		$(this).closest('li').eq(0).attr('class', 'completed todo');
+	});
+
+	$('#todo-list-form ul').on('mouseleave', '.todo', function() {
+		$(this).find('button').remove();
+	});
+
+	
+	
+	$('#todo-list-form ul').on('click', '#complete-button', function() {
+		$.ajax({
+			type: 'PUT',
+			url: '/api/todos/put',
+			data: {
+				"data": 
+				"status": "completed"
+			},
+			success: function(res) {
+				$(this).closest('li').eq(0).css('text-decoration', 'line-through');
+				$(this).closest('li').eq(0).attr('class', 'completed todo');
+			},
+			error: function(err) {
+				conosole.log(err);
+			}
+		});
+	});
+
+	$('#todo-list-form ul').on('click', '#delete-button', function() {
+		$.ajax({
+			type: 'DELETE',
+			url: '/api/todos/delete',
+			data: {
+				"data": $('#input-form').val(),
+				"status": "active"
+			},
+			success: function(res) {
+				var data = JSON.parse(res);
+				$(this).closest('li')[0].remove();
+			},
+			error: function(err) {
+				conosole.log(err);
+			}
+		});
+	});
+
+	
+	
+	
+	
+	
+	
+	$('#completed-button').click(function() {
+		$.ajax({
+			type: 'GET',
+			url: '/api/todos/completed',
+			success: function(res) {
+				var data = JSON.parse(res);
+				if (data.length === 0) {
+					alert('there is no completed todo.');
+				} else {
+					for (var i = 0; data.length; i++) {
+						$('#todo-list-form ul').prepend('<li class="complete todo">' + data[i].todo + '</li>');
+					}
+				}
+			},
+			error: function(err) {
+				conosole.log(err);
+			}
+		});
+	});
+
+	$('#active-button').click(function() {
+		$.ajax({
+			type: 'GET',
+			url: '/api/todos/active',
+			success: function(res) {
+				var data = JSON.parse(res);
+				if (data.length === 0) {
+					alert('there is no active todo.');
+				} else {
+					for (var i = 0; data.length; i++) {
+						$('#todo-list-form ul').prepend('<li class="complete todo">' + data[i].todo + '</li>');
+					}
+				}
+			},
+			error: function(err) {
+				conosole.log(err);
+			}
+		});
+	});
+
+	$('#all-button').click(function() {
+		$.ajax({
+			type: 'GET',
+			url: '/api/todos/all',
+			success: function(res) {
+				var data = JSON.parse(res);
+				if (data.length === 0) {
+					alert('there is no todos.');
+				} else {
+					for (var i = 0; data.length; i++) {
+						$('#todo-list-form ul').prepend('<li class="complete todo">' + data[i].todo + '</li>');
+					}
+				}
+			},
+			error: function(err) {
+				conosole.log(err);
+			}
+		});
+	});
+</script>
+</html>

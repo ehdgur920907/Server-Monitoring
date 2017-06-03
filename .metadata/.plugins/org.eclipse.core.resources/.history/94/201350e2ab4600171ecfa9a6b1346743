@@ -1,0 +1,31 @@
+package kr.or.connect.todo.service.persistence;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsertOperations;
+
+import kr.or.connect.todo.service.Todo;
+
+public class TodoDao {
+	DataSource dataSource;
+	NamedParameterJdbcOperations jdbc = new NamedParameterJdbcTemplate(dataSource);
+	SimpleJdbcInsertOperations insert = new SimpleJdbcInsert(dataSource).withTableName("todos").usingGeneratedKeyColumns("id");
+	
+	
+	public ArrayList<Todo> selectAllTodos() {
+		Map<String, Object> params = Collections.emptyMap();
+		return jdbc.query
+	}
+	
+	public int delete (String id) {
+		Map<String, ?> params = Collections.singletonMap("id", id);
+		return jdbc.update(TodoSqls.DELETE, params);
+	}
+}

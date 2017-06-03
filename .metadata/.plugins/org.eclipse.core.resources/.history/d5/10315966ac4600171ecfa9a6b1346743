@@ -1,0 +1,20 @@
+package kr.or.connect.todo.service.persistence;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import kr.or.connect.todo.service.Todo;
+
+@Test
+public class TodoDaoTest {
+	private TodoDao todoDao;
+	public void testSelectAll() {
+		List<Todo> allTodos = todoDao.selectAllTodos();
+		assertThat(allTodos, is(notNullValue()));
+	}
+}

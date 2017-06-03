@@ -1,0 +1,17 @@
+package kr.or.connect.todo.service;
+
+public class Todo {
+	private String todo;
+	private String status;
+	
+	public Todo(String todo, String status) {
+		super();
+		this.todo = todo;
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Todo [todo=" + todo + ", status=" + status + "]";
+	}
+}

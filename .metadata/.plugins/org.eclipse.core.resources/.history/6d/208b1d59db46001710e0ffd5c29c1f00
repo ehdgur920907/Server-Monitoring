@@ -1,0 +1,17 @@
+package kr.or.connect.todo.service;
+
+import org.springframework.stereotype.Service;
+
+import kr.or.connect.todo.service.persistence.TodoDao;
+
+@Service
+public class TodoService {
+	TodoDao todoDao;
+
+	public Todo insert(Todo todo) {
+		System.out.println("i am service.");
+		int id = todoDao.insert(todo);
+		todo.setId(id);
+		return todo;
+	}
+}

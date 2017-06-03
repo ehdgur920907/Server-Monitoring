@@ -1,0 +1,34 @@
+package kr.or.connect.todo.api;
+
+import javax.sql.DataSource;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import kr.or.connect.todo.service.Todo;
+import kr.or.connect.todo.service.TodoService;
+import kr.or.connect.todo.service.persistence.TodoDao;
+
+@RestController
+@RequestMapping("/api/todos")
+public class TodoController {
+	DataSource dataSource;
+	TodoService todoService = new TodoService();
+	TodoDao todoDao = new TodoDao();
+	@PostMapping("/post")
+	@ResponseBody
+	public void post(@RequestParam("data") String data, @RequestParam("status") String status) {
+		System.out.println(data);
+		System.out.println(status);
+		
+		Todo tempTodo = new Todo();
+		
+		tempTodo.setData(data);
+		tempTodo.setStatus(status);
+		todoDao.setTodoDao(dataSource);
+		todoDao.insert(tempTodo);
+	}
+}
