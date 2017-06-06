@@ -25,7 +25,7 @@
 
 # 2) 사용 기술
 <br>
-네티, 스프링, AJAX, JSON, 각종 자바 API, JSP, MyBatis, MySQL, jQuery, HTML, CSS 등
+네티, 스프링, AJAX, JSON, 자바 API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, D3.js, Chart.js
 <br>
 <br>
 
