@@ -254,7 +254,7 @@ $(document).ready(function() {
                 memoryChart.update(getRandomData());
             }
         });
-    }, 3000);
+    }, 2000);
 
 
 

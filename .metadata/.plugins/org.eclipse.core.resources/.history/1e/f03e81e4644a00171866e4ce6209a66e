@@ -52,9 +52,9 @@ function getRandomData() {
         usedDisk: Math.round(Math.random() * 100),
         freeDisk: Math.round(Math.random() * 100),
         totalDisk: Math.round(Math.random() * 100),
-        usedMemory: Math.round(Math.random() * 100),
-        freeMemory: Math.round(Math.random() * 100),
-        usedMemory: Math.round(Math.random() * 100),
+        usedMemory: Math.round(Math.random() * 16),
+        freeMemory: Math.round(Math.random() * 16),
+        usedMemory: Math.round(Math.random() * 16),
         totalCpu: Math.round(Math.random() * 100),
         userCpu: Math.round(Math.random() * 100),
         systemCpu: Math.round(Math.random() * 100),
@@ -69,15 +69,10 @@ var config = {
     data: {
         labels: [],
         datasets: [{
-            label: "user cpu",
-            backgroundColor: 'rgba(255,201,201,0.5)',
+            lineTension: 0,
+            label: "used memory",
+            backgroundColor: 'rgba(0,0,0,0)',
             borderColor: window.chartColors.red,
-            data: [],
-            fill: true
-        }, {
-            label: "system cpu",
-            backgroundColor: 'rgba(232,247,255, 0.5)',
-            borderColor: window.chartColors.blue,
             data: [],
             fill: true
         }]
@@ -98,8 +93,7 @@ var config = {
             }],
             yAxes: [{
                 ticks: {
-                    min: 0,
-                    max: 100
+                    beginAtZero: true
                 },
                 display: true
             }]
@@ -116,8 +110,7 @@ function memoryUpdate(data) {
     }
     config.data.labels.push(getTimeStamp()); // 이곳에 시간을 넣어주시면 됩니다.
 
-    config.data.datasets[0].data.push(data.userCpu);
-    config.data.datasets[1].data.push(data.systemCpu);
+    config.data.datasets[0].data.push(data.usedMemory);
 
     window.memoryChart.update();
 }
@@ -126,6 +119,7 @@ $(document).ready(function() {
     ctx = document.getElementById("memoryChartLine").getContext("2d");
 
     memoryChart = new Chart(ctx, config);
+    memoryUpdate({usedMemory: 4});
     setInterval(function() {
         $.ajax({
             type: 'GET',
@@ -135,8 +129,6 @@ $(document).ready(function() {
             },
             success: function(res) {
                 var data = JSON.parse(res);
-                data.userCpu = data.userCpu.slice(0,-1);
-                data.systemCpu = data.systemCpu.slice(0,-1);
                 memoryUpdate(data);
             },
             error: function(err) {
@@ -145,5 +137,5 @@ $(document).ready(function() {
 
             }
         });
-    }, 3000);
+    }, 2000);
 });

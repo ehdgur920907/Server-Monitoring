@@ -237,5 +237,59 @@ $(document).ready(function() {
                 cpuUpdate(getRandomData());
             }
         });
-    }, 3000);
+    }, 5000);
 });
+
+
+
+// var config = {
+//     type: 'line',
+//     data: {
+//         labels: [],
+//         datasets: [{
+//             label: "totalCpu",
+//             backgroundColor: window.chartColors.red,
+//             borderColor: window.chartColors.red,
+//             data: [],
+//             fill: false,
+//         }, {
+//             label: "userCpu",
+//             fill: false,
+//             backgroundColor: window.chartColors.blue,
+//             borderColor: window.chartColors.blue,
+//             data: [],
+//         }]
+//     },
+//     options: {
+//         responsive: true,
+//         maintainAspectRatio: true,
+//         title: {
+//             display: true,
+//             text: 'CPU chart'
+//         },
+//         tooltips: {
+//             mode: 'index',
+//             intersect: false,
+//         },
+//         hover: {
+//             mode: 'nearest',
+//             intersect: true
+//         },
+//         scales: {
+//             xAxes: [{
+//                 display: true,
+//                 scaleLabel: {
+//                     display: true,
+//                     labelString: 'Time'
+//                 }
+//             }],
+//             yAxes: [{
+//                 display: true,
+//                 scaleLabel: {
+//                     display: true,
+//                     labelString: 'Value'
+//                 }
+//             }]
+//         }
+//     }
+// };
