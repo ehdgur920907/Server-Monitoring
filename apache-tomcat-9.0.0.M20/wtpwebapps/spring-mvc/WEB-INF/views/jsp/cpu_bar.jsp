@@ -27,7 +27,7 @@
 </style>
 
 <link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/cpu_bar.js" />"></script>
+<script src="<c:url value="/resources/js/cpu_bar.js?ver=1" />"></script>
 <script
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
 <script

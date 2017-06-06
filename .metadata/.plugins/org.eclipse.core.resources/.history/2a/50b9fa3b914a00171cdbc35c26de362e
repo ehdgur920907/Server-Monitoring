@@ -19,11 +19,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/memory.js" />"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-<link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/cpu_wave.js?ver=1" />"></script>
 <script
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
 <script
@@ -60,8 +59,7 @@
 
 	</nav>
 	<div class="container">
-		<h1 class="big-chart-title" style="text-align: center;">cpu
-			wave</h1>
+		<h1 class="big-chart-title" style="text-align: center;">memory broken</h1>
 		<h5 id="time" style="text-align: center;"></h5>
 		<div class="big-chart-div">
 			<div class="big-chart-container">

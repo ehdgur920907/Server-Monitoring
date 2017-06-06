@@ -20,7 +20,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/memory.js" />"></script>
+<script src="<c:url value="/resources/js/memory.js?ver=1" />"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script
