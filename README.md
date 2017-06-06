@@ -1,12 +1,12 @@
-# 서버 모니터링
+# Simple Server Monitoring System(SSMS)
 
 기관: 명지대학교 컴퓨터공학과
 <br>
-전담 교수: 이강선 교수님 캡스톤 디자인1
+교수: 이강선 교수님
 <br>
-팀: 네티
+과목: 캡스톤 디자인1
 <br>
-프로젝트 이름: Simple Server Monitoring System(SSMS)
+팀명: Netty
 <br>
 <br>
 60122454 이동혁
