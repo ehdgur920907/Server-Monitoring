@@ -1,0 +1,81 @@
+
+package kr.or.connect.todo.service.persistence;
+
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
+
+import kr.or.connect.todo.service.Todo;
+
+@Repository
+public class TodoDao {
+	private NamedParameterJdbcTemplate jdbc;
+	private SimpleJdbcInsert insert;
+//	private RowMapper<Todo> rowMapper = BeanPropertyRowMapper.newInstance(Todo.class);
+	
+	public TodoDao(DataSource dataSource) {		
+		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
+		this.insert = new SimpleJdbcInsert(dataSource).withTableName("todos").usingGeneratedKeyColumns("id"); 
+	}
+	
+	public Todo selectId(Integer id) {
+		RowMapper<Todo> rowMapper = (rs, i) -> {
+			Todo todo = new Todo();
+			todo.setId(rs.getInt("id"));
+			todo.setData(rs.getString("data"));
+			todo.setStatus(rs.getString("status"));
+			return todo;
+		};
+		
+		Map<String, Object> params = new HashMap<>();
+		params.put("id", id);
+		return jdbc.queryForObject(TodoSqls.SELECT_ID, params, rowMapper);
+	}
+//	
+//	public List<Todo> selectAll() {
+//		Map<String, Object> params = Collections.emptyMap();
+//		return jdbc.query(TodoSqls.SELECT_ALL, params, rowMapper);
+//	}
+//	
+//	public List<Todo> selectAllActive(String active) {
+//		Map<String, Object> params = Collections.singletonMap("active", active);
+//		return jdbc.query(TodoSqls.SELECT_ALL, params, rowMapper);
+//	}
+//	
+//	public List<Todo> selectAllCompleted(String completed) {
+//		Map<String, Object> params = Collections.singletonMap("completed", completed);
+//		return jdbc.query(TodoSqls.SELECT_ALL, params, rowMapper);
+//	}
+
+	public Integer insert(Todo todo) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("data", todo.getData());
+	    params.put("status", todo.getStatus());
+	    Number id = insert.executeAndReturnKey(params);
+	    return id.intValue();
+	}
+	
+	public void update(Todo todo) {
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("status", todo.getStatus());
+		param.put("id", todo.getId());
+		jdbc.update(TodoSqls.UPDATE_COMPLETED, param);
+	}
+	
+	public void delete(Todo todo) {
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("id", todo.getId());
+		jdbc.update(TodoSqls.DELETE, param);
+	}
+}

@@ -1,9 +1,0 @@
-package kr.or.connect.todo.service;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import kr.or.connect.todo.domain.Todo;
-
-public class TodoService {
-
-}

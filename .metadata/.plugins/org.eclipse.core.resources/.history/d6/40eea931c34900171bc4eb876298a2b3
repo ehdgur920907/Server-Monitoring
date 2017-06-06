@@ -1,0 +1,11 @@
+package kr.or.connect.todo.service.persistence;
+
+public class TodoSqls {
+	public static final String INSERT = "INSERT INTO todos(data, status) VALUES(:data, :status)";
+	public static final String DELETE = "DELETE FROM todos WHERE id=:id";
+	public static final String UPDATE_COMPLETED = "UPDATE todos SET status=:status WHERE id=:id";
+	public static final String SELECT_ID = "SELECT * FROM todos WHERE id=:id";
+	public static final String SELECT_ALL = "SELECT * FROM todos";
+	public static final String SELECT_ALL_ACTIVE = "SELECT id, data FROM todos WHERE status=:active";
+	public static final String SELECT_ALL_COMPLETED = "SELECT id, data FROM todos WHERE status=:completed";
+}

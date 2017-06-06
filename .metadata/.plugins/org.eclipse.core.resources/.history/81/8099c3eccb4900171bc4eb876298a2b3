@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>todo</title>
+</head>
+<body onload="index();">
+	<input type="form" id="input-form">
+	<button id="add-button">add</button>
+	
+	<div id="todo-list-form">
+		<ul></ul>
+	</div>
+	<div id="must"></div>
+	<div id="style-choice">
+		<button id="all-button">ALL</button>
+		<button id="active-button">Active</button>
+		<button id="completed-button">Completed</button>
+		<button id="clear-completed-button">Clear completed</button>
+	</div>
+</body>
+<script src="app.js"></script>
+</html>

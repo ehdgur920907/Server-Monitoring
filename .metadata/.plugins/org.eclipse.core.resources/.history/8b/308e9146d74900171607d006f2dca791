@@ -1,0 +1,113 @@
+package kr.or.connect.todo.api;
+
+import java.util.HashMap;
+
+import java.util.List;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import kr.or.connect.todo.service.Todo;
+import kr.or.connect.todo.service.TodoService;
+
+@SuppressWarnings("unchecked")
+@RestController
+@RequestMapping("/api/todos")
+public class TodoController {
+	@Autowired
+	TodoService todoService = new TodoService();
+	
+	@PostMapping("/post")
+	@ResponseBody
+	public String post(@RequestParam("data") String data, @RequestParam("status") String status) {
+		HashMap<String, String> hashMap = new HashMap<String, String>();
+
+		Todo TodoForInserting = new Todo();
+		
+		TodoForInserting.setData(data);
+		TodoForInserting.setStatus(status);
+		
+		Integer id = todoService.insert(TodoForInserting);
+		
+		Todo todoForSelectingId = todoService.selectId(id);
+		
+		hashMap.put("id", String.valueOf(id));
+		hashMap.put("data", todoForSelectingId.getData());
+		hashMap.put("status", todoForSelectingId.getStatus());
+		
+		return JSONObject.toJSONString(hashMap);
+	}
+	
+	@PutMapping("/put")
+	@ResponseBody
+	public void put(@RequestParam("id") String id) {
+		Todo todoForUpdating = todoService.selectId(Integer.valueOf(id));
+		todoForUpdating.setStatus("completed");
+		todoService.update(todoForUpdating);
+	}
+	
+	@GetMapping("/delete")
+	@ResponseBody
+	public void delete(@RequestParam("id") String id) {
+		todoService.delete(Integer.parseInt((id)));
+	}
+	
+	@GetMapping("/select/all")
+	@ResponseBody
+	public String selectAll() {
+		JSONArray jsonArray = new JSONArray();
+		
+		for (int i = 0; i < todoService.selectAll().size(); i++) {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("id",  String.valueOf(todoService.selectAll().get(i).getId()));
+			jsonObject.put("data",  todoService.selectAll().get(i).getData());
+			
+			jsonArray.add(jsonObject);
+		}
+		return JSONArray.toJSONString(jsonArray);
+	}
+	
+	@GetMapping("/select/all/active")
+	@ResponseBody
+	public String selectAllActive() {
+		JSONArray jsonArray = new JSONArray();
+		
+		for (int i = 0; i < todoService.selectAllActive("active").size(); i++) {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("id",  String.valueOf(todoService.selectAllActive("active").get(i).getId()));
+			jsonObject.put("data",  todoService.selectAllActive("active").get(i).getData());
+			
+			jsonArray.add(jsonObject);
+		}
+		return JSONArray.toJSONString(jsonArray);
+	}
+	
+	@GetMapping("/select/all/completed")
+	@ResponseBody
+	public String selectAllCompleted() {
+		JSONArray jsonArray = new JSONArray();
+		
+		for (int i = 0; i < todoService.selectAllActive("completed").size(); i++) {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("id",  String.valueOf(todoService.selectAllActive("completed").get(i).getId()));
+			jsonObject.put("data",  todoService.selectAllActive("completed").get(i).getData());
+			
+			jsonArray.add(jsonObject);
+		}
+		return JSONArray.toJSONString(jsonArray);
+	}
+	
+	@GetMapping("/delete/completed")
+	@ResponseBody
+	public void deleteCompleted() {
+		todoService.deleteCompleted("completed");
+	}
+}

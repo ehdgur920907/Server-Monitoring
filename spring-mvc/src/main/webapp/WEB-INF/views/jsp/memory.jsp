@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <script src="liquidFillGauge.js" language="JavaScript"></script> -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -19,23 +19,17 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<style>
-.liquidFillGaugeText {
-	font-family: Helvetica;
-	font-weight: bold;
-}
-</style>
-
-<link href="<c:url value="/resources/css/index.css" />"
-	rel="stylesheet">
+<link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/memory.js" />"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
 <script
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" />"></script>
-<title>memory</title>
+<script src="<c:url value="resources/smoothie-master/smoothie.js" />"></script>
+<title>monitoring</title>
 </head>
-<meta charset="utf-8">
 
 <body onload="realtimeClock()">
 	<nav class="navbar navbar-default">
@@ -65,9 +59,14 @@
 
 	</nav>
 	<div class="container">
-		<h1>memory chart</h1>
-		<h3 id="time" style="text-align: center;"></h3>
-		<canvas id="memoryChartLine" class="big-chart" width="100" height="100"></canvas>
+		<h1 class="big-chart-title" style="text-align: center;">memory broken</h1>
+		<h5 id="time" style="text-align: center;"></h5>
+		<div class="big-chart-div">
+			<div class="big-chart-container">
+				<canvas id="memoryChartLine" class="big-chart" width="200"
+					height="100"></canvas>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

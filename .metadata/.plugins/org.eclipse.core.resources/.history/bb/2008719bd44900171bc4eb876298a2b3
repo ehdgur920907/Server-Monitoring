@@ -1,0 +1,195 @@
+function count() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/select/all/active',
+		success: function(res) {
+			var data = JSON.parse(res);
+			if (data.length === 0) {
+				$('#count').html('todo: ' + 0);
+			} else {
+				$('#count').html('todo: ' + data.length);
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+}
+
+function index() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/select/all',
+		success: function(res) {
+			var data = JSON.parse(res);
+			$("#todo-list-form ul").children().remove();
+			for (var i = 0; i < data.length; i++) {
+				$('#todo-list-form ul').prepend('<li class="active todo" data-id="' + data[i].id + '">' + data[i].data + '</li>');
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}		
+	});
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/select/all/active',
+		success: function(res) {
+			var data = JSON.parse(res);
+			if (data.length === 0) {
+				$('#count').html('todo: ' + 0);
+			} else {
+				$('#count').html('todo: ' + data.length);
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+}
+
+$('#input-form').keydown(function(key) {
+	if (key.keyCode === 13) {
+		if ($('#input-form').val().length === 0) {
+			alert('input your todo.');
+		} else {
+			$.ajax({
+				type: 'POST',
+				url: '/api/todos/post',
+				data: {
+					"data": $('#input-form').val(),
+					"status": "active"
+				},
+				success: function(res) {
+					var data = JSON.parse(res);
+					$('#todo-list-form ul').prepend('<li class="active todo" data-id="' + data.id + '">' + data.data + '</li>');
+					$('#input-form').val('');
+					count();
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		}
+	}
+});
+
+$('#todo-list-form ul').on('mouseenter', '.todo', function() {
+	$(this).prepend('<button id="complete-button">O</button>');
+	$(this).append('<button id="delete-button">X</button>');
+});
+
+$('#todo-list-form ul').on('mouseleave', '.todo', function() {
+	$(this).find('button').remove();
+});
+
+
+$('#todo-list-form ul').on('click', '#complete-button', function() {
+	$.ajax({
+		type: 'PUT',
+		url: '/api/todos/put',
+		data: {
+			"id": $(this).closest('li').attr("data-id")
+		},
+		success: function(res) {
+			$('#todo-list-form ul').closest('li').eq(0).css('text-decoration', 'line-through');
+			count();
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+
+
+$('#todo-list-form ul').on('click', '#delete-button', function() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/delete',
+		data: {
+			"id": $(this).closest('li').attr("data-id")			
+		},
+		success: function(res) {
+			console.log($(this).closest('li').attr("data-id"));
+			$(this).closest('li').remove();
+			count();
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+
+$('#completed-button').click(function() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/select/all/completed',
+		success: function(res) {
+			var data = JSON.parse(res);
+			if (data.length === 0) {
+				alert('there is no completed todo.');
+			} else {
+				$("#todo-list-form ul").children().remove();
+				for (var i = 0; i < data.length; i++) {
+					$('#todo-list-form ul').append('<li class="active todo" data-id="' + data[i].id + '">' + data[i].data + '</li>');
+				}
+				$("#todo-list-form ul").children().css('text-decoration', 'line-through');
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+
+$('#active-button').click(function() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/select/all/active',
+		success: function(res) {
+			var data = JSON.parse(res);
+			if (data.length === 0) {
+				alert('there is no active todo.');
+			} else {
+				$("#todo-list-form ul").children().remove();
+				for (var i = 0; i < data.length; i++) {
+					$('#todo-list-form ul').prepend('<li class="active todo" data-id="' + data[i].id + '">' + data[i].data + '</li>');
+				}
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+
+$('#all-button').click(function() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/select/all',
+		success: function(res) {
+			var data = JSON.parse(res);
+			if (data.length === 0) {
+				alert('there is no todos.');
+			} else {
+				$("#todo-list-form ul").children().remove();
+				for (var i = 0; i < data.length; i++) {
+					$('#todo-list-form ul').prepend('<li class="active todo" data-id="' + data[i].id + '">' + data[i].data + '</li>');
+				}
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+
+$('#clear-completed-button').click(function() {
+	$.ajax({
+		type: 'GET',
+		url: '/api/todos/delete/completed',
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});

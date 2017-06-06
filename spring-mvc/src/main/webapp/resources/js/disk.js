@@ -50,7 +50,7 @@ function getRandomData() {
 }
 
 
-var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
+var gauge1;
 var config1 = liquidFillGaugeDefaultSettings();
 config1.circleColor = "#FF7777";
 config1.textColor = "#FF4444";
@@ -65,6 +65,8 @@ function diskUpdate(data) {
 }
 
 $(document).ready(function() {
+    gauge1 = loadLiquidFillGauge("fillgauge1", 55);
+
     setInterval(function() {
         $.ajax({
             type: 'GET',
@@ -75,14 +77,12 @@ $(document).ready(function() {
             success: function(res) {
                 var data = JSON.parse(res);
 
-                // $('#os-name').text(data.osName);
-                // $('#ip-address').text(data.ipAddress);
-                // $('#host-name').text(data.hostName);
                 diskUpdate(data);
             },
             error: function(err) {
                 console.log('cannot receive status model.');
                 diskUpdate(getRandomData());
+
             }
         });
     }, 2000);

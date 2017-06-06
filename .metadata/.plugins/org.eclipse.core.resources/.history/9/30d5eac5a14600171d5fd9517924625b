@@ -1,9 +1,0 @@
-package kr.or.connect.todo.service.persistence;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import kr.or.connect.todo.domain.Todo;
-
-public interface TodoService extends JpaRepository<Todo, Long> {
-
-}

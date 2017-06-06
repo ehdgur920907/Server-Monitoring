@@ -1,0 +1,64 @@
+
+package kr.or.connect.todo.service.persistence;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+import org.springframework.stereotype.Repository;
+
+import kr.or.connect.todo.service.Todo;
+
+@Repository
+public class TodoDao {
+	private NamedParameterJdbcTemplate jdbc;
+	private SimpleJdbcInsert insert;
+	private RowMapper<Todo> rowMapper = BeanPropertyRowMapper.newInstance(Todo.class);
+	
+	public TodoDao(SimpleDriverDataSource dataSource) {		
+		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
+		this.insert = new SimpleJdbcInsert(dataSource).withTableName("todos").usingGeneratedKeyColumns("id"); 
+	}
+	
+//	public Todo selectId(Integer id) {
+//		Map<String, ?> params = Collections.singletonMap("id", id);
+//		return jdbc.queryForObject(TodoSqls.SELECT_ID, params, Todo.class);
+//	}
+//	
+//	public List<Todo> selectAll() {
+//		Map<String, Object> params = Collections.emptyMap();
+//		return jdbc.query(TodoSqls.SELECT_ALL, params, rowMapper);
+//	}
+//	
+//	public List<Todo> selectAllActive(String active) {
+//		Map<String, Object> params = Collections.singletonMap("active", active);
+//		return jdbc.query(TodoSqls.SELECT_ALL, params, rowMapper);
+//	}
+//	
+//	public List<Todo> selectAllCompleted(String completed) {
+//		Map<String, Object> params = Collections.singletonMap("completed", completed);
+//		return jdbc.query(TodoSqls.SELECT_ALL, params, rowMapper);
+//	}
+
+	public Integer insert(Todo todo) {
+		SqlParameterSource params = new BeanPropertySqlParameterSource(todo);
+		return insert.execute(params);
+	}
+	
+//	public Integer updateCompleted(Todo todo) {
+//		SqlParameterSource params = new BeanPropertySqlParameterSource(todo);
+//		return jdbc.update(TodoSqls.UPDATE_COMPLETED, params);
+//	}
+//	
+//	public Integer delete(Integer id) {
+//		Map<String, ?> params = Collections.singletonMap("id", id);
+//		return jdbc.update(TodoSqls.DELETE, params);
+//	}
+}
