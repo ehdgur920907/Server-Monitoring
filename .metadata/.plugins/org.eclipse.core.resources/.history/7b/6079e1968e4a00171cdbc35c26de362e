@@ -195,7 +195,7 @@ var config = {
 };
 
 function cpuUpdate(data) {
-    if (config.data.datasets[0].data.length >= 7) {
+    if (config.data.datasets[0].data.length >= 5) {
         config.data.labels.shift();
         config.data.datasets.forEach(function(data) {
             data.data.shift();
