@@ -73,7 +73,6 @@ function doughnutChart() {
 doughnutChart.prototype.init = function(canvasName) {
     this.ctx = document.getElementById(canvasName).getContext("2d");
     this.chart = new Chart(this.ctx, this.config);
-    console.log(canvasName + "init")
 }
 
 var cpuChart = new doughnutChart();

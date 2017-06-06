@@ -27,7 +27,7 @@
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js" />"></script>
 <script
 	src="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" />"></script>
-<script src="<c:url value="resources/smoothie-master/smoothie.js" />"></script>
+<script src="<c:url value="/resources/smoothie-master/smoothie.js" />"></script>
 <title>monitoring</title>
 </head>
 

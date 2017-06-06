@@ -209,9 +209,7 @@ function cpuUpdate(data) {
 }
 
 $(document).ready(function() {
-    console.log(document)
     ctx = document.getElementById("cpuChartLine").getContext("2d");
-    console.log(document)
 
     cpuChart = new Chart(ctx, config);
     setInterval(function() {
