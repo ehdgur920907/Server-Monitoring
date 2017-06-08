@@ -31,15 +31,8 @@
 <br>
 <br>
 
-# 3) 구동 화면
-![image](https://cloud.githubusercontent.com/assets/15026049/26786685/5eacee0e-4a42-11e7-903d-ca44a2b83952.png)
+# 3) 구동 화면!
+![image](https://user-images.githubusercontent.com/15026049/26915239-3d8b0556-4c60-11e7-8ddf-ec52c13d2e27.png)
 
-![image](https://cloud.githubusercontent.com/assets/15026049/26786218/d17b01ca-4a40-11e7-9976-15b68b931e63.png)
+![image](https://user-images.githubusercontent.com/15026049/26915242-40c8a110-4c60-11e7-82bc-94995ab0deb9.png)
 
-![image](https://cloud.githubusercontent.com/assets/15026049/26786234/e372e1b8-4a40-11e7-9a11-8a3c9bb5ff6d.png)
-
-![image](https://cloud.githubusercontent.com/assets/15026049/26786241/e6569c12-4a40-11e7-8f42-194bfae172e0.png)
-
-![image](https://cloud.githubusercontent.com/assets/15026049/26786251/ec1ab08e-4a40-11e7-9700-c0d60bf7665b.png)
-
-![image](https://cloud.githubusercontent.com/assets/15026049/26812132/de749e02-4ab0-11e7-8382-bfef58743540.png)
