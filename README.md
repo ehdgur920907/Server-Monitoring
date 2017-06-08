@@ -31,8 +31,12 @@
 <br>
 <br>
 
-# 3) 구동 화면!
+# 3) 구동 화면
+monitiorng, index
+<br>
 ![image](https://user-images.githubusercontent.com/15026049/26915239-3d8b0556-4c60-11e7-8ddf-ec52c13d2e27.png)
 
+cpu bar, cpu wave, memory, disk
+<br>
 ![image](https://user-images.githubusercontent.com/15026049/26915242-40c8a110-4c60-11e7-82bc-94995ab0deb9.png)
 
