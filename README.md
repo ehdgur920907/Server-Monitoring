@@ -29,14 +29,23 @@
 # 2) 사용 기술
 네티, 스프링, AJAX, JSON, 자바 API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, D3.js, Chart.js
 <br>
+# 3) 사용 설명
+server list 클릭
+<br>
+cpu 글씨 클릭 -> cpu_bar(3초 간격)
+<br>
+cpu 그래프 클릭 -> cpu_wave(3초 간격)
+<br>
+memory 글씨 클릭 -> memory(3초 간격)
+<br>
+disk 글씨 클릭 -> disk(3초 간격)
 <br>
 
-# 3) 구동 화면
-monitiorng, index
+# 4) 구동 화면
+index, monitiorng
 <br>
 ![image](https://user-images.githubusercontent.com/15026049/26915239-3d8b0556-4c60-11e7-8ddf-ec52c13d2e27.png)
 
 cpu bar, cpu wave, memory, disk
 <br>
 ![image](https://user-images.githubusercontent.com/15026049/26915242-40c8a110-4c60-11e7-82bc-94995ab0deb9.png)
-
