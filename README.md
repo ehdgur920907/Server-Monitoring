@@ -19,9 +19,7 @@
 # 1) 개요
 서버들을 관리하기 위해서는 주기적으로 서버의 상태를 파악해야 합니다.
 <br>
-서버의 하드웨어적인 면을 실시간으로 모니터링하는 것은
-<br>
-서버들을 관리하기 위해 해야할 가장 기본적인 행동이라 생각합니다.
+서버의 하드웨어적인 면을 실시간으로 모니터링하는 것은 서버들을 관리하기 위해 해야할 가장 기본적인 행동이라 생각합니다.
 <br>
 <br>
 저희 프로젝트는 현재 신세계 아이앤씨에서 쓰고 있는 서버 모니터링 시스템 ‘시스 마스터’를 모방하여
@@ -29,7 +27,7 @@
 서버들의 간단한 시스템 정보를 시각화해서 실시간으로 보여주는 것입니다.
 
 # 2) 사용 기술
-네티, 스프링, AJAX, JSON, 자바 API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, Bootstrap, D3.js, Chart.js
+Netty, Spring, AJAX, JSON, Java API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, Bootstrap, D3.js, Chart.js
 <br>
 # 3) 사용 설명
 server list 클릭
