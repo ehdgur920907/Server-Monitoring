@@ -27,7 +27,7 @@
 서버들의 간단한 시스템 정보를 시각화해서 실시간으로 보여주는 것입니다.
 
 # 2) 사용 기술
-네티, 스프링, AJAX, JSON, 자바 API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, D3.js, Chart.js
+네티, 스프링, AJAX, JSON, 자바 API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, Bootstrap, D3.js, Chart.js
 <br>
 # 3) 사용 설명
 server list 클릭
