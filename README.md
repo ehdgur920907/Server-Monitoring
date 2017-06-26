@@ -27,8 +27,12 @@
 서버들의 간단한 시스템 정보를 시각화해서 실시간으로 보여주는 것입니다.
 
 # 2) 프로젝트 사용 기술
-Netty, Spring MVC, AJAX, JSON, Java API(Sigar, Oshi), JSP, MyBatis, MySQL, jQuery, HTML, CSS, Bootstrap, D3.js, Chart.js
+Netty, Spring MVC, AJAX, JSON, Java API(Sigar, Oshi), JSP, 
 <br>
+MyBatis, MySQL, jQuery, HTML, CSS, Bootstrap, D3.js, Chart.js
+<br>
+
+![image](https://user-images.githubusercontent.com/15026049/27531653-672917ea-5a98-11e7-8c05-d25d14c232b2.png)
 
 # 3) 프로젝트 가이드 라인
 ![image](https://user-images.githubusercontent.com/15026049/27531378-52e56c4e-5a97-11e7-93b8-158f4897bc99.png)
