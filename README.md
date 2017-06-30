@@ -1,4 +1,3 @@
-# Simple Server Monitoring System(SSMS)
 # 1) 프로젝트 개요
 서버들을 관리하기 위해서는 주기적으로 서버의 상태를 파악해야 합니다.
 <br>
