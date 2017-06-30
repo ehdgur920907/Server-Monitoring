@@ -15,7 +15,10 @@ MyBatis, MySQL, jQuery, HTML, CSS, Bootstrap, D3.js, Chart.js
 ![image](https://user-images.githubusercontent.com/15026049/27531378-52e56c4e-5a97-11e7-93b8-158f4897bc99.png)
 
 # 4) 프로젝트 구동 화면
-index, monitiorng
+왼쪽 화면은 현재 서버들의 상태를 확인할 수 있습니다. status 부분이 "danger, warning, normal"로 나뉘어 시스템 상태에 따라 색깔이 변하게 됩니다.
+<br>
+오른쪽 화면은 서버 리스트에서 확인하고 싶은 서버를 클릭하면 원형 그래프에 실시간으로 시스템 상태가 나타나게 됩니다.
+
 <br>
 ![image](https://user-images.githubusercontent.com/15026049/26915239-3d8b0556-4c60-11e7-8ddf-ec52c13d2e27.png)
 
